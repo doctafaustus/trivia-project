@@ -14,7 +14,6 @@
 bower_components
 
 /node_modules
-/dist
 
 # Sublime
 *.sublime-workspace
