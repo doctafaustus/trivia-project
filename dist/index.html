@@ -32,6 +32,63 @@
   </div>
 
   <script src="./main.js"></script>
+  <script>
+  var users =  [
+    { name: 'Jed' },
+    { name: 'Beag' },
+    { name: 'Tron' },
+    { name: 'Janet' },
+    { name: 'Afd' },
+    { name: 'Yuni' },
+    { name: 'Quaor' },
+    { name: 'Hannit' },
+    { name: 'Frost' },
+    { name: 'Cayt' },
+  ];
+
+
+  // Loop over users and create an new array consisting of group objects contiaing four players
+  function group(users) {
+
+    const newArr = [];
+    let groupHolder = {};
+
+    users.forEach((user, index) => {
+      console.log({groupHolder})
+
+      // If this index is divisible by 4 AND the group holder is not empty
+      if (index % 4 === 0 && Object.keys(groupHolder).length) {
+        console.log('new group!');
+        newArr.push(groupHolder);
+        groupHolder = {};
+      }
+
+      // If we've reached the end of the users array
+      if (users.length === ++index) {
+        generateCompUsers(groupHolder);
+      }
+
+      groupHolder[user.name] = user;
+    });
+
+    console.log('new array', newArr);
+  }
+
+  group(users);
+
+
+function generateCompUsers(leftoverGroup) {
+  console.log('leftoverGroup', leftoverGroup)
+  console.log('asdfasdfadfsa', Object.keys(leftoverGroup).length)
+  const leftoverGroupUsers = Object.keys(leftoverGroup).length;
+  if (!leftoverGroupUsers) console.log('????');
+  console.log('generateCompUsers for', leftoverGroupUsers);
+
+}
+
+
+
+  </script>
 
 </body>
 </html>

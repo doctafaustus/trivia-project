@@ -4,14 +4,14 @@
   "description": "",
   "private": true,
   "dependencies": {
-    "webpack": "^4.15.1",
-    "webpack-cli": "^3.0.8"
+    "webpack": "^4.15.1"
   },
   "devDependencies": {
     "css-loader": "^1.0.0",
     "node-sass": "^4.9.1",
     "sass-loader": "^7.0.3",
-    "style-loader": "^0.21.0"
+    "style-loader": "^0.21.0",
+    "webpack-cli": "^3.1.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

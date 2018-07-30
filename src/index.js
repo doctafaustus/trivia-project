@@ -1,3 +1,3 @@
 import './style.scss';
 
-console.log('amih');
+//console.log('amih');
