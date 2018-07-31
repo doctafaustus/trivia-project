@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+  <div id="join-status"></div>
+  <br>
+  <br>
+
+  <input id="message" type="text">
+  <button>Send</button>
+
+  <div class="party">
+    <h2>Your Party:</h2>
+    <ul id="party-list"><ul>
+  </div>
+
+  <ul id="player-list"></ul>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    var socket = io();
+  </script>
+  <script type="text/javascript">
+
+    $('button').click(function() {
+      var message = $('#message').val();
+      socket.emit('chat message', message);
+    });
+
+    socket.on('player-joined', (msg) => {
+      console.log(msg);
+    });
+
+
+  </script>
+
+</body>
+</html>
