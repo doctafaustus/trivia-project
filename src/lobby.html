@@ -2,19 +2,26 @@
 <html>
 <head>
   <title></title>
+  <style>
+    .invite {
+      color: blue;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
-  <div id="join-status"></div>
+  <h3>My Id:</h3>
+  <div id="my-id"></div>
   <br>
   <br>
 
-  <input id="message" type="text">
-  <button>Send</button>
+  <div id="invitations"></div>
+
 
   <div class="party">
     <h2>Your Party:</h2>
-    <ul id="party-list"><ul>
+    <ul id="party-list"><li>test</li></ul>
   </div>
 
   <ul id="player-list"></ul>
@@ -22,18 +29,44 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="/socket.io/socket.io.js"></script>
   <script>
-    var socket = io();
+    const socket = io();
   </script>
   <script type="text/javascript">
 
-    $('button').click(function() {
-      var message = $('#message').val();
-      socket.emit('chat message', message);
+    socket.on('player-joined-or-left', players => {
+      const $list = $('#party-list').empty();
+      players.forEach(({ playerName, testValue }) => {
+        $list.append(`
+          <li>
+            <span class="player-test">${testValue}</span>
+            <span class="player-name">${playerName}</span>
+            <span class="invite">Invite</span>
+          </li>
+        `);
+      });
     });
 
-    socket.on('player-joined', (msg) => {
-      console.log(msg);
+    socket.on('my-id', id => { 
+      $('#my-id').text(id);
+      window.playerID = id;
     });
+
+    $('#party-list').on('click', '.invite', function() {
+      const playerToInvite = $(this).prev().text().trim();
+      socket.emit('invite', { playerToInvite, sender: window.playerID });
+    });
+
+
+    socket.on('receiveInvite', sender => {
+      $('#invitations').prepend(`
+        <div><span class="invite-sender">${sender}</span> <span>wants to join your party!</span></div>
+        <button class="accept">Accept</button>
+        <button class="reject">Reject</button>
+      `);
+    });
+
+
+
 
 
   </script>

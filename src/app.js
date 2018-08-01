@@ -16,12 +16,16 @@ io.on('connection', socket => {
   console.log('a user connected');
   players[socket.id] = socket;
   players[socket.id].test = Math.floor((Math.random() * 1000));
-  getPlayers(players);
-  //io.emit('player-joined', players);
+  socket.emit('my-id', socket.id);
+  io.emit('player-joined-or-left', getPlayers(players));
 
   socket.on('disconnect', () => {
-    console.log('user disconnected');
     delete players[socket.id];
+    io.emit('player-joined-or-left', getPlayers(players));
+  });
+
+  socket.on('invite', data => {
+    players[data.playerToInvite].emit('receiveInvite', data.sender);
   });
 
 
@@ -32,10 +36,7 @@ io.on('connection', socket => {
 
 
 function getPlayers(players) {
-  const playersArray = Object.keys(players);
-  console.log(playersArray);
-  playersArray.forEach((player) => {
-    console.log('Player Name', player);
-    console.log('Test Value', players[player].test);
+  return formattedPlayersArray = Object.keys(players).map(player => {
+    return { playerName: player, testValue: players[player].test }
   });
 }
