@@ -11,6 +11,7 @@ http.listen(process.env.PORT || 3000, () => {
 });
 
 const players = {};
+const playerGroups = {};
 
 io.on('connection', socket => {
   console.log('a user connected');
@@ -28,10 +29,26 @@ io.on('connection', socket => {
     players[data.playerToInvite].emit('receiveInvite', data.sender);
   });
 
+  socket.on('accept', data => {
+    players[data.senderID].emit('accept', data.playerWhoAccepted);
+    const partyLeaderID = data.senderID;
+    const acceptedPlayerID = data.playerWhoAccepted;
+    playerGroups[partyLeaderID] = {
+      [partyLeaderID]: players[partyLeaderID],
+      [acceptedPlayerID]: players[acceptedPlayerID],
+    };
+
+    console.log(playerGroups)
+  });
+
+  socket.on('reject', data => {
+    players[data.senderID].emit('reject', data.playerWhoRejected);
+  });
+
+
+
 
 });
-
-
 
 
 

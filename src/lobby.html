@@ -7,6 +7,13 @@
       color: blue;
       cursor: pointer;
     }
+    .invite.sent {
+      color: red;
+    }
+    .invite-status {
+      color: gray;
+      font-style: italic;
+    }
   </style>
 </head>
 <body>
@@ -19,28 +26,31 @@
   <div id="invitations"></div>
 
 
-  <div class="party">
-    <h2>Your Party:</h2>
-    <ul id="party-list"><li>test</li></ul>
+  <div>
+    <h2>Player List:</h2>
+    <ul id="player-list"></ul>
+  </div>
+
+  <div>
+    <h3>My Party:</h3>
   </div>
 
   <ul id="player-list"></ul>
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="/socket.io/socket.io.js"></script>
-  <script>
-    const socket = io();
-  </script>
   <script type="text/javascript">
+    const socket = io();
 
     socket.on('player-joined-or-left', players => {
-      const $list = $('#party-list').empty();
+      const $list = $('#player-list').empty();
       players.forEach(({ playerName, testValue }) => {
         $list.append(`
           <li>
             <span class="player-test">${testValue}</span>
             <span class="player-name">${playerName}</span>
             <span class="invite">Invite</span>
+            <span class="invite-status"></span>
           </li>
         `);
       });
@@ -51,20 +61,53 @@
       window.playerID = id;
     });
 
-    $('#party-list').on('click', '.invite', function() {
+    socket.on('receiveInvite', sender => {
+      $('#invitations').prepend(`
+        <div class="invitation">
+          <span class="invite-sender">${sender}</span> <span>wants to join your party!</span>
+          <button class="accept">Accept</button>
+          <button class="reject">Reject</button>
+        </div>
+      `);
+    });
+
+    socket.on('accept', playerWhoAccepted => {
+      updateInviteStatus(playerWhoAccepted, 'Invite accepted!');
+    });
+
+    socket.on('reject', playerWhoRejected => {
+      updateInviteStatus(playerWhoRejected, 'Invite declined');
+    });
+
+    $('#player-list').on('click', '.invite:not(.sent)', function() {
+      $(this).addClass('sent');
+      $(this).closest('li').find('.invite-status').text('Invite pending...');
       const playerToInvite = $(this).prev().text().trim();
       socket.emit('invite', { playerToInvite, sender: window.playerID });
     });
 
-
-    socket.on('receiveInvite', sender => {
-      $('#invitations').prepend(`
-        <div><span class="invite-sender">${sender}</span> <span>wants to join your party!</span></div>
-        <button class="accept">Accept</button>
-        <button class="reject">Reject</button>
-      `);
+    $('#invitations').on('click', '.accept', function() {
+      const senderID = $(this).closest('.invitation').find('.invite-sender').text().trim();
+      socket.emit('accept', { senderID, playerWhoAccepted: playerID });
     });
 
+    $('#invitations').on('click', '.reject', function() {
+      const senderID = $(this).closest('.invitation').find('.invite-sender').text().trim();
+      socket.emit('reject', { senderID, playerWhoRejected: playerID });
+      $(this).closest('.invitation').remove();
+    });
+
+    // Create a party leader so already-invited players can't invite others
+    // Need party leader crown icon
+
+
+    function updateInviteStatus(idTarget, status) {
+      const $playerRow = $('#player-list').find(`.player-name:contains(${idTarget})`).closest('li');
+      $playerRow.find('.invite-status').text(status);
+      if (status === 'Invite declined') {
+        $playerRow.find('.invite').removeClass('sent');
+      }
+    }
 
 
 
