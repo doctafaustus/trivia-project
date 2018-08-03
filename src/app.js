@@ -11,7 +11,7 @@ http.listen(process.env.PORT || 3000, () => {
 });
 
 const players = {};
-const playerGroups = {};
+const parties = {};
 
 io.on('connection', socket => {
   console.log('a user connected');
@@ -33,18 +33,37 @@ io.on('connection', socket => {
     players[data.senderID].emit('accept', data.playerWhoAccepted);
     const partyLeaderID = data.senderID;
     const acceptedPlayerID = data.playerWhoAccepted;
-    playerGroups[partyLeaderID] = {
-      [partyLeaderID]: players[partyLeaderID],
-      [acceptedPlayerID]: players[acceptedPlayerID],
-    };
 
-    console.log(playerGroups)
+    if (players[partyLeaderID].isPartyLeader) {
+      if (Object.keys(parties[partyLeaderID]).length >= 4) return console.log('Party size too big');
+      parties[partyLeaderID][acceptedPlayerID] = players[acceptedPlayerID];
+    } else {
+      parties[partyLeaderID] = {
+        [partyLeaderID]: players[partyLeaderID],
+        [acceptedPlayerID]: players[acceptedPlayerID],
+      };
+      players[partyLeaderID].isPartyLeader = true;
+    }
+
+    const party = parties[partyLeaderID];
+    Object.keys(party).forEach(playerID => {
+      players[playerID].emit('party-update', getPlayers(party));
+    });
   });
 
   socket.on('reject', data => {
     players[data.senderID].emit('reject', data.playerWhoRejected);
   });
 
+  socket.on('leave-party', data => {
+    const partyLeaderID = data.partyLeader;
+    const party = parties[partyLeaderID];
+    delete parties[partyLeaderID][data.playerWhoWantsToLeave];
+    Object.keys(party).forEach(playerID => {
+      players[playerID].emit('party-update', getPlayers(party));
+    });
+    players[data.playerWhoWantsToLeave].emit('left-party');
+  });
 
 
 
@@ -54,6 +73,10 @@ io.on('connection', socket => {
 
 function getPlayers(players) {
   return formattedPlayersArray = Object.keys(players).map(player => {
-    return { playerName: player, testValue: players[player].test }
+    return { 
+      playerName: player, 
+      testValue: players[player].test,
+      isPartyLeader: players[player].isPartyLeader,
+    };
   });
 }

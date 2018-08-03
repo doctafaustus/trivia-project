@@ -14,6 +14,10 @@
       color: gray;
       font-style: italic;
     }
+    #leave-party {
+      color: blue;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -33,9 +37,11 @@
 
   <div>
     <h3>My Party:</h3>
+    <ul id="party-list"></ul>
   </div>
 
   <ul id="player-list"></ul>
+  <div id="leave-party">Leave Party</div>
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="/socket.io/socket.io.js"></script>
@@ -79,6 +85,26 @@
       updateInviteStatus(playerWhoRejected, 'Invite declined');
     });
 
+    socket.on('party-update', partyPlayers => {
+      window.partyPlayers = partyPlayers;
+      const $list = $('#party-list').empty();
+      partyPlayers.forEach(({ playerName, testValue, isPartyLeader }) => {
+        const $li = $(`<li>
+          <span class="player-test">${testValue}</span>
+          <span class="player-name">${playerName}</span>
+        </li>`);
+
+        if (isPartyLeader) {
+          $li.append(`<span class="party-leader">KING</span>`);
+        }
+
+        $list.append($li);
+      });
+    });
+
+    socket.on('left-party', disbandParty);
+
+
     $('#player-list').on('click', '.invite:not(.sent)', function() {
       $(this).addClass('sent');
       $(this).closest('li').find('.invite-status').text('Invite pending...');
@@ -97,8 +123,10 @@
       $(this).closest('.invitation').remove();
     });
 
-    // Create a party leader so already-invited players can't invite others
-    // Need party leader crown icon
+    $('#leave-party').click(function() {
+      const partyLeader = $('#party-list').find('.party-leader').closest('li').find('.player-name').text().trim()
+      socket.emit('leave-party', { partyLeader, playerWhoWantsToLeave: playerID });
+    });
 
 
     function updateInviteStatus(idTarget, status) {
@@ -109,7 +137,17 @@
       }
     }
 
+    function disbandParty() {
+      window.partyPlayers = null;
+      $('#party-list').empty();
+    }
 
+
+    // Once the last player has left the party then the party module should reset
+    // As soon as a player is accepted into a party they should not see the Invite links
+    // What happens if a user has several invitations? If they accept one then the others should be removed
+    // What happens if the party leader disconnects? The whole part should be disbanded with a message
+    // What happens if a party member disconnects? 
 
 
   </script>
