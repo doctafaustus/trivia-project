@@ -21,6 +21,15 @@ io.on('connection', socket => {
   io.emit('player-joined-or-left', getPlayers(players));
 
   socket.on('disconnect', () => {
+    // If disconnecting player was the party leader then disband the party
+    if (players[socket.id].isPartyLeader) {
+      const partyLeaderID = socket.id;
+      const party = parties[partyLeaderID];
+      delete parties[partyLeaderID];
+      Object.keys(party).forEach(playerID => {
+        players[playerID].emit('disband-party-from-leader');
+      });
+    }
     delete players[socket.id];
     io.emit('player-joined-or-left', getPlayers(players));
   });
@@ -47,7 +56,7 @@ io.on('connection', socket => {
 
     const party = parties[partyLeaderID];
     Object.keys(party).forEach(playerID => {
-      players[playerID].emit('party-update', getPlayers(party));
+      players[playerID].emit('party-update', { party: getPlayers(party), status: data.statusBroadcast });
     });
   });
 
@@ -60,12 +69,10 @@ io.on('connection', socket => {
     const party = parties[partyLeaderID];
     delete parties[partyLeaderID][data.playerWhoWantsToLeave];
     Object.keys(party).forEach(playerID => {
-      players[playerID].emit('party-update', getPlayers(party));
+      players[playerID].emit('party-update', { party: getPlayers(party), status: data.statusBroadcast });
     });
-    players[data.playerWhoWantsToLeave].emit('left-party');
+    players[data.playerWhoWantsToLeave].emit('left-party', data.statusTarget);
   });
-
-
 
 });
 
@@ -76,7 +83,7 @@ function getPlayers(players) {
     return { 
       playerName: player, 
       testValue: players[player].test,
-      isPartyLeader: players[player].isPartyLeader,
+      isPartyLeader: players[player].isPartyLeader ? true : false,
     };
   });
 }

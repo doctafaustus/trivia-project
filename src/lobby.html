@@ -3,7 +3,8 @@
 <head>
   <title></title>
   <style>
-    .invite {
+    .invite,
+    .remove-from-party {
       color: blue;
       cursor: pointer;
     }
@@ -17,6 +18,14 @@
     #leave-party {
       color: blue;
       cursor: pointer;
+    }
+    #status-messages {
+      border: solid 1px #070707;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+      color: gray;
     }
   </style>
 </head>
@@ -37,11 +46,14 @@
 
   <div>
     <h3>My Party:</h3>
+    <div id="party-status"></div>
     <ul id="party-list"></ul>
   </div>
 
   <ul id="player-list"></ul>
   <div id="leave-party">Leave Party</div>
+
+  <ul id="status-messages"></ul>
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="/socket.io/socket.io.js"></script>
@@ -85,24 +97,39 @@
       updateInviteStatus(playerWhoRejected, 'Invite declined');
     });
 
-    socket.on('party-update', partyPlayers => {
-      window.partyPlayers = partyPlayers;
+    socket.on('party-update', data => {
+      console.log(data);
+      window.partyPlayers = data.party;
+      addStatus(data.status);
+      markPartyLeader();
       const $list = $('#party-list').empty();
       partyPlayers.forEach(({ playerName, testValue, isPartyLeader }) => {
-        const $li = $(`<li>
+        const $li = $(`<li data-player-id=${playerName}>
           <span class="player-test">${testValue}</span>
           <span class="player-name">${playerName}</span>
         </li>`);
 
         if (isPartyLeader) {
           $li.append(`<span class="party-leader">KING</span>`);
+        } else if (window.isPartyLeader) {
+          $li.append(`<span class="remove-from-party">Remove</span>`);
         }
 
         $list.append($li);
       });
+
+      
     });
 
-    socket.on('left-party', disbandParty);
+    socket.on('left-party', status => {
+      disbandParty(status);
+      addStatus(status);
+    });
+
+    socket.on('disband-party-from-leader', status => {
+      disbandParty(status);
+      addStatus(status);
+    });
 
 
     $('#player-list').on('click', '.invite:not(.sent)', function() {
@@ -113,8 +140,9 @@
     });
 
     $('#invitations').on('click', '.accept', function() {
+      $(this).closest('.invitation').remove();
       const senderID = $(this).closest('.invitation').find('.invite-sender').text().trim();
-      socket.emit('accept', { senderID, playerWhoAccepted: playerID });
+      socket.emit('accept', { senderID, playerWhoAccepted: playerID, statusBroadcast: `${playerID} joined the party` });
     });
 
     $('#invitations').on('click', '.reject', function() {
@@ -125,7 +153,12 @@
 
     $('#leave-party').click(function() {
       const partyLeader = $('#party-list').find('.party-leader').closest('li').find('.player-name').text().trim()
-      socket.emit('leave-party', { partyLeader, playerWhoWantsToLeave: playerID });
+      socket.emit('leave-party', { partyLeader, playerWhoWantsToLeave: playerID, statusTarget: 'You left the party', statusBroadcast: `${window.playerID} left the party` });
+    });
+
+    $('#party-list').on('click', '.remove-from-party', function() {
+      const playerToRemove = $(this).closest('li').attr('data-player-id');
+      socket.emit('leave-party', { partyLeader: window.playerID, playerWhoWantsToLeave: playerToRemove, statusTarget: 'You were removed by the party leader', statusBroadcast: `${playerToRemove} was removed from the party` });
     });
 
 
@@ -137,16 +170,29 @@
       }
     }
 
-    function disbandParty() {
+    function disbandParty(status) {
       window.partyPlayers = null;
       $('#party-list').empty();
     }
+
+    function markPartyLeader() {
+      const partyLeaderID = partyPlayers.find(player => player.isPartyLeader).playerName;
+
+      if (window.playerID === partyLeaderID) {
+        window.isPartyLeader = true;
+      }
+    }
+
+    function addStatus(status) {
+      $('#status-messages').prepend(`<li>${status}</li>`);
+    }
+
 
 
     // Once the last player has left the party then the party module should reset
     // As soon as a player is accepted into a party they should not see the Invite links
     // What happens if a user has several invitations? If they accept one then the others should be removed
-    // What happens if the party leader disconnects? The whole part should be disbanded with a message
+    // What happens if the party leader disconnects? The whole party should be disbanded with a message
     // What happens if a party member disconnects? 
 
 
