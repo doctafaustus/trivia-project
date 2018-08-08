@@ -30,6 +30,12 @@ io.on('connection', socket => {
         players[playerID].emit('disband-party-from-leader');
       });
     }
+
+    // If diconnecting player was in a party then remove them
+    if (players[socket.id].partyID) {
+      console.log('TODO: Remove this player from the party');
+    }
+
     delete players[socket.id];
     io.emit('player-joined-or-left', getPlayers(players));
   });
@@ -55,6 +61,8 @@ io.on('connection', socket => {
     }
 
     const party = parties[partyLeaderID];
+
+    Object.keys(party).forEach(playerID => players[playerID].partyID = partyLeaderID);
     Object.keys(party).forEach(playerID => {
       players[playerID].emit('party-update', { party: getPlayers(party), status: data.statusBroadcast });
     });
@@ -67,6 +75,7 @@ io.on('connection', socket => {
   socket.on('leave-party', data => {
     const partyLeaderID = data.partyLeader;
     const party = parties[partyLeaderID];
+    parties[partyLeaderID][data.playerWhoWantsToLeave].partyID = null;
     delete parties[partyLeaderID][data.playerWhoWantsToLeave];
     Object.keys(party).forEach(playerID => {
       players[playerID].emit('party-update', { party: getPlayers(party), status: data.statusBroadcast });
@@ -84,6 +93,7 @@ function getPlayers(players) {
       playerName: player, 
       testValue: players[player].test,
       isPartyLeader: players[player].isPartyLeader ? true : false,
+      partyID: players[player].partyID,
     };
   });
 }
