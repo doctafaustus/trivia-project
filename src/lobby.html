@@ -67,6 +67,7 @@
     const socket = io();
     window.invitationsRemaining = 3;
 
+    // TODO: Need to keep state of invitations
     socket.on('player-joined-or-left', players => {
       const $list = $('#player-list').empty();
       players.forEach(({ playerName, testValue }) => {

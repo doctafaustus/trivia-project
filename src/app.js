@@ -92,6 +92,7 @@ function leaveParty(data) {
   if (!party) return console.log('No party!');
   const partyLength = Object.keys(party).length;
 
+  // If second-to-last-player is leaving or party leader is leaving then disband party
   party[data.playerWhoWantsToLeave].partyID = null;
   if (party[data.playerWhoWantsToLeave].isPartyLeader || partyLength === 2) {
     Object.keys(party).forEach(playerID => {
@@ -102,14 +103,14 @@ function leaveParty(data) {
     });
 
     return console.log('first case');
+  } else {
+    delete parties[partyLeaderID][data.playerWhoWantsToLeave];
+    Object.keys(party).forEach(playerID => {
+      players[playerID].emit('party-update', { party: getPlayers(party), status: data.statusBroadcast });
+    });
+    players[data.playerWhoWantsToLeave].emit('left-party', data.statusTarget);
+    players[partyLeaderID].emit('PL-update');
   }
-
-  delete parties[partyLeaderID][data.playerWhoWantsToLeave];
-  Object.keys(party).forEach(playerID => {
-    players[playerID].emit('party-update', { party: getPlayers(party), status: data.statusBroadcast });
-  });
-  players[data.playerWhoWantsToLeave].emit('left-party', data.statusTarget);
-  players[partyLeaderID].emit('PL-update');
 }
 
 
