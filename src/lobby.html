@@ -27,6 +27,9 @@
       z-index: 10;
       color: gray;
     }
+    .self {
+      border: solid 1px red;
+    }
   </style>
 </head>
 <body>
@@ -64,7 +67,7 @@
       const $list = $('#player-list').empty();
       players.forEach(({ playerName, testValue }) => {
         $list.append(`
-          <li>
+          <li data-player-id="${playerName}">
             <span class="player-test">${testValue}</span>
             <span class="player-name">${playerName}</span>
             <span class="invite">Invite</span>
@@ -72,6 +75,8 @@
           </li>
         `);
       });
+
+      $(`#player-list [data-player-id="${window.playerID}"]`).addClass('self');
     });
 
     socket.on('my-id', id => { 
@@ -122,12 +127,17 @@
     });
 
     socket.on('left-party', status => {
-      disbandParty(status);
+      disbandParty();
       addStatus(status);
     });
 
     socket.on('disband-party-from-leader', status => {
-      disbandParty(status);
+      disbandParty();
+      addStatus(status);
+    });
+
+    socket.on('disband-from-all-member-leave', status => {
+      disbandParty();
       addStatus(status);
     });
 
@@ -170,7 +180,7 @@
       }
     }
 
-    function disbandParty(status) {
+    function disbandParty() {
       window.partyPlayers = null;
       $('#party-list').empty();
     }
@@ -194,6 +204,7 @@
     // What happens if a user has several invitations? If they accept one then the others should be removed
     // What happens if the party leader disconnects? The whole party should be disbanded with a message
     // What happens if a party member disconnects? 
+    // What happens if party leader leaves?
 
 
   </script>

@@ -33,7 +33,12 @@ io.on('connection', socket => {
 
     // If diconnecting player was in a party then remove them
     if (players[socket.id].partyID) {
-      console.log('TODO: Remove this player from the party');
+      const data = {
+        partyLeader: players[socket.id].partyID,
+        playerWhoWantsToLeave: players[socket.id].id,
+        statusBroadcast: `${players[socket.id].partyID} has disconnected`,
+      };
+      leaveParty(data);
     }
 
     delete players[socket.id];
@@ -73,18 +78,38 @@ io.on('connection', socket => {
   });
 
   socket.on('leave-party', data => {
-    const partyLeaderID = data.partyLeader;
-    const party = parties[partyLeaderID];
-    parties[partyLeaderID][data.playerWhoWantsToLeave].partyID = null;
-    delete parties[partyLeaderID][data.playerWhoWantsToLeave];
-    Object.keys(party).forEach(playerID => {
-      players[playerID].emit('party-update', { party: getPlayers(party), status: data.statusBroadcast });
-    });
-    players[data.playerWhoWantsToLeave].emit('left-party', data.statusTarget);
+    leaveParty(data);
   });
 
 });
 
+
+function leaveParty(data) {
+  const partyLeaderID = data.partyLeader;
+  const party = parties[partyLeaderID];
+
+  party[data.playerWhoWantsToLeave].partyID = null;
+  if (party[data.playerWhoWantsToLeave].isPartyLeader) {
+    console.log('THIS IS THE LEADER');
+  }
+
+  delete parties[partyLeaderID][data.playerWhoWantsToLeave];
+  Object.keys(party).forEach(playerID => {
+    players[playerID].emit('party-update', { party: getPlayers(party), status: data.statusBroadcast });
+  });
+  players[data.playerWhoWantsToLeave].emit('left-party', data.statusTarget);
+
+  const partyLength = Object.keys(party).length;
+  if (partyLength === 1) {
+    Object.keys(party).forEach(playerID => {
+      players[playerID].emit('disband-from-all-member-leave', 'Your party disbanded');
+      players[playerID].partyID = null;
+      players[playerID].isPartyLeader = null;
+      delete parties[playerID];
+      console.log(Object.keys(parties).length)
+    });
+  }
+}
 
 
 function getPlayers(players) {
