@@ -1,3 +1,5 @@
+// https://docs.google.com/spreadsheets/d/1wi2mznOl549z4kxp33usF7UyiiIUc4nkO7cdf5ghCIE/edit#gid=0
+
 const app = require('express')();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
@@ -87,10 +89,19 @@ io.on('connection', socket => {
 function leaveParty(data) {
   const partyLeaderID = data.partyLeader;
   const party = parties[partyLeaderID];
+  if (!party) return console.log('No party!');
+  const partyLength = Object.keys(party).length;
 
   party[data.playerWhoWantsToLeave].partyID = null;
-  if (party[data.playerWhoWantsToLeave].isPartyLeader) {
-    console.log('THIS IS THE LEADER');
+  if (party[data.playerWhoWantsToLeave].isPartyLeader || partyLength === 2) {
+    Object.keys(party).forEach(playerID => {
+      players[playerID].emit('disband-from-all-member-leave', 'Your party disbanded');
+      players[playerID].partyID = null;
+      players[playerID].isPartyLeader = null;
+      delete parties[playerID];
+    });
+
+    return console.log('first case');
   }
 
   delete parties[partyLeaderID][data.playerWhoWantsToLeave];
@@ -98,17 +109,7 @@ function leaveParty(data) {
     players[playerID].emit('party-update', { party: getPlayers(party), status: data.statusBroadcast });
   });
   players[data.playerWhoWantsToLeave].emit('left-party', data.statusTarget);
-
-  const partyLength = Object.keys(party).length;
-  if (partyLength === 1) {
-    Object.keys(party).forEach(playerID => {
-      players[playerID].emit('disband-from-all-member-leave', 'Your party disbanded');
-      players[playerID].partyID = null;
-      players[playerID].isPartyLeader = null;
-      delete parties[playerID];
-      console.log(Object.keys(parties).length)
-    });
-  }
+  players[partyLeaderID].emit('PL-update');
 }
 
 

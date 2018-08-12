@@ -8,9 +8,6 @@
       color: blue;
       cursor: pointer;
     }
-    .invite.sent {
-      color: red;
-    }
     .invite-status {
       color: gray;
       font-style: italic;
@@ -29,6 +26,12 @@
     }
     .self {
       border: solid 1px red;
+    }
+    .rescind {
+      color: red;
+    }
+    .hide {
+      display: none;
     }
   </style>
 </head>
@@ -62,6 +65,7 @@
   <script src="/socket.io/socket.io.js"></script>
   <script type="text/javascript">
     const socket = io();
+    window.invitationsRemaining = 3;
 
     socket.on('player-joined-or-left', players => {
       const $list = $('#player-list').empty();
@@ -71,6 +75,7 @@
             <span class="player-test">${testValue}</span>
             <span class="player-name">${playerName}</span>
             <span class="invite">Invite</span>
+            <span class="rescind hide">Rescind</span>
             <span class="invite-status"></span>
           </li>
         `);
@@ -122,8 +127,6 @@
 
         $list.append($li);
       });
-
-      
     });
 
     socket.on('left-party', status => {
@@ -141,10 +144,23 @@
       addStatus(status);
     });
 
+    // TODO: nail down invitationsRemaining
+    // TODO: Make "rescind" work
+    socket.on('PL-update', () => {
+      console.log('PL-update');
+      window.invitationsRemaining++;
+    });
+
+
 
     $('#player-list').on('click', '.invite:not(.sent)', function() {
-      $(this).addClass('sent');
-      $(this).closest('li').find('.invite-status').text('Invite pending...');
+      window.invitationsRemaining--;
+      const $row = $(this).closest('li');
+
+      $row.find('.invite-status').text('Invite pending...');
+      $row.find('.invite').addClass('hide');
+      $row.find('.rescind').removeClass('hide');
+
       const playerToInvite = $(this).prev().text().trim();
       socket.emit('invite', { playerToInvite, sender: window.playerID });
     });
@@ -176,13 +192,18 @@
       const $playerRow = $('#player-list').find(`.player-name:contains(${idTarget})`).closest('li');
       $playerRow.find('.invite-status').text(status);
       if (status === 'Invite declined') {
-        $playerRow.find('.invite').removeClass('sent');
+        $playerRow.find('.invite').removeClass('hide');
+        $playerRow.find('.rescind').addClass('hide');
+        window.invitationsRemaining++;
+      } else {
+        $playerRow.find('.invite, .rescind').addClass('hide');
       }
     }
 
     function disbandParty() {
       window.partyPlayers = null;
       $('#party-list').empty();
+      window.invitationsRemaining = 3;
     }
 
     function markPartyLeader() {
@@ -196,16 +217,6 @@
     function addStatus(status) {
       $('#status-messages').prepend(`<li>${status}</li>`);
     }
-
-
-
-    // Once the last player has left the party then the party module should reset
-    // As soon as a player is accepted into a party they should not see the Invite links
-    // What happens if a user has several invitations? If they accept one then the others should be removed
-    // What happens if the party leader disconnects? The whole party should be disbanded with a message
-    // What happens if a party member disconnects? 
-    // What happens if party leader leaves?
-
 
   </script>
 
