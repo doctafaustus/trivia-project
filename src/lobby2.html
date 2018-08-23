@@ -2,6 +2,74 @@
 <html>
 <head>
   <title>Trivia</title>
+  <style>
+  body {
+    font-family: 'Open Sans', sans-serif;
+  }
+  .main-left {
+    width: 75%;
+  }
+  .video-container {
+    border: solid 1px black;
+    width: 600px;
+    height: 400px;
+  }
+  .invitation-container h3 {
+    font-size: 14px;
+  }
+  .invitation-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .invitation {
+    display: flex;
+    justify-content: space-between;
+    border: solid 1px black;
+    border-radius: 13px;
+    padding: 12px 14px;
+    font-size: 12px;
+    width: 615px;
+  }
+  .invitation-party-leader {
+    font-weight: bold;
+    color: #2ba3fb;
+    font-size: 16px;
+  }
+  .invitation-crown {
+    position: relative;
+    top: 3px;
+    right: 2px;
+    width: 18px;
+  }
+  .invitation-party-leader-label {
+    color: #6f6f6f;
+  }
+  .invitation-members-label {
+    font-weight: bold;
+  }
+  .invitation-members {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+  .accept,
+  .reject {
+    display: block;
+    width: 110px;
+    color: white;
+    border: 0;
+    padding: 8px
+  }
+  .accept {
+    margin-bottom: 12px;
+    background-color: #2ed82e;
+  }
+  .reject {
+    background-color: red;
+  }
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
 </head>
 <body>
   <div class="main">
@@ -12,10 +80,14 @@
         <ul class="invitation-list">
           <li class="invitation">
             <div class="invitation-left">
-              <div class="invitation-party-leader">Ace Dauntless</div>
+              <div class="invitation-party-leader">
+                <img class="invitation-crown" src="./crown.png">
+                <span>Ace Dauntless</span>
+              </div>
               <div class="invitation-party-leader-label">Party Leader</div>
             </div>
             <div class="invitation-middle">
+              <div class="invitation-members-label">Members:</div>
               <ul class="invitation-members">
                 <li class="invitation-member">AceDauntless</li>
                 <li class="invitation-member">Stevie Ray Nicks</li>
