@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Trivia</title>
+  <link rel="stylesheet" href="lobby.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+</head>
+<body>
+  <div class="main">
+    <div class="main-left">
+      <div class="video-container"></div>
+      <div class="invitation-container">
+        <h3>Party Invitations</h3>
+        <ul class="invitation-list">
+          <li class="invitation">
+            <div class="invitation-left">
+              <div class="invitation-party-leader">
+                <img class="invitation-crown" src="./crown.png">
+                <span>Ace Dauntless</span>
+              </div>
+              <div class="invitation-party-leader-label">Party Leader</div>
+            </div>
+            <div class="invitation-middle">
+              <div class="invitation-members-label">Members:</div>
+              <ul class="invitation-members">
+                <li class="invitation-member">AceDauntless</li>
+                <li class="invitation-member">Stevie Ray Nicks</li>
+                <li class="invitation-member">AuntieAnne</li>
+              </ul>
+            </div>
+            <div class="invitation-right">
+              <button class="accept">Accept</button>
+              <button class="reject">Reject</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-right">
+      <div class="side-bar">
+        <div class="tabs">
+          <div class="tab tab-players active" data-tab-id="tab-players-content">
+            <div class="tab-title"><span>Players </span><span class="player-count">(100)</span></div>
+          </div>
+          <div class="tab tab-friends" data-tab-id="tab-friends-content">
+            <div class="tab-title"><span>Friends </span><span class="friend-count">(5)</span></div>
+          </div>
+          <div class="tab tab-requests" data-tab-id="tab-requests-content">
+            <div class="tab-title"><span>Requests </span><span class="requests-count">(1)</span></div>
+          </div>
+        </div>
+
+        <ul id="tab-players-content" class="tab-content active"><li>Players test</li></ul>
+        <ul id="tab-friends-content" class="tab-content"><li>Friends test</li></ul>
+        <ul id="tab-requests-content" class="tab-content"><li>Requests test</li></ul>
+
+      </div>
+    </div>
+
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>

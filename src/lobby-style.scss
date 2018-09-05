@@ -1,0 +1,123 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+.main {
+  display: grid;
+  grid-template-columns: 1fr .5fr;
+  grid-column-gap: 20px;
+  max-width: 1000px;
+  padding: 40px;
+  margin: 0 auto;
+}
+.main-left {
+  /* width: 65%; */
+  /* float: left; */
+}
+.main-right {
+  border: solid 1px #620;
+}
+.video-container {
+  border: solid 1px black;
+  /* width: 600px; */
+  height: 400px;
+}
+.invitation-container h3 {
+  font-size: 14px;
+}
+.invitation-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.invitation {
+  display: flex;
+  justify-content: space-between;
+  border: solid 1px black;
+  border-radius: 13px;
+  padding: 12px 14px;
+  font-size: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.invitation-party-leader {
+  font-weight: bold;
+  color: #2ba3fb;
+  font-size: 16px;
+}
+.invitation-crown {
+  position: relative;
+  top: 3px;
+  right: 2px;
+  width: 18px;
+}
+.invitation-party-leader-label {
+  color: #6f6f6f;
+}
+.invitation-members-label {
+  font-weight: bold;
+}
+.invitation-members {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.accept,
+.reject {
+  display: block;
+  width: 110px;
+  color: white;
+  border: 0;
+  padding: 8px
+}
+.accept {
+  margin-bottom: 12px;
+  background-color: blue;
+}
+.reject {
+  background-color: red;
+}
+
+.side-bar {
+  min-height: 500px;
+
+  .tabs {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 13px;
+    flex-direction: row;
+    align-items: stretch;
+    width: 100%;
+    background-color: #6200ee;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 3px 0px;
+
+    .tab {
+      flex-direction: row;
+      align-items: stretch;
+      width: 100%;
+      font-size: 13px;
+      color: white;
+      cursor: pointer;
+
+      &.active .tab-title {
+        border-bottom: solid 2px white;
+      }
+
+      .tab-title {
+        padding: 10px;
+      }
+    }
+  }
+
+      
+  .tab-content {
+    list-style-type: none;
+    margin: 0;
+    padding: 12px;
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}
+

@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Trivia</title>
+  <link rel="stylesheet" href="lobby.css">
   <style>
   body {
     font-family: 'Open Sans', sans-serif;
@@ -19,9 +20,7 @@
     /* float: left; */
   }
   .main-right {
-    /* width: 30%; */
-    /* float: right; */
-    border: solid 1px green;
+    border: solid 1px #620;
   }
   .video-container {
     border: solid 1px black;
@@ -94,16 +93,18 @@
     flex-direction: row;
     align-items: stretch;
     width: 100%;
+    background-color: #6200ee;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 3px 0px;
   }
   .tab {
     flex-direction: row;
     align-items: stretch;
     width: 100%;
     font-size: 13px;
-    border-bottom: solid 1px gray;
+    color: white;
+    cursor: pointer;
   }
   .tab-title {
-    background-color: #eef8ff;
     padding: 10px;
   }
   .tab-content {
@@ -113,14 +114,10 @@
     display: none;
   }
   .tab.active .tab-title {
-    background-color: #aee0ff;
+    border-bottom: solid 2px white;
   }
   .tab-content.active {
     display: block;
-  }
-  .tab:nth-child(1),
-  .tab:nth-child(2) {
-    border-right: solid 1px gray;
   }
   </style>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
