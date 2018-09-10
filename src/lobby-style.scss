@@ -1,7 +1,113 @@
+/* --- CSS Reset --- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ul, ol, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+h1 { font-size: 2em; }
+h2 { font-size: 20px; }
+h3 { font-size: 1.17em; }
+h4 { font-size: 1.12em; }
+h5 { font-size: .83em; }
+h6 { font-size: .75em; }
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: #f6f6f6;
 }
+
+/* Common Classes */
+.btn {
+  display: inline-block;
+  border: 0;
+  background-color: #3ecf83;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .01em;
+  text-shadow: 0 1px 3px rgba(36,180,126,.4);
+  height: 40px;
+  line-height: 40px;
+  padding: 0 24px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+}
+.btn:hover {
+  background-color: #fa755a;
+}
+.btn.btn-orange {
+  background-color: #fa755a;
+}
+.btn.btn-orange:hover {
+  background-color: #fba924;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: #f5f5f5;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  height: 56px;
+  padding: 0 18px;
+  background: #6200ee;
+  color: white;
+  display: grid;
+  grid-template-columns: 54px auto;
+  align-items: center;
+  box-shadow: 0 0 2px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.24);
+
+  #logo {
+    width: 50px;
+  }
+
+  #logo-text {
+    font-weight: 300;
+  }
+}
+
 .main {
   display: grid;
   grid-template-columns: 1fr .5fr;
@@ -15,77 +121,91 @@ body {
   /* float: left; */
 }
 .main-right {
-  border: solid 1px #620;
   background-color: white;
+  border-radius: 2px;
+  box-shadow: 0 0 2px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.24);
 }
 .video-container {
   border: solid 1px black;
   background-color: black;
   height: 400px;
+  margin-bottom: 20px;
 }
 
 .invitation-container {
-  background-color: white;
-  border-radius: 5px;
-
-  h3 {
-    font-size: 18px;
-    padding: 16px;
-    border-bottom: solid 2px #eee;
-  }
-
   .invitation-list {
     list-style-type: none;
     margin: 0;
     padding: 0;
-  }
-  .invitation {
-    display: flex;
-    justify-content: space-between;
-    border: solid 1px black;
-    border-radius: 13px;
-    padding: 12px 14px;
-    font-size: 12px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  .invitation-party-leader {
-    font-weight: bold;
-    color: #2ba3fb;
-    font-size: 16px;
-  }
-  .invitation-crown {
-    position: relative;
-    top: 3px;
-    right: 2px;
-    width: 18px;
-  }
-  .invitation-party-leader-label {
-    color: #6f6f6f;
-  }
-  .invitation-members-label {
-    font-weight: bold;
-  }
-  .invitation-members {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-  }
-  .accept,
-  .reject {
-    display: block;
-    width: 110px;
-    color: white;
-    border: 0;
-    padding: 8px;
-    border-radius: 20px;
-  }
-  .accept {
-    margin-bottom: 12px;
-    background-color: #38b44a;
-  }
-  .reject {
-    background-color: #a7a6a6;
+
+    .invitation {
+      display: grid;
+      grid-template-columns: 43px auto 120px;
+      background-color: white;
+      border-radius: 2px;
+      box-shadow: 0 0 2px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.24);
+      padding: 18px;
+      font-size: 12px;
+      width: 100%;
+      box-sizing: border-box;
+
+      .invitation-left {
+        .invitation-avatar {
+          img {
+            border-radius: 50%;
+          }
+        }
+      }
+
+      .invitation-middle {
+        padding-left: 25px;
+
+        .invitation-title {
+          font-size: 18px;
+          margin-bottom: 6px;
+        }
+
+        .invitation-subtitle {
+          font-size: 14px;
+          margin-bottom: 12px;
+        }
+
+        .invitation-learn-more {
+          text-transform: uppercase;
+          color: #16af65;
+          font-size: 11px;
+          font-weight: bold;
+        }
+      }
+
+      .invitation-right {
+        justify-self: right;
+
+        .accept,
+        .reject {
+          display: block;
+          border: none;
+          outline: none;
+          border-radius: 3px;
+          color: white;
+          cursor: pointer;
+          width: 100px;
+          background: #ececec;
+          padding: 7px 8px;
+          font-size: 11px;
+          font-weight: bold;
+          text-transform: uppercase;
+          box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+        }
+        .accept {
+          margin-bottom: 12px;
+          background-color: #16af65;
+        }
+        .reject {
+          background-color: #e62a2a;
+        }
+      }
+    }
   }
 }
 
@@ -110,6 +230,7 @@ body {
       font-size: 13px;
       color: white;
       cursor: pointer;
+      text-align: center;
 
       &.active .tab-title {
         border-bottom: solid 2px white;
@@ -125,7 +246,6 @@ body {
   .tab-content {
     list-style-type: none;
     margin: 0;
-    padding: 12px;
     display: none;
 
     &.active {
@@ -133,4 +253,140 @@ body {
     }
   }
 }
+
+.tab-content {
+
+  li {
+    display: grid;
+    grid-template-columns: 33px auto 50px;
+    align-items: center;
+    padding: 6px 12px;
+    font-size: 13px;
+    border-top: 1px solid rgba(153,153,153,0.2);
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
+  }
+
+  .player-icon {
+    display: inline-grid;
+
+    img {
+      border-radius: 50%;
+      width: 24px;
+    }
+  }
+
+  .player-invite {
+    border: none;
+    outline: none;
+    justify-self: flex-end;
+    cursor: pointer;
+    background: #f5f5f5;
+    padding: 5px 8px;
+    letter-spacing: .5px;
+    font-size: 11px;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 1px 1px -1px rgba(0,0,0,0.12), 0 1px 1px 0 rgba(0,0,0,0.2);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
