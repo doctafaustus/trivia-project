@@ -5,7 +5,7 @@ module.exports = {
   watch: true,
   entry: ['./src/lobby.js'],
   output: {
-    filename: 'main.js',
+    filename: 'lobby.js',
     path: path.resolve(__dirname, 'dist')
   },
   module: {

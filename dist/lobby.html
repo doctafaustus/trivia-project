@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Trivia</title>
-  <link rel="stylesheet" href="lobby.css">
+  <meta property="og:description" content="Completely Absurd Trivia (CAT) is a contest of wits, strategery, and itrigue. Actually, not really - it's just a really fun live trivia game! Play with your friends or compete against the horde for ultimate glory.">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 </head>
 <body>
@@ -17,7 +17,7 @@
       <div class="invitation-container">
         <ul class="invitation-list">
 
-          <li class="invitation">
+          <li class="invitation box">
             <div class="invitation-left">
               <div class="invitation-avatar">
                 <img src="https://api.adorable.io/avatars/40/abott@adorable.png">
@@ -32,7 +32,11 @@
               <div class="invitation-subtitle">
                 Would you like to play in this group?
               </div>
-              <a class="invitation-learn-more" href="#">Learn More</a>
+              <a class="invitation-learn-more toggle-learn-more" href="#">Learn More</a>
+              <div class="invitation-help-info">
+                <div>Completely Absurd Trivia is played in groups of 4! You may choose to play with this party or we'll randomly match you with 3 other players.</div>
+                <a class="invitation-close-help-info toggle-learn-more" href="#">Hide</a>
+              </div>
             </div>
 
             <div class="invitation-right">
@@ -41,7 +45,7 @@
             </div>
           </li>
 
-          <li class="invitation">
+          <li class="invitation box">
             <div class="invitation-left">
               <div class="invitation-avatar">
                 <img src="https://api.adorable.io/avatars/40/tel@adorable.png">
@@ -56,7 +60,11 @@
               <div class="invitation-subtitle">
                 Would you like to play in this group?
               </div>
-              <a class="invitation-learn-more" href="#">Learn More</a>
+              <a class="invitation-learn-more toggle-learn-more" href="#">Learn More</a>
+              <div class="invitation-help-info">
+                <div>Completely Absurd Trivia is played in groups of 4! You may choose to play with this party or we'll randomly match you with 3 other players.</div>
+                <a class="invitation-close-help-info toggle-learn-more" href="#">Hide</a>
+              </div>
             </div>
 
             <div class="invitation-right">
@@ -70,9 +78,10 @@
 
       <div>How to play, etc. boxes</div>
       <div>For top bar - maybe "Account", "Leaderboard", "Invite Friend"</div>
+      <div>Banner for "Every Wednesday at 8pm!"</div>
 
     </div>
-    <div class="main-right">
+    <div class="main-right box">
       <div class="side-bar">
         <div class="tabs">
           <div class="tab tab-players active" data-tab-id="tab-players-content">
@@ -169,10 +178,19 @@
       </div>
     </div>
 
+    <div class="how-to-play-container box info-box">
+      <img class="info-icon" src="./how-to-play.png">
+      <div class="info-content">
+        <div class="info-title">How to play</div>
+        <div class="info-subtitle"></div>
+      </div>
+
+      <div class="info-close"><img class="info-close-icon" src="./close.png"></div>
+    </div>
 
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="./main.js"></script>
+  <script src="./lobby.js"></script>
 </body>
 </html>

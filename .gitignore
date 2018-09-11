@@ -19,3 +19,5 @@ bower_components
 *.sublime-workspace
 
 npm-debug.log
+
+/graphics

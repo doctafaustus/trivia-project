@@ -108,22 +108,50 @@ header {
   }
 }
 
+
+// Unviersal classes
+.box {
+  background-color: white;
+  border-radius: 2px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24);
+}
+.info-box {
+  display: grid;
+  grid-template-columns: 135px auto 23px;
+  position: relative;
+
+  .info-icon {
+    width: 95px;
+  }
+
+  .info-title {
+    font-size: 25px;
+    font-weight: 300;
+    margin-bottom: 10px;
+  }
+
+  .info-subtitle {
+    font-size: 14px;
+  }
+
+  .info-close {
+    cursor: pointer;
+  }
+}
+
 .main {
   display: grid;
   grid-template-columns: 1fr .5fr;
   grid-column-gap: 20px;
-  max-width: 1000px;
+  width: 1000px;
   padding: 40px;
   margin: 0 auto;
 }
 .main-left {
-  /* width: 65%; */
-  /* float: left; */
+
 }
 .main-right {
-  background-color: white;
-  border-radius: 2px;
-  box-shadow: 0 0 2px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.24);
+
 }
 .video-container {
   border: solid 1px black;
@@ -141,9 +169,6 @@ header {
     .invitation {
       display: grid;
       grid-template-columns: 43px auto 120px;
-      background-color: white;
-      border-radius: 2px;
-      box-shadow: 0 0 2px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.24);
       padding: 18px;
       font-size: 12px;
       width: 100%;
@@ -160,9 +185,19 @@ header {
       .invitation-middle {
         padding-left: 25px;
 
+        &.info-veil {
+          .invitation-learn-more {
+            display: none;
+          }
+
+          .invitation-help-info {
+            display: block;
+          }
+        }
+
         .invitation-title {
           font-size: 18px;
-          margin-bottom: 6px;
+          margin-bottom: 8px;
         }
 
         .invitation-subtitle {
@@ -175,6 +210,25 @@ header {
           color: #16af65;
           font-size: 11px;
           font-weight: bold;
+        }
+
+        .invitation-help-info {
+          margin-top: 10px;
+          display: none;
+
+          div {
+            color: #f09300;
+            margin-bottom: 12px;
+            font-size: 13px;
+            line-height: 16px;
+          }
+
+          .invitation-close-help-info {
+            text-transform: uppercase;
+            color: #f09300;
+            font-size: 11px;
+            font-weight: bold;
+          }
         }
       }
 
@@ -292,7 +346,12 @@ header {
 }
 
 
-
+.how-to-play-container {
+  margin-top: 50px;
+  grid-column: 1 / -1;
+  background-color: white;
+  padding: 24px;
+}
 
 
 

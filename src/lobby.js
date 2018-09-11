@@ -1,6 +1,14 @@
+// Add SCSS styles
 const css = require('./lobby-style.scss');
 
-console.log('hi0');
+console.log('Hello world!');
+
+// Invitation Learn More
+$('.invitation-list').on('click', '.toggle-learn-more', function(e) {
+  $(this).closest('.invitation-middle').toggleClass('info-veil');
+});
+
+
 
 // Sidebar tab toggle
 $('.tab').click(function() {
