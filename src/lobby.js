@@ -9,7 +9,6 @@ $('.invitation-list').on('click', '.toggle-learn-more', function(e) {
 });
 
 
-
 // Sidebar tab toggle
 $('.tab').click(function() {
   const $currentTab = $(this);
@@ -17,3 +16,9 @@ $('.tab').click(function() {
   $('.tab, .tab-content').removeClass('active');
   $currentTab.add(`#${tabContentToShow}`).addClass('active');
 }); 
+
+
+// How to play close
+$('.how-to-play-container .info-close').click(function() {
+  $('.how-to-play-container').hide();
+});
