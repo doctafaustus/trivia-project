@@ -16,7 +16,7 @@ $('.tab').click(function() {
   $('.tab, .tab-content').removeClass('active');
   $currentTab.add(`#${tabContentToShow}`).addClass('active');
 }); 
-
+$('.tab:last').trigger('click');
 
 // How to play close
 $('.how-to-play-container .info-close').click(function() {
