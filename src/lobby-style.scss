@@ -110,42 +110,20 @@ header {
   border-radius: 2px;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24);
 }
-.info-box {
-  display: grid;
-  grid-template-columns: 135px auto 23px;
-  position: relative;
 
-  .info-icon {
-    width: 95px;
-  }
-
-  .info-title {
-    font-size: 25px;
-    font-weight: 300;
-    margin-bottom: 10px;
-  }
-
-  .info-subtitle {
-    font-size: 14px;
-    line-height: 20px;
-  }
-
-  .info-close {
-    cursor: pointer;
-  }
-}
 
 .main-top,
 .main-bottom {
   width: 1152px;
   padding: 40px;
   margin: 0 auto;
-}
-
-.main-top {
   display: grid;
   grid-template-columns: 1fr .5fr;
   grid-column-gap: 20px;
+}
+
+.main-top {
+
 }
 .main-top-left {
 
@@ -162,6 +140,10 @@ header {
 .lobby-title {
   height: 70px;
   margin-bottom: 10px;
+  line-height: 70px;
+  font-size: 24px;
+  text-align: center;
+  font-weight: 300;
 }
 
 
@@ -186,7 +168,6 @@ header {
       font-size: 12px;
       width: 100%;
       box-sizing: border-box;
-      width: 800px;
       margin: 0 auto;
 
       &:last-child {
@@ -386,12 +367,44 @@ header {
 
 .how-to-play-container {
   box-sizing: border-box;
-  width: 800px;
   margin: 0 auto;
-  grid-column: 1 / -1;
   background-color: white;
   padding: 24px;
+  position: relative;
+
+  .how-to-play-icon {
+    width: 75px;
+    float: left;
+    margin-bottom: 15px;
+  }
+
+  .how-to-play-title {
+    font-size: 25px;
+    font-weight: 300;
+    margin: 24px 0 0 24px;
+    float: left;
+  }
+
+  .how-to-play-subtitle {
+    font-size: 14px;
+    line-height: 20px;
+    clear: both;
+  }
+
+  .how-to-play-close {
+    cursor: pointer;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+  }
 }
+
+
+
+
+
+
+
 
 
 
