@@ -410,28 +410,35 @@ header {
 
 // Party Tab / Chat
 #tab-party-content {
-  li {
-    grid-template-columns: 33px auto;
-    font-size: 13px;
-    border-top: none;
 
-    .player-icon {
-      display: inline;
-      margin-right: 10px;
-      align-self: flex-start;
-    }
+  ul {
+    border: solid 1px red;
+    height: 450px;
+    overflow-y: scroll;
 
-    .name-and-message {
-      margin-top: 4px;
+    li {
+      grid-template-columns: 33px auto;
+      font-size: 13px;
+      border-top: none;
 
-      .player-name {
-        color: #5f84f1;
-        font-weight: bold;
-        margin-right: 4px;
+      .player-icon {
+        display: inline;
+        margin-right: 10px;
+        align-self: flex-start;
       }
 
-      .message {
-        line-height: 15px;
+      .name-and-message {
+        margin-top: 4px;
+
+        .player-name {
+          color: #5f84f1;
+          font-weight: bold;
+          margin-right: 4px;
+        }
+
+        .message {
+          line-height: 15px;
+        }
       }
     }
   }

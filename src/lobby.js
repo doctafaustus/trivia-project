@@ -22,3 +22,12 @@ $('.tab:last').trigger('click');
 $('.how-to-play-container .info-close').click(function() {
   $('.how-to-play-container').hide();
 });
+
+
+// Show dummy messages
+for (let i = 0; i < 3; i++) {
+  const messageClones = $('#tab-party-content li').clone();
+  $('#tab-party-content ul').append(messageClones);
+}
+
+
