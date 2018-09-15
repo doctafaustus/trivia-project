@@ -366,6 +366,7 @@ header {
 
 
 .how-to-play-container {
+  max-height: 213px;
   box-sizing: border-box;
   margin: 0 auto;
   background-color: white;
@@ -373,15 +374,15 @@ header {
   position: relative;
 
   .how-to-play-icon {
-    width: 75px;
+    width: 50px;
     float: left;
     margin-bottom: 15px;
   }
 
   .how-to-play-title {
-    font-size: 25px;
+    font-size: 22px;
     font-weight: 300;
-    margin: 24px 0 0 24px;
+    margin: 12px 0 0 24px;
     float: left;
   }
 
@@ -412,14 +413,19 @@ header {
 #tab-party-content {
 
   ul {
-    border: solid 1px red;
-    height: 450px;
+    height: 451px;
     overflow-y: scroll;
+    display: flex;
+    flex-direction: column-reverse;
 
     li {
       grid-template-columns: 33px auto;
       font-size: 13px;
       border-top: none;
+
+      &:first-child {
+        padding-bottom: 20px;
+      }
 
       .player-icon {
         display: inline;
@@ -428,8 +434,6 @@ header {
       }
 
       .name-and-message {
-        margin-top: 4px;
-
         .player-name {
           color: #5f84f1;
           font-weight: bold;
@@ -444,10 +448,24 @@ header {
   }
 
   .chat-form {
+    padding: 12px;
+    display: flex;
+    background-color: #f8f8f8;
+
     .chat-player-icon {
+      margin-right: 12px;
+
       img {
         border-radius: 50%;
       }
+    }
+
+    #chat-input {
+      width: 100%;
+      outline: none;
+      border: none;
+      border-bottom: solid 1px #b8b8b8;
+      background-color: #f8f8f8;
     }
   }
 }
