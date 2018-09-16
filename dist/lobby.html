@@ -18,217 +18,266 @@
     </ul>
   </header>
 
-  <div class="main-top">
-    <div class="main-top-left">
-
-      <div class="lobby-title box">Game Lobby - Game About To Begin</div>
-
-      <div class="video-container"><iframe width="752" height="470" src="https://www.youtube.com/embed/ana5kgfjQVA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe></div>
-    </div>
-    <div class="main-top-right box">
-      <div class="side-bar">
-        <div class="tabs">
-          <div class="tab tab-players active" data-tab-id="tab-players-content">
-            <div class="tab-title"><span>Players </span><span class="player-count">(100)</span></div>
+  <section id="page-game-lobby" class="active">
+    <div class="main-top">
+      <div class="main-top-left">
+  
+        <div class="lobby-title box">Game Lobby - Game About To Begin</div>
+  
+        <div class="video-container"><iframe width="752" height="470" src="https://www.youtube.com/embed/ana5kgfjQVA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe></div>
+      </div>
+      <div class="main-top-right box">
+        <div class="side-bar">
+          <div class="tabs">
+            <div class="tab tab-players active" data-tab-id="tab-players-content">
+              <div class="tab-title"><span>Players </span><span class="player-count">(100)</span></div>
+            </div>
+            <div class="tab tab-friends" data-tab-id="tab-friends-content">
+              <div class="tab-title"><span>Friends </span><span class="friend-count">(5)</span></div>
+            </div>
+            <div class="tab tab-party" data-tab-id="tab-party-content">
+              <div class="tab-title"><span>Party</span></div>
+            </div>
           </div>
-          <div class="tab tab-friends" data-tab-id="tab-friends-content">
-            <div class="tab-title"><span>Friends </span><span class="friend-count">(5)</span></div>
-          </div>
-          <div class="tab tab-party" data-tab-id="tab-party-content">
-            <div class="tab-title"><span>Party</span></div>
-          </div>
-        </div>
-
-        <ul id="tab-players-content" class="tab-content active">
-
-          <li>
-            <div class="player-icon">
-              <img src="https://api.adorable.io/avatars/40/abott@adorable.png">
-            </div>
-            <div class="player-name">AceDauntless</div>
-            <button class="player-invite">Invite</button>
-          </li>
-
-          <li>
-            <div class="player-icon">
-              <img src="https://api.adorable.io/avatars/40/ab3ott@adorable.png">
-            </div>
-            <div class="player-name">doctafaustus</div>
-            <button class="player-invite">Invite</button>
-          </li>
-
-          <li>
-            <div class="player-icon">
-              <img src="https://api.adorable.io/avatars/40/32234@adorable.png">
-            </div>
-            <div class="player-name">BabBambino</div>
-            <button class="player-invite">Invite</button>
-          </li>
-
-          <li>
-            <div class="player-icon">
-              <img src="https://api.adorable.io/avatars/40/lolz@adorable.png">
-            </div>
-            <div class="player-name">YoYoMah</div>
-            <button class="player-invite">Invite</button>
-          </li>
-
-          <li>
-            <div class="player-icon">
-              <img src="https://api.adorable.io/avatars/40/fuo@adorable.png">
-            </div>
-            <div class="player-name">Venask5</div>
-            <button class="player-invite">Invite</button>
-          </li>
-
-          <li>
-            <div class="player-icon">
-              <img src="https://api.adorable.io/avatars/40/tel@adorable.png">
-            </div>
-            <div class="player-name">Impossib</div>
-            <button class="player-invite">Invite</button>
-          </li>
-          
-        </ul>
-
-        <ul id="tab-friends-content" class="tab-content">
-          <li>
-            <div class="player-icon">
-              <img src="https://api.adorable.io/avatars/40/abott@adorable.png">
-            </div>
-            <div class="player-name">AceDauntless</div>
-            <button class="player-invite">Invite</button>
-          </li>
-          <li>
-            <div class="player-icon">
-              <img src="https://api.adorable.io/avatars/40/32234@adorable.png">
-            </div>
-            <div class="player-name">BabBambino</div>
-            <button class="player-invite">Invite</button>
-          </li>
-          <li>
-            <div class="player-icon">
-              <img src="https://api.adorable.io/avatars/40/anderson12@adorable.png">
-            </div>
-            <div class="player-name">Andersson12</div>
-            <button class="player-invite invited">Invited</button>
-          </li>
-        </ul>
-
-        <div id="tab-party-content" class="tab-content">
-          <ul>
+  
+          <ul id="tab-players-content" class="tab-content active">
+  
             <li>
               <div class="player-icon">
                 <img src="https://api.adorable.io/avatars/40/abott@adorable.png">
               </div>
-              <div class="name-and-message">
-                <span class="player-name">AceDauntless</span>
-                <span class="message">This is my message but it might be kinda long sometiems</span>
-              </div>
+              <div class="player-name">AceDauntless</div>
+              <button class="player-invite">Invite</button>
             </li>
+  
             <li>
               <div class="player-icon">
                 <img src="https://api.adorable.io/avatars/40/ab3ott@adorable.png">
               </div>
-              <div class="name-and-message">
-                <span class="player-name">doctafaustus</span>
-                <span class="message">Another message</span>
+              <div class="player-name">doctafaustus</div>
+              <button class="player-invite">Invite</button>
+            </li>
+  
+            <li>
+              <div class="player-icon">
+                <img src="https://api.adorable.io/avatars/40/32234@adorable.png">
               </div>
+              <div class="player-name">BabBambino</div>
+              <button class="player-invite">Invite</button>
+            </li>
+  
+            <li>
+              <div class="player-icon">
+                <img src="https://api.adorable.io/avatars/40/lolz@adorable.png">
+              </div>
+              <div class="player-name">YoYoMah</div>
+              <button class="player-invite">Invite</button>
+            </li>
+  
+            <li>
+              <div class="player-icon">
+                <img src="https://api.adorable.io/avatars/40/fuo@adorable.png">
+              </div>
+              <div class="player-name">Venask5</div>
+              <button class="player-invite">Invite</button>
+            </li>
+  
+            <li>
+              <div class="player-icon">
+                <img src="https://api.adorable.io/avatars/40/tel@adorable.png">
+              </div>
+              <div class="player-name">Impossib</div>
+              <button class="player-invite">Invite</button>
+            </li>
+            
+          </ul>
+  
+          <ul id="tab-friends-content" class="tab-content">
+            <li>
+              <div class="player-icon">
+                <img src="https://api.adorable.io/avatars/40/abott@adorable.png">
+              </div>
+              <div class="player-name">AceDauntless</div>
+              <button class="player-invite">Invite</button>
             </li>
             <li>
               <div class="player-icon">
-                <img src="https://api.adorable.io/avatars/40/hoeyjay@adorable.png">
+                <img src="https://api.adorable.io/avatars/40/32234@adorable.png">
               </div>
-              <div class="name-and-message">
-                <span class="player-name">JoeyJay</span>
-                <span class="message">Another It's simple! When the host starts the game you will be presented with 20 multiple choice questions. You'll only have a few seconds to answer before the timer runs out so answer quickly! Be careful - all answers are final. You'll compete in groups of 4 and whoever scores the highest in your group wins!</span>
+              <div class="player-name">BabBambino</div>
+              <button class="player-invite">Invite</button>
+            </li>
+            <li>
+              <div class="player-icon">
+                <img src="https://api.adorable.io/avatars/40/anderson12@adorable.png">
               </div>
+              <div class="player-name">Andersson12</div>
+              <button class="player-invite invited">Invited</button>
             </li>
           </ul>
-
-          <form class="chat-form">
-            <div class="chat-player-icon">
-              <img src="https://api.adorable.io/avatars/40/ab3ott@adorable.png">
-            </div>
-            <input type="text" id="chat-input" autocomplete="off" placeholder="Say something...">
-          </form>
+  
+          <div id="tab-party-content" class="tab-content">
+            <ul>
+              <li>
+                <div class="player-icon">
+                  <img src="https://api.adorable.io/avatars/40/abott@adorable.png">
+                </div>
+                <div class="name-and-message">
+                  <span class="player-name">AceDauntless</span>
+                  <span class="message">This is my message but it might be kinda long sometiems</span>
+                </div>
+              </li>
+              <li>
+                <div class="player-icon">
+                  <img src="https://api.adorable.io/avatars/40/ab3ott@adorable.png">
+                </div>
+                <div class="name-and-message">
+                  <span class="player-name">doctafaustus</span>
+                  <span class="message">Another message</span>
+                </div>
+              </li>
+              <li>
+                <div class="player-icon">
+                  <img src="https://api.adorable.io/avatars/40/hoeyjay@adorable.png">
+                </div>
+                <div class="name-and-message">
+                  <span class="player-name">JoeyJay</span>
+                  <span class="message">Another It's simple! When the host starts the game you will be presented with 20 multiple choice questions. You'll only have a few seconds to answer before the timer runs out so answer quickly! Be careful - all answers are final. You'll compete in groups of 4 and whoever scores the highest in your group wins!</span>
+                </div>
+              </li>
+            </ul>
+  
+            <form class="chat-form">
+              <div class="chat-player-icon">
+                <img src="https://api.adorable.io/avatars/40/ab3ott@adorable.png">
+              </div>
+              <input type="text" id="chat-input" autocomplete="off" placeholder="Say something...">
+            </form>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="main-bottom">
-    <div class="invitation-container">
-      <ul class="invitation-list">
-
-        <li class="invitation box">
-          <div class="invitation-left">
-            <div class="invitation-avatar">
-              <img src="https://api.adorable.io/avatars/40/abott@adorable.png">
+  
+    <div class="main-bottom">
+      <div class="invitation-container">
+        <ul class="invitation-list">
+  
+          <li class="invitation box">
+            <div class="invitation-left">
+              <div class="invitation-avatar">
+                <img src="https://api.adorable.io/avatars/40/abott@adorable.png">
+              </div>
             </div>
+  
+            <div class="invitation-middle">
+              <div class="invitation-title">
+                <span class="invitation-party-leader">AceDauntless</span>
+                <span> invited you to their party</span>
+              </div>
+              <div class="invitation-subtitle">
+                Would you like to play in this group?
+              </div>
+              <a class="invitation-learn-more toggle-learn-more" href="#">Learn More</a>
+              <div class="invitation-help-info">
+                <div>Completely Absurd Trivia is played in groups of 4! You may choose to play with this party or we'll randomly match you with 3 other players.</div>
+                <a class="invitation-close-help-info toggle-learn-more" href="#">Hide</a>
+              </div>
+            </div>
+  
+            <div class="invitation-right">
+              <button class="accept">Accept</button>
+              <button class="reject">Reject</button>
+            </div>
+          </li>
+  
+          <li class="invitation box">
+            <div class="invitation-left">
+              <div class="invitation-avatar">
+                <img src="https://api.adorable.io/avatars/40/tel@adorable.png">
+              </div>
+            </div>
+  
+            <div class="invitation-middle">
+              <div class="invitation-title">
+                <span class="invitation-party-leader">Impossib</span>
+                <span> invited you to their party</span>
+              </div>
+              <div class="invitation-subtitle">
+                Would you like to play in this group?
+              </div>
+              <a class="invitation-learn-more toggle-learn-more" href="#">Learn More</a>
+              <div class="invitation-help-info">
+                <div>Completely Absurd Trivia is played in groups of 4! You may choose to play with this party or we'll randomly match you with 3 other players.</div>
+                <a class="invitation-close-help-info toggle-learn-more" href="#">Hide</a>
+              </div>
+            </div>
+  
+            <div class="invitation-right">
+              <button class="accept">Accept</button>
+              <button class="reject">Reject</button>
+            </div>
+          </li>
+  
+        </ul>
+      </div>
+  
+      <div class="how-to-play-container box">
+        <img class="how-to-play-icon" src="./how-to-play.png">
+        <div class="how-to-play-title">How to Play</div>
+          <div class="how-to-play-subtitle">
+            When the host starts the game you will be shown 20 multiple choice questions one at a time. You'll only have a few seconds to guess and all answers are final. You'll compete in groups of 4 and whoever scores the highest in your group wins!
           </div>
-
-          <div class="invitation-middle">
-            <div class="invitation-title">
-              <span class="invitation-party-leader">AceDauntless</span>
-              <span> invited you to their party</span>
-            </div>
-            <div class="invitation-subtitle">
-              Would you like to play in this group?
-            </div>
-            <a class="invitation-learn-more toggle-learn-more" href="#">Learn More</a>
-            <div class="invitation-help-info">
-              <div>Completely Absurd Trivia is played in groups of 4! You may choose to play with this party or we'll randomly match you with 3 other players.</div>
-              <a class="invitation-close-help-info toggle-learn-more" href="#">Hide</a>
-            </div>
-          </div>
-
-          <div class="invitation-right">
-            <button class="accept">Accept</button>
-            <button class="reject">Reject</button>
-          </div>
-        </li>
-
-        <li class="invitation box">
-          <div class="invitation-left">
-            <div class="invitation-avatar">
-              <img src="https://api.adorable.io/avatars/40/tel@adorable.png">
-            </div>
-          </div>
-
-          <div class="invitation-middle">
-            <div class="invitation-title">
-              <span class="invitation-party-leader">Impossib</span>
-              <span> invited you to their party</span>
-            </div>
-            <div class="invitation-subtitle">
-              Would you like to play in this group?
-            </div>
-            <a class="invitation-learn-more toggle-learn-more" href="#">Learn More</a>
-            <div class="invitation-help-info">
-              <div>Completely Absurd Trivia is played in groups of 4! You may choose to play with this party or we'll randomly match you with 3 other players.</div>
-              <a class="invitation-close-help-info toggle-learn-more" href="#">Hide</a>
-            </div>
-          </div>
-
-          <div class="invitation-right">
-            <button class="accept">Accept</button>
-            <button class="reject">Reject</button>
-          </div>
-        </li>
-
-      </ul>
+        <div class="how-to-play-close"><img class="how-to-play-close-icon" src="./close.png"></div>
+      </div>
     </div>
 
-    <div class="how-to-play-container box">
-      <img class="how-to-play-icon" src="./how-to-play.png">
-      <div class="how-to-play-title">How to Play</div>
-        <div class="how-to-play-subtitle">
-          When the host starts the game you will be shown 20 multiple choice questions one at a time. You'll only have a few seconds to guess and all answers are final. You'll compete in groups of 4 and whoever scores the highest in your group wins!
+  </section>
+
+  <section id="page-leaderboard">
+    <div class="leaderboard box">
+      <div id="leaderboard-header">
+        <div class="leaderboard-title">Rank</div>
+        <div class="leaderboard-title">Player</div>
+        <div class="leaderboard-title">Wins</div>
+        <div class="leaderboard-title">Games Played</div>
+        <div class="leaderboard-title">Total Points</div>
+      </div>
+
+      <div class="leaderboard-row">
+        <div class="lb-rank">1</div>
+        <div class="lb-player-icon-and-name">
+          <div class="lb-player-icon">
+              <img src="https://api.adorable.io/avatars/40/doctafaustus@adorable.png">
+          </div>
+          <div class="lb-player-name">doctafaustus</div>
         </div>
-      <div class="how-to-play-close"><img class="how-to-play-close-icon" src="./close.png"></div>
+        <div class="lb-wins">13</div>
+        <div class="lb-games-played">27</div>
+        <div class="lb-total-points">4565</div>
+      </div>
+    
+      <div class="leaderboard-row">
+        <div class="lb-rank">2</div>
+        <div class="lb-player-icon-and-name">
+          <div class="lb-player-icon">
+              <img src="https://api.adorable.io/avatars/40/asdfa@adorable.png">
+          </div>
+          <div class="lb-player-name">AceDauntless</div>
+        </div>
+        <div class="lb-wins">9</div>
+        <div class="lb-games-played">23</div>
+        <div class="lb-total-points">3125</div>
+      </div>
     </div>
-  </div>
+  </section>
+
+  <section id="page-account">
+    I am the account
+  </section>
+
+  <section id="page-invite-friends">
+    I am the invite friends
+  </section>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="./lobby.js"></script>

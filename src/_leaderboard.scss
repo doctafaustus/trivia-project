@@ -1,0 +1,61 @@
+.leaderboard {
+  width: 800px;
+  margin: 40px auto;
+  font-size: 13px;
+
+  #leaderboard-header,
+  .leaderboard-row {
+    display: grid;
+    grid-template-columns: 64px 308px 143px 143px 143px;
+    align-items: center;
+    border-bottom: solid 1px #e0e0e0;
+    box-sizing: border-box;
+
+    > div {
+      border-right: solid 1px #e0e0e0;
+      padding: 15px;
+      box-sizing: border-box;
+    }
+  }
+
+  #leaderboard-header {
+    font-weight: bold;
+  }
+
+  .leaderboard-row {
+    &:hover {
+      background-color: #f3ebfe;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .lb-player-icon-and-name {
+      display: flex;
+      align-items: center;
+      padding: 7px 15px !important;
+  
+      .lb-player-icon,
+      .lb-player-name {
+        display: inline-block;
+      }
+  
+      .lb-player-icon {
+        margin-right: 12px;
+  
+        img {
+          border-radius: 50%;
+          width: 26px;
+        }
+      }
+    }
+  
+    .lb-rank,
+    .lb-wins,
+    .lb-games-played,
+    .lb-total-points {
+      text-align: center;
+    }
+  }
+}
