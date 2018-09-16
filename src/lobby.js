@@ -16,7 +16,7 @@ $('#menu li').click(function() {
   $('section, #menu li').removeClass('active');
   $currentTab.add(`#page-${tabContentToShow}`).addClass('active');
 });
-$('#menu li[data-tab-id=leaderboard]').click();
+$('#menu li[data-tab-id=account]').click();
 
 
 // Sidebar tab toggle

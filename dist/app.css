@@ -143,6 +143,10 @@ header {
   .leaderboard .leaderboard-row .lb-total-points {
     text-align: center; }
 
+.account-container {
+  width: 800px;
+  margin: 40px auto; }
+
 .main-top,
 .main-bottom {
   width: 1152px;
