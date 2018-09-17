@@ -120,7 +120,8 @@ header {
       padding: 15px;
       box-sizing: border-box; }
   .leaderboard #leaderboard-header {
-    font-weight: bold; }
+    font-weight: bold;
+    text-align: center; }
   .leaderboard .leaderboard-row:hover {
     background-color: #f3ebfe; }
   .leaderboard .leaderboard-row:last-child {
@@ -143,9 +144,35 @@ header {
   .leaderboard .leaderboard-row .lb-total-points {
     text-align: center; }
 
-.account-container {
-  width: 800px;
-  margin: 40px auto; }
+.stats-container {
+  width: 400px;
+  margin: 40px auto;
+  padding: 40px;
+  text-align: center; }
+  .stats-container .player-icon {
+    margin-bottom: 20px; }
+    .stats-container .player-icon img {
+      border-radius: 50%; }
+  .stats-container .player-name {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #5f83f1;
+    font-weight: bold; }
+  .stats-container .member-since {
+    margin-bottom: 60px;
+    color: #7e7d7d; }
+  .stats-container .stats-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+    margin-bottom: 40px; }
+    .stats-container .stats-list .stats-value {
+      font-size: 45px;
+      margin-bottom: 8px;
+      color: #5f84f1;
+      font-weight: bold; }
+    .stats-container .stats-list .stats-title {
+      color: #7e7d7d; }
 
 .main-top,
 .main-bottom {

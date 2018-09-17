@@ -14,7 +14,7 @@
     <ul id="menu">
       <li class="active" data-tab-id="game-lobby">Game Lobby</li>
       <li data-tab-id="leaderboard">Leaderboard</li>
-      <li data-tab-id="account">Account</li>
+      <li data-tab-id="stats">Stats</li>
       <li data-tab-id="invite-friends">Invite Friends</li>
     </ul>
   </header>
@@ -272,20 +272,32 @@
     </div>
   </section>
 
-  <section id="page-account">
-    <div class="account-container box">
+  <section id="page-stats">
+    <div class="stats-container box">
       
       <div class="player-icon">
-          <img src="https://api.adorable.io/avatars/40/doctafausts@adorable.png">
+          <img src="https://api.adorable.io/avatars/100/doctafausts@adorable.png">
       </div>
       <div class="player-name">doctafaustus</div>
-      <div class="games-played">Games Played: 27</div>
-      <div class="wins">13</div>
-      <div class="total-points">4565</div>
-
-
-      <div class="member-since">Member Since: 9/15/18</div>
-      <div class="delete-account">Delete Account</div>
+      <div class="member-since">Member since <span id="member-since-value">9/18/18</span></div>
+      <ul class="stats-list">
+          <li class="games-played">
+            <div class="stats-value">27</div>
+            <div class="stats-title">Games Played</div>
+          </li>
+          <li class="wins">
+            <div class="stats-value">13</div>
+            <div class="stats-title">Wins</div>
+          </li>
+          <li class="win-percentage">
+            <div class="stats-value">55%</div>
+            <div class="stats-title">Win Percentage</div>
+          </li>
+          <li class="total-points">
+              <div class="stats-value">4565</div>
+              <div class="stats-title">Total Points</div>
+            </li>
+        </ul>
     </div>
   </section>
 
