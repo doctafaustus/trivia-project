@@ -175,7 +175,7 @@ header {
       color: #7e7d7d; }
 
 .invite-friends-container {
-  width: 750px;
+  width: 70S0px;
   margin: 40px auto;
   text-align: center;
   padding: 40px; }
@@ -184,7 +184,8 @@ header {
     margin-bottom: 30px;
     font-weight: 300; }
   .invite-friends-container .invite-image {
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    width: 250px; }
   .invite-friends-container .invite-code-container {
     display: flex;
     justify-content: space-between;
@@ -205,10 +206,11 @@ header {
         height: 17px;
         width: 20px;
         text-align: center;
-        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2); }
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+        cursor: pointer; }
   .invite-friends-container .invite-info {
     color: #757575;
-    font-size: 14px; }
+    font-size: 13px; }
 
 .main-top,
 .main-bottom {
