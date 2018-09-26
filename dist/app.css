@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* --- CSS Reset --- */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -175,7 +176,7 @@ header {
       color: #7e7d7d; }
 
 .invite-friends-container {
-  width: 70S0px;
+  width: 700px;
   margin: 40px auto;
   text-align: center;
   padding: 40px; }
@@ -407,27 +408,36 @@ section.active {
     top: 24px;
     right: 24px; }
 
-#tab-party-content ul {
+#tab-party-content #party-messages {
   height: 451px;
   overflow-y: scroll;
   display: flex;
   flex-direction: column-reverse; }
-  #tab-party-content ul li {
-    grid-template-columns: 33px auto;
+  #tab-party-content #party-messages > li {
+    grid-template-columns: 33px auto 18px;
     font-size: 13px;
     border-top: none; }
-    #tab-party-content ul li:first-child {
+    #tab-party-content #party-messages > li:first-child {
       padding-bottom: 20px; }
-    #tab-party-content ul li .player-icon {
+    #tab-party-content #party-messages > li:hover .chat-submenu {
+      display: block; }
+    #tab-party-content #party-messages > li .player-icon {
       display: inline;
       margin-right: 10px;
       align-self: flex-start; }
-    #tab-party-content ul li .name-and-message .player-name {
+    #tab-party-content #party-messages > li .name-and-message .player-name {
       color: #5f84f1;
       font-weight: bold;
       margin-right: 4px; }
-    #tab-party-content ul li .name-and-message .message {
+    #tab-party-content #party-messages > li .name-and-message .message {
       line-height: 15px; }
+    #tab-party-content #party-messages > li .chat-submenu {
+      display: none;
+      align-self: flex-start; }
+      #tab-party-content #party-messages > li .chat-submenu .chat-submenu-dots div::after {
+        content: '\2022'; }
+      #tab-party-content #party-messages > li .chat-submenu .boot {
+        display: none; }
 
 #tab-party-content .chat-form {
   padding: 12px;

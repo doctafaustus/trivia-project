@@ -8,7 +8,7 @@
 </head>
 <body>
   <header>
-    <img id="logo" src="./logo.png">
+    <img id="logo" src="../src/images/logo.png">
     <div id="logo-text">Completely Absurd Trivia</div>
 
     <ul id="menu">
@@ -118,7 +118,7 @@
           </ul>
   
           <div id="tab-party-content" class="tab-content">
-            <ul>
+            <ul id="party-messages">
               <li>
                 <div class="player-icon">
                   <img src="https://api.adorable.io/avatars/40/abott@adorable.png">
@@ -126,6 +126,14 @@
                 <div class="name-and-message">
                   <span class="player-name">AceDauntless</span>
                   <span class="message">This is my message but it might be kinda long sometiems</span>
+                </div>
+                <div class="chat-submenu">
+                  <svg class="chat-submenu-dots" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="style-scope yt-icon" style="pointer-events: none; display: block; width: 100%; height: 100%;">
+                    <g class="style-scope yt-icon">
+                      <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" class="style-scope yt-icon"></path>
+                    </g>
+                  </svg>
+                  <div class="boot">Remove from party</div>
                 </div>
               </li>
               <li>
@@ -136,6 +144,14 @@
                   <span class="player-name">doctafaustus</span>
                   <span class="message">Another message</span>
                 </div>
+                <div class="chat-submenu">
+                  <svg class="chat-submenu-dots" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="style-scope yt-icon" style="pointer-events: none; display: block; width: 100%; height: 100%;">
+                      <g class="style-scope yt-icon">
+                        <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" class="style-scope yt-icon"></path>
+                      </g>
+                    </svg>
+                  <div class="boot">Remove from party</div>
+                </div>
               </li>
               <li>
                 <div class="player-icon">
@@ -144,6 +160,14 @@
                 <div class="name-and-message">
                   <span class="player-name">JoeyJay</span>
                   <span class="message">Another It's simple! When the host starts the game you will be presented with 20 multiple choice questions. You'll only have a few seconds to answer before the timer runs out so answer quickly! Be careful - all answers are final. You'll compete in groups of 4 and whoever scores the highest in your group wins!</span>
+                </div>
+                <div class="chat-submenu">
+                  <svg class="chat-submenu-dots" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="style-scope yt-icon" style="pointer-events: none; display: block; width: 100%; height: 100%;">
+                      <g class="style-scope yt-icon">
+                        <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" class="style-scope yt-icon"></path>
+                      </g>
+                    </svg>
+                  <div class="boot">Remove from party</div>
                 </div>
               </li>
             </ul>
@@ -223,12 +247,12 @@
       </div>
   
       <div class="how-to-play-container box">
-        <img class="how-to-play-icon" src="./how-to-play.png">
+        <img class="how-to-play-icon" src="../src/images/how-to-play.png">
         <div class="how-to-play-title">How to Play</div>
           <div class="how-to-play-subtitle">
             When the host starts the game you will be shown 20 multiple choice questions one at a time. You'll only have a few seconds to guess and all answers are final. You'll compete in groups of 4 and whoever scores the highest in your group wins!
           </div>
-        <div class="how-to-play-close"><img class="how-to-play-close-icon" src="./close.png"></div>
+        <div class="how-to-play-close"><img class="how-to-play-close-icon" src="../src/images/close.png"></div>
       </div>
     </div>
 
@@ -321,7 +345,7 @@
     </div>
   </section>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="../src/js/jquery.min.js"></script>
   <script src="./lobby.js"></script>
 </body>
 </html>

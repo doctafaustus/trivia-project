@@ -1,5 +1,5 @@
 // Add SCSS styles
-const css = require('./lobby-style.scss');
+const css = require('./lobby.scss');
 
 console.log('Hello world!');
 
@@ -16,7 +16,7 @@ $('#menu li').click(function() {
   $('section, #menu li').removeClass('active');
   $currentTab.add(`#page-${tabContentToShow}`).addClass('active');
 });
-$('#menu li[data-tab-id=invite-friends]').click();
+//$('#menu li[data-tab-id=invite-friends]').click();
 
 
 // Sidebar tab toggle
@@ -50,16 +50,11 @@ $('.chat-form').submit(function(e) {
       <span class="message">${message}</span>
     </div>
   </li>`;
-  $('#tab-party-content ul').prepend(formattedMessage);
+  $('#tab-party-content #party-messages').prepend(formattedMessage);
   $chatInput.val('');
 });
 
 
-// Show dummy messages
-for (let i = 0; i < 3; i++) {
-  const messageClones = $('#tab-party-content li').clone();
-  $('#tab-party-content ul').prepend(messageClones);
-}
 
 // Show dummy leadboard data
 let fakeLeaderboardRows = ''

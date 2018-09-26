@@ -112,13 +112,13 @@ header {
 }
 
 // Leaderboard
-@import 'leaderboard';
+@import './partial-styles/leaderboard';
 
 // Stats
-@import 'stats';
+@import './partial-styles/stats';
 
 // Invite Friends
-@import 'invite-friends';
+@import './partial-styles/invite-friends';
 
 
 .main-top,
@@ -431,19 +431,25 @@ section.active {
 // Party Tab / Chat
 #tab-party-content {
 
-  ul {
+  #party-messages {
     height: 451px;
     overflow-y: scroll;
     display: flex;
     flex-direction: column-reverse;
 
-    li {
-      grid-template-columns: 33px auto;
+    > li {
+      grid-template-columns: 33px auto 18px;
       font-size: 13px;
       border-top: none;
 
       &:first-child {
         padding-bottom: 20px;
+      }
+
+      &:hover {
+        .chat-submenu {
+          display: block;
+        }
       }
 
       .player-icon {
@@ -461,6 +467,23 @@ section.active {
 
         .message {
           line-height: 15px;
+        }
+      }
+
+      .chat-submenu {
+        display: none;
+        align-self: flex-start;
+
+        .chat-submenu-dots {
+          div {
+            &::after {
+              content: '•';
+            }
+          }
+        }
+
+        .boot {
+          display: none;
         }
       }
     }
