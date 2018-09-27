@@ -345,7 +345,7 @@ section.active {
 
 .tab-content li {
   display: grid;
-  grid-template-columns: 33px auto 59px 59px;
+  grid-template-columns: 33px auto 59px;
   align-items: center;
   padding: 6px 12px;
   font-size: 13px;
@@ -354,17 +354,11 @@ section.active {
     background-color: #f5f5f5; }
     .tab-content li:hover .player-invite {
       visibility: visible; }
-  .tab-content li.invited .player-uninvite,
   .tab-content li.invited .player-invite {
-    visibility: visible; }
-  .tab-content li.invited .player-invite {
-    background: #f5f5f5;
-    color: black;
-    cursor: default;
-    box-shadow: none;
-    border: solid 1px #eaeaea; }
+    visibility: visible;
+    background: #ff7818; }
     .tab-content li.invited .player-invite::before {
-      content: 'Invited'; }
+      content: 'Uninvite'; }
 
 .tab-content .player-icon {
   display: inline-grid; }
@@ -372,8 +366,7 @@ section.active {
     border-radius: 50%;
     width: 24px; }
 
-.tab-content .player-invite,
-.tab-content .player-uninvite {
+.tab-content .player-invite {
   visibility: hidden;
   border-radius: 2px;
   border: none;
@@ -389,9 +382,6 @@ section.active {
 
 .tab-content .player-invite::before {
   content: 'Invite'; }
-
-.tab-content .player-uninvite {
-  background: #ff7818; }
 
 .how-to-play-container {
   max-height: 213px;

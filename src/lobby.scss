@@ -335,7 +335,7 @@ section.active {
 
   li {
     display: grid;
-    grid-template-columns: 33px auto 59px 59px;
+    grid-template-columns: 33px auto 59px;
     align-items: center;
     padding: 6px 12px;
     font-size: 13px;
@@ -350,19 +350,12 @@ section.active {
     }
 
     &.invited {
-      .player-uninvite,
       .player-invite {
         visibility: visible;
-      }
-      .player-invite {
-        background: #f5f5f5;
-        color: black;
-        cursor: default;
-        box-shadow: none;
-        border: solid 1px #eaeaea;
+        background: #ff7818;
 
         &::before {
-          content: 'Invited';
+          content: 'Uninvite';
         }
       }
     }
@@ -377,8 +370,7 @@ section.active {
     }
   }
 
-  .player-invite,
-  .player-uninvite {
+  .player-invite {
     visibility: hidden;
     border-radius: 2px;
     border: none;
@@ -397,10 +389,6 @@ section.active {
     &::before {
       content: 'Invite';
     }
-  }
-
-  .player-uninvite {
-    background: #ff7818;
   }
 }
 

@@ -33,6 +33,18 @@ $('.how-to-play-close').click(function() {
   $('.how-to-play-container').hide();
 });
 
+// Temporary invite functionality
+$('.side-bar').on('click', '.tab-content .player-invite', function() {
+  const $li = $(this).closest('li');
+  const playerInvited = $li.hasClass('invited');
+  if (!playerInvited) {
+    $li.addClass('invited');
+  } else {
+    $li.removeClass('invited');
+  }
+});
+
+
 
 // Chat functionality
 $('.chat-form').submit(function(e) {
@@ -83,17 +95,10 @@ for (let i = 0; i < 123; i++) {
 $('.leaderboard').append(fakeLeaderboardRows);
 
 
-
 // Boot party member
-// $(document).on('click', function(e) {
-//   if (!e.target.matches('.boot')) {
-//     $('#party-messages li.submenu-open').removeClass('submenu-open');
-//   }
-// });
 function hideSubmenus() {
   $('#party-messages li.submenu-open').removeClass('submenu-open');
 }
-
 $('#tab-party-content').on('click', '.chat-submenu-dots', function() {
   const $parentMessage = $(this).closest('li');
   $parentMessage.addClass('submenu-open');
@@ -101,7 +106,6 @@ $('#tab-party-content').on('click', '.chat-submenu-dots', function() {
     if (!e.target.matches('.boot')) hideSubmenus();
   });
 });
-
 $('#tab-party-content').on('click', '.boot', function() {
   console.log('Clicked submeu');
   hideSubmenus();
