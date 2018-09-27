@@ -26,7 +26,7 @@ $('.tab').click(function() {
   $('.tab, .tab-content').removeClass('active');
   $currentTab.add(`#${tabContentToShow}`).addClass('active');
 }); 
-$('.tab:last').trigger('click');
+$('.tab').eq(1).trigger('click');
 
 // How to play close
 $('.how-to-play-close').click(function() {
@@ -48,6 +48,14 @@ $('.chat-form').submit(function(e) {
     <div class="name-and-message">
       <span class="player-name">${randomNum}</span>
       <span class="message">${message}</span>
+    </div>
+    <div class="chat-submenu">
+      <svg class="chat-submenu-dots" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="style-scope yt-icon">
+        <g class="style-scope yt-icon">
+          <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" class="style-scope yt-icon"></path>
+        </g>
+      </svg>
+      <div class="boot">Remove from party</div>
     </div>
   </li>`;
   $('#tab-party-content #party-messages').prepend(formattedMessage);
@@ -75,7 +83,30 @@ for (let i = 0; i < 123; i++) {
 $('.leaderboard').append(fakeLeaderboardRows);
 
 
+
 // Boot party member
+// $(document).on('click', function(e) {
+//   if (!e.target.matches('.boot')) {
+//     $('#party-messages li.submenu-open').removeClass('submenu-open');
+//   }
+// });
+function hideSubmenus() {
+  $('#party-messages li.submenu-open').removeClass('submenu-open');
+}
+
 $('#tab-party-content').on('click', '.chat-submenu-dots', function() {
-  $(this).closest('li').addClass('submenu-open');
+  const $parentMessage = $(this).closest('li');
+  $parentMessage.addClass('submenu-open');
+  $(document).one('mousedown', function(e) {
+    if (!e.target.matches('.boot')) hideSubmenus();
+  });
 });
+
+$('#tab-party-content').on('click', '.boot', function() {
+  console.log('Clicked submeu');
+  hideSubmenus();
+});
+
+
+
+

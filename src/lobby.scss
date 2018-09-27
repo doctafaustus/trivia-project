@@ -335,7 +335,7 @@ section.active {
 
   li {
     display: grid;
-    grid-template-columns: 33px auto 50px;
+    grid-template-columns: 33px auto 59px 59px;
     align-items: center;
     padding: 6px 12px;
     font-size: 13px;
@@ -345,7 +345,25 @@ section.active {
       background-color: #f5f5f5;
 
       .player-invite {
-        display: block;
+        visibility: visible;
+      }
+    }
+
+    &.invited {
+      .player-uninvite,
+      .player-invite {
+        visibility: visible;
+      }
+      .player-invite {
+        background: #f5f5f5;
+        color: black;
+        cursor: default;
+        box-shadow: none;
+        border: solid 1px #eaeaea;
+
+        &::before {
+          content: 'Invited';
+        }
       }
     }
   }
@@ -359,8 +377,10 @@ section.active {
     }
   }
 
-  .player-invite {
-    display: none;
+  .player-invite,
+  .player-uninvite {
+    visibility: hidden;
+    border-radius: 2px;
     border: none;
     outline: none;
     justify-self: flex-end;
@@ -371,15 +391,16 @@ section.active {
     letter-spacing: .5px;
     font-size: 11px;
     box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 1px 1px -1px rgba(0,0,0,0.12), 0 1px 1px 0 rgba(0,0,0,0.2);
+  }
 
-    &.invited {
-      display: block;
-      background: #f5f5f5;
-      color: black;
-      cursor: default;
-      box-shadow: none;
-      border: solid 1px #ebebeb;
+  .player-invite {
+    &::before {
+      content: 'Invite';
     }
+  }
+
+  .player-uninvite {
+    background: #ff7818;
   }
 }
 
@@ -492,8 +513,9 @@ section.active {
           display: none;
           background-color: white;
           position: absolute;
-          right: 11px;
-          padding: 15px;
+          top: 3px;
+          right: 29px;
+          padding: 10px 15px;
           box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24);
           z-index: 10;
           cursor: pointer;
