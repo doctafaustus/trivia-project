@@ -73,3 +73,9 @@ for (let i = 0; i < 123; i++) {
   </div>`;
 }
 $('.leaderboard').append(fakeLeaderboardRows);
+
+
+// Boot party member
+$('#tab-party-content').on('click', '.chat-submenu-dots', function() {
+  $(this).closest('li').addClass('submenu-open');
+});
