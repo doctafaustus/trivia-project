@@ -1,7 +1,7 @@
 // Add SCSS styles
 const css = require('./lobby.scss');
 
-console.log('Hello world!');
+console.log('Hello world....');
 
 // Invitation Learn More
 $('.invitation-list').on('click', '.toggle-learn-more', function(e) {

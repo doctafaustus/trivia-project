@@ -4,11 +4,19 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
   mode: 'development',
   watch: true,
-  entry: ['./src/lobby.js'],
-  output: {
-    filename: 'lobby.js',
-    path: path.resolve(__dirname, 'dist')
+  entry: {
+    './src/lobby': './src/lobby.js',
+    './src/home': './src/home',
   },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].js'
+  },
+  // entry: ['./src/lobby.js'],
+  // output: {
+  //   filename: 'lobby.js',
+  //   path: path.resolve(__dirname, 'dist')
+  // },
   module: {
     rules: [
       { test: /\.scss$/,
