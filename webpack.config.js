@@ -1,30 +1,38 @@
 const path = require('path');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
   watch: true,
   entry: {
     './src/lobby': './src/lobby.js',
-    './src/home': './src/home',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js'
   },
-  // entry: ['./src/lobby.js'],
-  // output: {
-  //   filename: 'lobby.js',
-  //   path: path.resolve(__dirname, 'dist')
-  // },
   module: {
     rules: [
       { test: /\.scss$/,
         use: ExtractTextPlugin.extract(['css-loader', 'sass-loader']),
-      }
+      },
+      { test: /\.(html)$/,
+        include: path.join(__dirname, 'src/'),
+        use: {
+          loader: 'html-loader',
+          options: {
+            interpolate: true
+          }
+        }
+      }      
     ]
   },
   plugins: [
-    new ExtractTextPlugin('app.css')
+    new ExtractTextPlugin('app.css'),
+    new HtmlWebpackPlugin({
+      title: 'Custom template',
+      template: './src/index.ejs',
+    }),
   ]
 };
