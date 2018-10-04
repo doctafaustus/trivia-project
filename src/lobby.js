@@ -1,5 +1,5 @@
 // Add SCSS styles
-const css = require('./lobby.scss');
+const css = require('./style.scss');
 
 console.log('Hello world....');
 
@@ -16,7 +16,7 @@ $('#menu li').click(function() {
   $('section, #menu li').removeClass('active');
   $currentTab.add(`#page-${tabContentToShow}`).addClass('active');
 });
-//$('#menu li[data-tab-id=invite-friends]').click();
+$('#menu li[data-tab-id=home]').click();
 
 
 // Sidebar tab toggle

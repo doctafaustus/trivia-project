@@ -1,0 +1,30 @@
+// Unviersal classes
+.box {
+  background-color: white;
+  border-radius: 2px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24);
+}
+
+.main-top,
+.main-bottom {
+  width: 1152px;
+  padding: 40px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr .5fr;
+  grid-column-gap: 20px;
+}
+.main-bottom {
+  padding-top: 0;
+}
+
+
+// Nav and Sections
+section {
+  display: none;
+
+}
+
+section.active {
+  display: block;
+}

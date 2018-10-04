@@ -6,344 +6,349 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 <link href="app.css" rel="stylesheet"></head>
 <body>
-  <h1>I AM PARTIAL222</h1>
+
   <header>
-    <img id="logo" src="../src/images/logo.png">
-    <div id="logo-text">Completely Absurd Trivia</div>
+  <img id="logo" src="data:image/png;base64,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">
+  <div id="logo-text">Completely Absurd Trivia</div>
 
-    <ul id="menu">
-      <li class="active" data-tab-id="game-lobby">Game Lobby</li>
-      <li data-tab-id="leaderboard">Leaderboard</li>
-      <li data-tab-id="stats">Stats</li>
-      <li data-tab-id="invite-friends">Invite Friends</li>
-    </ul>
-  </header>
+  <ul id="menu">
+    <li data-tab-id="home">Home</li>
+    <li data-tab-id="lobby">Game Lobby</li>
+    <li data-tab-id="leaderboard">Leaderboard</li>
+    <li data-tab-id="stats">Stats</li>
+    <li data-tab-id="invite-friends">Invite Friends</li>
+  </ul>
+</header>
 
-  <section id="page-game-lobby" class="active">
-    <div class="main-top">
-      <div class="main-top-left">
-  
-        <div class="lobby-title box">Game Lobby - Game About To Begin</div>
-  
-        <div class="video-container"><iframe width="752" height="470" src="https://www.youtube.com/embed/ana5kgfjQVA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe></div>
-      </div>
-      <div class="main-top-right box">
-        <div class="side-bar">
-          <div class="tabs">
-            <div class="tab tab-players active" data-tab-id="tab-players-content">
-              <div class="tab-title"><span>Players </span><span class="player-count">(100)</span></div>
-            </div>
-            <div class="tab tab-friends" data-tab-id="tab-friends-content">
-              <div class="tab-title"><span>Friends </span><span class="friend-count">(5)</span></div>
-            </div>
-            <div class="tab tab-party" data-tab-id="tab-party-content">
-              <div class="tab-title"><span>Party</span></div>
-            </div>
+  <section id="page-home">
+  HOME
+</section>
+
+  <section id="page-lobby">
+  <div class="main-top">
+    <div class="main-top-left">
+
+      <div class="lobby-title box">Game Lobby - Game About To Begin</div>
+
+      <div class="video-container"><iframe width="752" height="470" src="https://www.youtube.com/embed/ana5kgfjQVA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe></div>
+    </div>
+    <div class="main-top-right box">
+      <div class="side-bar">
+        <div class="tabs">
+          <div class="tab tab-players active" data-tab-id="tab-players-content">
+            <div class="tab-title"><span>Players </span><span class="player-count">(100)</span></div>
           </div>
-  
-          <ul id="tab-players-content" class="tab-content active">
-  
+          <div class="tab tab-friends" data-tab-id="tab-friends-content">
+            <div class="tab-title"><span>Friends </span><span class="friend-count">(5)</span></div>
+          </div>
+          <div class="tab tab-party" data-tab-id="tab-party-content">
+            <div class="tab-title"><span>Party</span></div>
+          </div>
+        </div>
+
+        <ul id="tab-players-content" class="tab-content active">
+
+          <li>
+            <div class="player-icon">
+              <img src="https://api.adorable.io/avatars/40/abott@adorable.png">
+            </div>
+            <div class="player-name">AceDauntless</div>
+            <button class="player-invite"></button>
+          </li>
+
+          <li>
+            <div class="player-icon">
+              <img src="https://api.adorable.io/avatars/40/ab3ott@adorable.png">
+            </div>
+            <div class="player-name">doctafaustus</div>
+            <button class="player-invite"></button>
+          </li>
+
+          <li>
+            <div class="player-icon">
+              <img src="https://api.adorable.io/avatars/40/32234@adorable.png">
+            </div>
+            <div class="player-name">BabBambino</div>
+            <button class="player-invite"></button>
+          </li>
+
+          <li>
+            <div class="player-icon">
+              <img src="https://api.adorable.io/avatars/40/lolz@adorable.png">
+            </div>
+            <div class="player-name">YoYoMah</div>
+            <button class="player-invite"></button>
+          </li>
+
+          <li>
+            <div class="player-icon">
+              <img src="https://api.adorable.io/avatars/40/fuo@adorable.png">
+            </div>
+            <div class="player-name">Venask5</div>
+            <button class="player-invite"></button>
+          </li>
+
+          <li>
+            <div class="player-icon">
+              <img src="https://api.adorable.io/avatars/40/tel@adorable.png">
+            </div>
+            <div class="player-name">Impossib</div>
+            <button class="player-invite"></button>
+          </li>
+          
+        </ul>
+
+        <ul id="tab-friends-content" class="tab-content">
+          <li>
+            <div class="player-icon">
+              <img src="https://api.adorable.io/avatars/40/abott@adorable.png">
+            </div>
+            <div class="player-name">AceDauntless</div>
+            <button class="player-invite"></button>
+          </li>
+          <li>
+            <div class="player-icon">
+              <img src="https://api.adorable.io/avatars/40/32234@adorable.png">
+            </div>
+            <div class="player-name">BabBambino</div>
+            <button class="player-invite"></button>
+          </li>
+          <li class="invited">
+            <div class="player-icon">
+              <img src="https://api.adorable.io/avatars/40/anderson12@adorable.png">
+            </div>
+            <div class="player-name">Andersson12</div>
+            <button class="player-invite"></button>
+          </li>
+        </ul>
+
+        <div id="tab-party-content" class="tab-content">
+          <ul id="party-messages">
             <li>
               <div class="player-icon">
                 <img src="https://api.adorable.io/avatars/40/abott@adorable.png">
               </div>
-              <div class="player-name">AceDauntless</div>
-              <button class="player-invite"></button>
+              <div class="name-and-message">
+                <span class="player-name">AceDauntless</span>
+                <span class="message">This is my message but it might be kinda long sometiems</span>
+              </div>
+              <div class="chat-submenu">
+                <svg class="chat-submenu-dots" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="style-scope yt-icon">
+                  <g class="style-scope yt-icon">
+                    <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" class="style-scope yt-icon"></path>
+                  </g>
+                </svg>
+                <div class="boot">Remove from party</div>
+              </div>
             </li>
-  
             <li>
               <div class="player-icon">
                 <img src="https://api.adorable.io/avatars/40/ab3ott@adorable.png">
               </div>
-              <div class="player-name">doctafaustus</div>
-              <button class="player-invite"></button>
-            </li>
-  
-            <li>
-              <div class="player-icon">
-                <img src="https://api.adorable.io/avatars/40/32234@adorable.png">
+              <div class="name-and-message">
+                <span class="player-name">doctafaustus</span>
+                <span class="message">Another message</span>
               </div>
-              <div class="player-name">BabBambino</div>
-              <button class="player-invite"></button>
-            </li>
-  
-            <li>
-              <div class="player-icon">
-                <img src="https://api.adorable.io/avatars/40/lolz@adorable.png">
-              </div>
-              <div class="player-name">YoYoMah</div>
-              <button class="player-invite"></button>
-            </li>
-  
-            <li>
-              <div class="player-icon">
-                <img src="https://api.adorable.io/avatars/40/fuo@adorable.png">
-              </div>
-              <div class="player-name">Venask5</div>
-              <button class="player-invite"></button>
-            </li>
-  
-            <li>
-              <div class="player-icon">
-                <img src="https://api.adorable.io/avatars/40/tel@adorable.png">
-              </div>
-              <div class="player-name">Impossib</div>
-              <button class="player-invite"></button>
-            </li>
-            
-          </ul>
-  
-          <ul id="tab-friends-content" class="tab-content">
-            <li>
-              <div class="player-icon">
-                <img src="https://api.adorable.io/avatars/40/abott@adorable.png">
-              </div>
-              <div class="player-name">AceDauntless</div>
-              <button class="player-invite"></button>
-            </li>
-            <li>
-              <div class="player-icon">
-                <img src="https://api.adorable.io/avatars/40/32234@adorable.png">
-              </div>
-              <div class="player-name">BabBambino</div>
-              <button class="player-invite"></button>
-            </li>
-            <li class="invited">
-              <div class="player-icon">
-                <img src="https://api.adorable.io/avatars/40/anderson12@adorable.png">
-              </div>
-              <div class="player-name">Andersson12</div>
-              <button class="player-invite"></button>
-            </li>
-          </ul>
-  
-          <div id="tab-party-content" class="tab-content">
-            <ul id="party-messages">
-              <li>
-                <div class="player-icon">
-                  <img src="https://api.adorable.io/avatars/40/abott@adorable.png">
-                </div>
-                <div class="name-and-message">
-                  <span class="player-name">AceDauntless</span>
-                  <span class="message">This is my message but it might be kinda long sometiems</span>
-                </div>
-                <div class="chat-submenu">
-                  <svg class="chat-submenu-dots" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="style-scope yt-icon">
+              <div class="chat-submenu">
+                <svg class="chat-submenu-dots" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="style-scope yt-icon">
                     <g class="style-scope yt-icon">
                       <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" class="style-scope yt-icon"></path>
                     </g>
                   </svg>
-                  <div class="boot">Remove from party</div>
-                </div>
-              </li>
-              <li>
-                <div class="player-icon">
-                  <img src="https://api.adorable.io/avatars/40/ab3ott@adorable.png">
-                </div>
-                <div class="name-and-message">
-                  <span class="player-name">doctafaustus</span>
-                  <span class="message">Another message</span>
-                </div>
-                <div class="chat-submenu">
-                  <svg class="chat-submenu-dots" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="style-scope yt-icon">
-                      <g class="style-scope yt-icon">
-                        <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" class="style-scope yt-icon"></path>
-                      </g>
-                    </svg>
-                  <div class="boot">Remove from party</div>
-                </div>
-              </li>
-              <li>
-                <div class="player-icon">
-                  <img src="https://api.adorable.io/avatars/40/hoeyjay@adorable.png">
-                </div>
-                <div class="name-and-message">
-                  <span class="player-name">JoeyJay</span>
-                  <span class="message">Another It's simple! When the host starts the game you will be presented with 20 multiple choice questions. You'll only have a few seconds to answer before the timer runs out so answer quickly! Be careful - all answers are final. You'll compete in groups of 4 and whoever scores the highest in your group wins!</span>
-                </div>
-                <div class="chat-submenu">
-                  <svg class="chat-submenu-dots" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="style-scope yt-icon">
-                      <g class="style-scope yt-icon">
-                        <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" class="style-scope yt-icon"></path>
-                      </g>
-                    </svg>
-                  <div class="boot">Remove from party</div>
-                </div>
-              </li>
-            </ul>
-  
-            <form class="chat-form">
-              <div class="chat-player-icon">
-                <img src="https://api.adorable.io/avatars/40/ab3ott@adorable.png">
+                <div class="boot">Remove from party</div>
               </div>
-              <input type="text" id="chat-input" autocomplete="off" placeholder="Say something...">
-            </form>
-          </div>
+            </li>
+            <li>
+              <div class="player-icon">
+                <img src="https://api.adorable.io/avatars/40/hoeyjay@adorable.png">
+              </div>
+              <div class="name-and-message">
+                <span class="player-name">JoeyJay</span>
+                <span class="message">Another It's simple! When the host starts the game you will be presented with 20 multiple choice questions. You'll only have a few seconds to answer before the timer runs out so answer quickly! Be careful - all answers are final. You'll compete in groups of 4 and whoever scores the highest in your group wins!</span>
+              </div>
+              <div class="chat-submenu">
+                <svg class="chat-submenu-dots" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="style-scope yt-icon">
+                    <g class="style-scope yt-icon">
+                      <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" class="style-scope yt-icon"></path>
+                    </g>
+                  </svg>
+                <div class="boot">Remove from party</div>
+              </div>
+            </li>
+          </ul>
+
+          <form class="chat-form">
+            <div class="chat-player-icon">
+              <img src="https://api.adorable.io/avatars/40/ab3ott@adorable.png">
+            </div>
+            <input type="text" id="chat-input" autocomplete="off" placeholder="Say something...">
+          </form>
         </div>
       </div>
     </div>
-  
-    <div class="main-bottom">
-      <div class="invitation-container">
-        <ul class="invitation-list">
-  
-          <li class="invitation box">
-            <div class="invitation-left">
-              <div class="invitation-avatar">
-                <img src="https://api.adorable.io/avatars/40/abott@adorable.png">
-              </div>
+  </div>
+
+  <div class="main-bottom">
+    <div class="invitation-container">
+      <ul class="invitation-list">
+
+        <li class="invitation box">
+          <div class="invitation-left">
+            <div class="invitation-avatar">
+              <img src="https://api.adorable.io/avatars/40/abott@adorable.png">
             </div>
-  
-            <div class="invitation-middle">
-              <div class="invitation-title">
-                <span class="invitation-party-leader">AceDauntless</span>
-                <span> invited you to their party</span>
-              </div>
-              <div class="invitation-subtitle">
-                Would you like to play in this group?
-              </div>
-              <a class="invitation-learn-more toggle-learn-more" href="#">Learn More</a>
-              <div class="invitation-help-info">
-                <div>Completely Absurd Trivia is played in groups of 4! You may choose to play with this party or we'll randomly match you with 3 other players.</div>
-                <a class="invitation-close-help-info toggle-learn-more" href="#">Hide</a>
-              </div>
-            </div>
-  
-            <div class="invitation-right">
-              <button class="accept">Accept</button>
-              <button class="reject">Reject</button>
-            </div>
-          </li>
-  
-          <li class="invitation box">
-            <div class="invitation-left">
-              <div class="invitation-avatar">
-                <img src="https://api.adorable.io/avatars/40/tel@adorable.png">
-              </div>
-            </div>
-  
-            <div class="invitation-middle">
-              <div class="invitation-title">
-                <span class="invitation-party-leader">Impossib</span>
-                <span> invited you to their party</span>
-              </div>
-              <div class="invitation-subtitle">
-                Would you like to play in this group?
-              </div>
-              <a class="invitation-learn-more toggle-learn-more" href="#">Learn More</a>
-              <div class="invitation-help-info">
-                <div>Completely Absurd Trivia is played in groups of 4! You may choose to play with this party or we'll randomly match you with 3 other players.</div>
-                <a class="invitation-close-help-info toggle-learn-more" href="#">Hide</a>
-              </div>
-            </div>
-  
-            <div class="invitation-right">
-              <button class="accept">Accept</button>
-              <button class="reject">Reject</button>
-            </div>
-          </li>
-  
-        </ul>
-      </div>
-  
-      <div class="how-to-play-container box">
-        <img class="how-to-play-icon" src="../src/images/how-to-play.png">
-        <div class="how-to-play-title">How to Play</div>
-          <div class="how-to-play-subtitle">
-            When the host starts the game you will be shown 20 multiple choice questions one at a time. You'll only have a few seconds to guess and all answers are final. You'll compete in groups of 4 and whoever scores the highest in your group wins!
           </div>
-        <div class="how-to-play-close"><img class="how-to-play-close-icon" src="../src/images/close.png"></div>
-      </div>
+
+          <div class="invitation-middle">
+            <div class="invitation-title">
+              <span class="invitation-party-leader">AceDauntless</span>
+              <span> invited you to their party</span>
+            </div>
+            <div class="invitation-subtitle">
+              Would you like to play in this group?
+            </div>
+            <a class="invitation-learn-more toggle-learn-more" href="#">Learn More</a>
+            <div class="invitation-help-info">
+              <div>Completely Absurd Trivia is played in groups of 4! You may choose to play with this party or we'll randomly match you with 3 other players.</div>
+              <a class="invitation-close-help-info toggle-learn-more" href="#">Hide</a>
+            </div>
+          </div>
+
+          <div class="invitation-right">
+            <button class="accept">Accept</button>
+            <button class="reject">Reject</button>
+          </div>
+        </li>
+
+        <li class="invitation box">
+          <div class="invitation-left">
+            <div class="invitation-avatar">
+              <img src="https://api.adorable.io/avatars/40/tel@adorable.png">
+            </div>
+          </div>
+
+          <div class="invitation-middle">
+            <div class="invitation-title">
+              <span class="invitation-party-leader">Impossib</span>
+              <span> invited you to their party</span>
+            </div>
+            <div class="invitation-subtitle">
+              Would you like to play in this group?
+            </div>
+            <a class="invitation-learn-more toggle-learn-more" href="#">Learn More</a>
+            <div class="invitation-help-info">
+              <div>Completely Absurd Trivia is played in groups of 4! You may choose to play with this party or we'll randomly match you with 3 other players.</div>
+              <a class="invitation-close-help-info toggle-learn-more" href="#">Hide</a>
+            </div>
+          </div>
+
+          <div class="invitation-right">
+            <button class="accept">Accept</button>
+            <button class="reject">Reject</button>
+          </div>
+        </li>
+
+      </ul>
     </div>
 
-  </section>
+    <div class="how-to-play-container box">
+      <img class="how-to-play-icon" src="528ca53ed7c2e90fa4a1ab73170b864e.png">
+      <div class="how-to-play-title">How to Play</div>
+        <div class="how-to-play-subtitle">
+          When the host starts the game you will be shown 20 multiple choice questions one at a time. You'll only have a few seconds to guess and all answers are final. You'll compete in groups of 4 and whoever scores the highest in your group wins!
+        </div>
+      <div class="how-to-play-close"><img class="how-to-play-close-icon" src="data:image/png;base64,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"></div>
+    </div>
+  </div>
+
+</section>
 
   <section id="page-leaderboard">
-    <div class="leaderboard box">
-      <div id="leaderboard-header">
-        <div class="leaderboard-title">Rank</div>
-        <div class="leaderboard-title">Player</div>
-        <div class="leaderboard-title">Wins</div>
-        <div class="leaderboard-title">Games Played</div>
-        <div class="leaderboard-title">Total Points</div>
-      </div>
-
-      <div class="leaderboard-row">
-        <div class="lb-rank">1</div>
-        <div class="lb-player-icon-and-name">
-          <div class="lb-player-icon">
-              <img src="https://api.adorable.io/avatars/40/doctafaustus@adorable.png">
-          </div>
-          <div class="lb-player-name">doctafaustus</div>
-        </div>
-        <div class="lb-wins">13</div>
-        <div class="lb-games-played">27</div>
-        <div class="lb-total-points">4565</div>
-      </div>
-    
-      <div class="leaderboard-row">
-        <div class="lb-rank">2</div>
-        <div class="lb-player-icon-and-name">
-          <div class="lb-player-icon">
-              <img src="https://api.adorable.io/avatars/40/asdfa@adorable.png">
-          </div>
-          <div class="lb-player-name">AceDauntless</div>
-        </div>
-        <div class="lb-wins">9</div>
-        <div class="lb-games-played">23</div>
-        <div class="lb-total-points">3125</div>
-      </div>
+  <div class="leaderboard box">
+    <div id="leaderboard-header">
+      <div class="leaderboard-title">Rank</div>
+      <div class="leaderboard-title">Player</div>
+      <div class="leaderboard-title">Wins</div>
+      <div class="leaderboard-title">Games Played</div>
+      <div class="leaderboard-title">Total Points</div>
     </div>
-  </section>
+
+    <div class="leaderboard-row">
+      <div class="lb-rank">1</div>
+      <div class="lb-player-icon-and-name">
+        <div class="lb-player-icon">
+            <img src="https://api.adorable.io/avatars/40/doctafaustus@adorable.png">
+        </div>
+        <div class="lb-player-name">doctafaustus</div>
+      </div>
+      <div class="lb-wins">13</div>
+      <div class="lb-games-played">27</div>
+      <div class="lb-total-points">4565</div>
+    </div>
+  
+    <div class="leaderboard-row">
+      <div class="lb-rank">2</div>
+      <div class="lb-player-icon-and-name">
+        <div class="lb-player-icon">
+            <img src="https://api.adorable.io/avatars/40/asdfa@adorable.png">
+        </div>
+        <div class="lb-player-name">AceDauntless</div>
+      </div>
+      <div class="lb-wins">9</div>
+      <div class="lb-games-played">23</div>
+      <div class="lb-total-points">3125</div>
+    </div>
+  </div>
+</section>
 
   <section id="page-stats">
-    <div class="stats-container box">
-      
-      <div class="player-icon">
-          <img src="https://api.adorable.io/avatars/100/doctafausts@adorable.png">
-      </div>
-      <div class="player-name">doctafaustus</div>
-      <div class="member-since">Member since <span id="member-since-value">9/18/18</span></div>
-      <ul class="stats-list">
-          <li class="games-played">
-            <div class="stats-value">27</div>
-            <div class="stats-title">Games Played</div>
-          </li>
-          <li class="wins">
-            <div class="stats-value">13</div>
-            <div class="stats-title">Wins</div>
-          </li>
-          <li class="win-percentage">
-            <div class="stats-value">55%</div>
-            <div class="stats-title">Win Percentage</div>
-          </li>
-          <li class="total-points">
-              <div class="stats-value">4565</div>
-              <div class="stats-title">Total Points</div>
-            </li>
-        </ul>
+  <div class="stats-container box">
+    
+    <div class="player-icon">
+        <img src="https://api.adorable.io/avatars/100/doctafausts@adorable.png">
     </div>
-  </section>
+    <div class="player-name">doctafaustus</div>
+    <div class="member-since">Member since <span id="member-since-value">9/18/18</span></div>
+    <ul class="stats-list">
+        <li class="games-played">
+          <div class="stats-value">27</div>
+          <div class="stats-title">Games Played</div>
+        </li>
+        <li class="wins">
+          <div class="stats-value">13</div>
+          <div class="stats-title">Wins</div>
+        </li>
+        <li class="win-percentage">
+          <div class="stats-value">55%</div>
+          <div class="stats-title">Win Percentage</div>
+        </li>
+        <li class="total-points">
+            <div class="stats-value">4565</div>
+            <div class="stats-title">Total Points</div>
+          </li>
+      </ul>
+  </div>
+</section>
 
   <section id="page-invite-friends">
-    <div class="invite-friends-container box">
-      <h2>Your Invite Link</h2>
-      <img class="invite-image" src="../src/images/network.png">
-      <div class="invite-code-container">
-        <div class="invite-code">https://g.co/fi/r/F919PM</div>
-        <div class="invite-facebook invite-icon">
-          <img src="../src/images/invite-facebook.png">
-        </div>
-        <div class="invite-twitter invite-icon">
-          <img src="../src/images/invite-twitter.png">
-        </div>
-        <div class="invite-email invite-icon">
-          <img src="../src/images/invite-email.png">
-        </div>
+  <div class="invite-friends-container box">
+    <h2>Your Invite Link</h2>
+    <img class="invite-image" src="2a65e53a172dc088119cf849e356a1c8.png">
+    <div class="invite-code-container">
+      <div class="invite-code">https://g.co/fi/r/F919PM</div>
+      <div class="invite-facebook invite-icon">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAQCAQAAACBg/b2AAAAXUlEQVR4AWOAAiWGDoYNDNsZFkG4AgzrGHaB4TqIQBiYs4KhiiEfIlAMFjBhgIMqsIAMhKMChO1gASsgS44BzETAXnSBUgaGMiBcDOY0AFl2GIbSUCCbYTEQSoKYAHEHLfju1fVaAAAAAElFTkSuQmCC">
       </div>
-      <div class="invite-info">When your friend signs up or logs in with this link they will be added to your friends list.</div>
+      <div class="invite-twitter invite-icon">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAMCAQAAAAXSy9vAAAAmElEQVR4AW3Jg05oAQAA0PNsa3qNuaasIducmjLmxvQF2ZyXrftz2bUzH975BYAvemxali9FBsRb8g9Av+DaujIviRfYUeED3jm+7TX/4b1lgcCOPs2CW4NAqlnBU7qBb7ae7SyAMBNPctsngBAHT7oRABLNOnGXY14DwA/tDm9zxBcAIgwLbq2q9goAeCVStgaFYr0EAM4A5XVGXaOgKBkAAAAASUVORK5CYII=">
+      </div>
+      <div class="invite-email invite-icon">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAQAAAD4iURRAAAAZklEQVR4AWzJsQmDUBQAwGvfMoqu4RAuYHAfOyMOkFTypov8Iqh8rjxGh6w4jHws1Vx8SYPGeotVY5CkXS9M/5qE3l6ymIXW+9QKsyykwqYTQmeTjyxep7yQFb9RQXITTqlNeIMPAOlPbGJMcXXOAAAAAElFTkSuQmCC">
+      </div>
     </div>
-  </section>
+    <div class="invite-info">When your friend signs up or logs in with this link they will be added to your friends list.</div>
+  </div>
+</section>
 
   <script src="../src/js/jquery.min.js"></script>
 <script type="text/javascript" src="./src/lobby.js"></script></body>

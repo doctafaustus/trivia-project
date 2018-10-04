@@ -8,13 +8,14 @@
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "socket.io": "^2.1.1",
+    "url-loader": "^1.1.1",
     "webpack": "^4.15.1"
   },
   "devDependencies": {
     "css-loader": "^1.0.0",
     "extract-loader": "^1.0.1",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "file-loader": "^0.11.2",
+    "file-loader": "^2.0.0",
     "node-sass": "^4.9.3",
     "postcss-loader": "^2.0.6",
     "sass-loader": "^7.1.0",

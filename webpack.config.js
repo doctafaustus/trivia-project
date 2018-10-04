@@ -17,6 +17,12 @@ module.exports = {
       { test: /\.scss$/,
         use: ExtractTextPlugin.extract(['css-loader', 'sass-loader']),
       },
+      { test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000
+        }
+      },
       { test: /\.(html)$/,
         include: path.join(__dirname, 'src/'),
         use: {
@@ -25,7 +31,7 @@ module.exports = {
             interpolate: true
           }
         }
-      }      
+      } 
     ]
   },
   plugins: [
