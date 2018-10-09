@@ -157,14 +157,25 @@ header {
       border: none; }
 
 .countdown-container {
-  padding: 80px 0; }
+  padding: 80px 0;
+  width: 460px;
+  margin: 0 auto; }
   .countdown-container h2 {
     font-size: 44px;
     text-align: center;
     color: #0f9d58; }
   .countdown-container #countdown-clock {
     width: 460px;
-    margin: 40px auto 0 auto; }
+    margin: 40px auto 20px auto; }
+  .countdown-container .countdown-subtitle {
+    font-family: 'Roboto', sans-serif;
+    color: #888b8d;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center; }
+    .countdown-container .countdown-subtitle span {
+      color: #0f9d58;
+      font-weight: bold; }
 
 .lobby-title {
   height: 70px;
