@@ -114,3 +114,13 @@ $('#tab-party-content').on('click', '.boot', function() {
 
 
 
+// Countdown Timer
+$('#countdown-clock').FlipClock(10, {
+  clockFace: 'MiniteCounter',
+  countdown: true,
+  callbacks: {
+    stop: function() {
+      console.log('DONE!');
+    },
+  },
+});

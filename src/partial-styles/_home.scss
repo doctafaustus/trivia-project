@@ -1,0 +1,62 @@
+#page-home {
+  background-color: white;
+}
+
+.hero-container {
+  height: 540px;
+  max-width: 1440px;
+  max-height: 540px;
+  margin: 0 auto;
+  background: url('../src/images/hero.jpg') no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: bottom;
+  background-position: left center;
+
+  .hero-container-text {
+    width: 500px;
+    left: 50%;
+    right: auto;
+    position: absolute;
+    margin-top: 142px;
+    color: white;
+
+    h1 {
+      font-size: 44px;
+      margin-bottom: 45px;
+    }
+
+    .hero-container-subtitle {
+      font-size: 22px;
+      line-height: 28px;
+      margin-bottom: 45px;
+      letter-spacing: .45px;
+    }
+
+    #alert-next-game {
+      background-color: #00bcd4;
+      border-radius: 5px;
+      padding: 20px 30px;
+      color: white;
+      font-size: 18px;
+      border: none;
+    }
+  }
+}
+
+.countdown-container {
+  padding: 80px 0;
+
+  h2 {
+    font-size: 44px;
+    text-align: center;
+    color: #0f9d58;
+  }
+
+  #countdown-clock {
+    width: 460px;
+    margin: 40px auto 0 auto;
+  }
+}
