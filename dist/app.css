@@ -121,6 +121,8 @@ header {
 #page-home {
   background-color: #f5f5f5;
   font-family: 'Roboto', sans-serif; }
+  #page-home .home-wrapper {
+    max-width: 1440px; }
 
 .hero-container {
   height: 540px;
@@ -320,6 +322,59 @@ header {
     animation-iteration-count: 1;
     animation-timing-function: linear;
     background-color: rgba(255, 14, 14, 0.67) !important; }
+
+.pre-footer-container {
+  background-color: #6200ee;
+  overflow: auto;
+  overflow-x: hidden; }
+  .pre-footer-container #scroll-top {
+    background-color: #4302a0;
+    height: 60px;
+    width: 70px;
+    text-align: center;
+    float: right;
+    cursor: pointer; }
+    .pre-footer-container #scroll-top svg {
+      fill: white;
+      position: relative;
+      top: 19px; }
+
+.footer-container {
+  background-color: #230056f7;
+  padding: 120px 0;
+  color: white; }
+  .footer-container .home-wrapper {
+    margin: 0 auto;
+    padding: 0 50px; }
+  .footer-container #footer-block {
+    border-top: solid 1px #626876;
+    width: 480px; }
+    .footer-container #footer-block #footer-links {
+      padding-top: 18px;
+      font-size: 13px;
+      text-transform: uppercase;
+      margin-bottom: 45px; }
+      .footer-container #footer-block #footer-links li {
+        display: inline-block;
+        margin-right: 32px; }
+        .footer-container #footer-block #footer-links li a {
+          color: white; }
+          .footer-container #footer-block #footer-links li a:hover {
+            color: #FF5274; }
+    .footer-container #footer-block #footer-extra {
+      font-size: 13px; }
+      .footer-container #footer-block #footer-extra .gray {
+        color: #ACB1B4; }
+      .footer-container #footer-block #footer-extra #footer-company {
+        padding-right: 8px; }
+      .footer-container #footer-block #footer-extra #contact {
+        margin-top: 15px; }
+      .footer-container #footer-block #footer-extra #crafted {
+        margin-top: 8px; }
+        .footer-container #footer-block #footer-extra #crafted img {
+          top: 5px;
+          left: 7px;
+          position: relative; }
 
 .lobby-title {
   height: 70px;
