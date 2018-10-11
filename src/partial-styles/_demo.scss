@@ -1,0 +1,139 @@
+.demo-container {
+  text-align: center;
+  padding: 80px 0;
+  background-color: white;
+
+  h1 {
+    color: #00bcd4;
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+
+  .demo-subtitle {
+    font-size: 22px;
+    color: #888b8d;
+    width: 600px;
+    margin: 0 auto 40px auto;
+    line-height: 26px;
+  }
+
+  .demo-container-inner {
+    background-image: url(../src/images/lights-bg.png);
+    background-size: cover;
+    background-position: center center;
+    color: black;
+    height: 500px;
+    color: white;
+    text-align: center;
+    padding-bottom: 140px;
+    font-family: 'Open Sans', sans-serif;
+  
+  
+    #demo-box {
+      width: 680px;
+      margin: 0 auto;
+      padding-top: 140px;
+  
+      .panel {
+        background-color: rgba(50, 50, 69, 0.8);
+        margin-bottom: 1px;
+      }
+  
+      #demo-question {
+        height: 250px;
+        font-size: 32px;
+        transition: .6s ease-out;
+  
+        &.grow {
+          height: 372px;
+        }
+  
+        #question-title {
+          padding: 91px 30px 0 30px;
+          line-height: 43px;
+  
+          &.shifted {
+            padding-top: 162px;
+          }
+        }
+      }
+  
+      #demo-answers {
+  
+        .answer-btn {
+          float: left;
+          width: 340px;
+          height: 60px;
+          line-height: 60px;
+          cursor: pointer;
+          font-size: 18px;
+          box-sizing: border-box;
+  
+          &.answer-btn-left {
+            width: 340px;
+            margin-right: 1px;
+          }
+  
+          &.answer-btn-right {
+            width: 339px;
+          }
+  
+          &:not(.locked):hover {
+            background-color: rgba(255, 81, 116, 0.78);
+          }
+  
+          &.selected {
+            background-color: rgba(240, 153, 32, 0.69);
+          }
+        }
+      }
+    }
+  }
+  
+  @keyframes correct {
+    0% {
+      background-color: rgba(10, 195, 18, 0.6);
+    }
+    50% {
+      background-color: rgba(240, 153, 32, 0.69);
+    }
+    75% {
+      background-color: rgba(10, 195, 18, 0.6);
+    }
+    100% {
+      background-color: rgba(10, 195, 18, 0.6);
+    }
+  }
+      
+  @keyframes incorrect {
+    0% {
+      background-color: rgba(255, 14, 14, 0.67) !important;
+    }
+    50% {
+      background-color: rgba(50, 50, 69, 0.8);
+    }
+    75% {
+      background-color: rgba(255, 14, 14, 0.67) !important;
+    }
+    100% {
+      background-color: rgba(255, 14, 14, 0.67) !important;;
+    }
+  }
+  
+  
+  .correct {
+    animation-name: correct;
+    animation-duration: 700ms;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    background-color: rgba(10, 195, 18, 0.6) !important;
+  } 
+  
+  .incorrect {
+    animation-name: incorrect;
+    animation-duration: 700ms;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    background-color: rgba(255, 14, 14, 0.67) !important;
+  }
+}

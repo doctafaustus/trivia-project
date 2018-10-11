@@ -1,5 +1,5 @@
 #page-home {
-  background-color: white;
+  background-color: #f5f5f5;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -80,7 +80,7 @@
 
 
 .feature-container {
-  background-color: #f5f5f5;
+  background-color: white;
   padding: 80px 0;
 
   .feature-container-inner {
@@ -156,3 +156,6 @@
     }
   }
 }
+
+
+@import './demo';
