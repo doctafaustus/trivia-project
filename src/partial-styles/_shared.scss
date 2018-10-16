@@ -7,13 +7,19 @@
 
 .main-top,
 .main-bottom {
-  width: 1152px;
+  box-sizing: border-box;
+  max-width: 1152px;
   padding: 40px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr .5fr;
   grid-column-gap: 20px;
 }
+
+.main-top {
+  width: 100%;
+}
+
 .main-bottom {
   padding-top: 0;
 }

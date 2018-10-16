@@ -20,7 +20,7 @@ header {
   }
 
   #logo-text {
-    font-weight: 300;
+    font-weight: 600;
   }
 
   #menu {
@@ -42,5 +42,13 @@ header {
         border-bottom: solid 3px white;
       }
     }
+  }
+}
+
+
+
+@media (max-width: 1099px) {
+  header {
+    display: block;
   }
 }

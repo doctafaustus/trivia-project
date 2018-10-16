@@ -17,6 +17,12 @@ $('#menu li').click(function() {
   $currentTab.add(`#page-${tabContentToShow}`).addClass('active');
 });
 $('#menu li[data-tab-id=home]').click();
+// Footer navigation
+$('#footer-links a').click(function() {
+  const linkID = $(this).attr('data-tab-id');
+  const target = $(`#menu li[data-tab-id=${linkID}]`);
+  target.click();
+});
 
 
 // Sidebar tab toggle
@@ -111,7 +117,14 @@ $('#tab-party-content').on('click', '.boot', function() {
   hideSubmenus();
 });
 
-
+// Back to top
+$('#scroll-top').click(function() {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth',
+  });
+});
 
 
 // Countdown Timer

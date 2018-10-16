@@ -5,6 +5,7 @@
   <meta property="og:description" content="Completely Absurd Trivia (CAT) is a contest of wits, strategery, and itrigue. Actually, not really - it's just a really fun live trivia game! Play with your friends or compete against the horde for ultimate glory.">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="app.css" rel="stylesheet"></head>
 <body>
 
@@ -23,6 +24,7 @@
 
   <section id="page-home">
 
+  <div class="mobile-hero"></div>
   <div class="hero-container">
     <div class="hero-container-text">
       <h1>Live Trivia Gameshow</h1>
@@ -139,14 +141,14 @@
     <div class="home-wrapper">
       <div id="footer-block">
         <ul id="footer-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Leaderboard</a></li>
-            <li><a href="#">Stats</a></li>
-            <li><a href="#">Invite Friends</a></li>
+            <li><a data-tab-id="home" href="#">Home</a></li>
+            <li><a data-tab-id="leaderboard" href="#">Leaderboard</a></li>
+            <li><a data-tab-id="stats" href="#">Stats</a></li>
+            <li><a data-tab-id="invite-friends" href="#">Invite Friends</a></li>
         </ul>
 
         <div id="footer-extra">
-          <div id="copyright"><span class="gray" id="footer-company">Copyright &copy; 2018</span> Completely Absurd Trivia</div>
+          <div id="copyright"><span class="gray" id="footer-company">Copyright &copy; 2019</span> Completely Absurd Trivia</div>
           <div id="contact">contact@completelyabsurdtrivia.com</div>
           <div id="crafted" class="gray">Lovingly crafted with NodeJS<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAATCAMAAABBexbDAAAAflBMVEUAAACMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuMyEuDGrZ6AAAAKXRSTlMAF+9ULvQFR/nm32c0c14PC9nRyqROH+m2qZSGfW07KMS8sZyMWiommAGZORIAAADISURBVBjTRdBHksJAEETRbG/lvUMwuNH9L4ha0PCWf1FRkXh71PqP44dMtHIXMbZ4yxdjXA6ZFl2ShdBUdCIIstmUTGLS9QPR81+P0Akg1wxEpYoA9w20AYhhvBRWFAp+L2wvmvUVkeRSyVgEq03SeK7kKZZ7du00LR1ioU4R2fpx8/xbbN/KfNn4XoQ67ihri6KbEcotRyZSkMalK+Ss4WiZLhvDQZ3Dw8/amisCPtDPJC33yQpyE2eF6GTNYMMkX5IPtvc4vABovgybEs3zeAAAAABJRU5ErkJggg=="></div>
         </div>
@@ -162,7 +164,7 @@
 
       <div class="lobby-title box">Game Lobby - Game About To Begin</div>
 
-      <div class="video-container"><iframe width="752" height="470" src="https://www.youtube.com/embed/ana5kgfjQVA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe></div>
+      <div class="video-container"><iframe width="100%" height="470" src="https://www.youtube.com/embed/ana5kgfjQVA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe></div>
     </div>
     <div class="main-top-right box">
       <div class="side-bar">

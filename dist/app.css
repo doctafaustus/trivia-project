@@ -69,12 +69,16 @@ h6 {
 
 .main-top,
 .main-bottom {
-  width: 1152px;
+  box-sizing: border-box;
+  max-width: 1152px;
   padding: 40px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr .5fr;
   grid-column-gap: 20px; }
+
+.main-top {
+  width: 100%; }
 
 .main-bottom {
   padding-top: 0; }
@@ -103,7 +107,7 @@ header {
   header #logo {
     width: 50px; }
   header #logo-text {
-    font-weight: 300; }
+    font-weight: 600; }
   header #menu li {
     display: inline-block;
     height: 53px;
@@ -118,18 +122,25 @@ header {
     header #menu li.active {
       border-bottom: solid 3px white; }
 
+@media (max-width: 1099px) {
+  header {
+    display: block; } }
+
 #page-home {
   background-color: #f5f5f5;
   font-family: 'Roboto', sans-serif; }
   #page-home .home-wrapper {
     max-width: 1440px; }
 
+.mobile-hero {
+  display: none; }
+
 .hero-container {
   height: 540px;
   max-width: 1440px;
   max-height: 540px;
   margin: 0 auto;
-  background: url(86afd23531fbd167662f28294baa175c.jpg) no-repeat;
+  background: url(eec58a02195ceca7cdf73ba835bf538e.jpg) no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -233,7 +244,7 @@ header {
 
 .demo-container {
   text-align: center;
-  padding: 80px 0;
+  padding: 80px 0 0 0;
   background-color: white; }
   .demo-container h1 {
     color: #00bcd4;
@@ -375,6 +386,44 @@ header {
           top: 5px;
           left: 7px;
           position: relative; }
+
+@media (max-width: 1099px) {
+  .mobile-hero {
+    display: block;
+    background: url(b0369666f08b8c97910a24e3ea5088ba.jpg) no-repeat;
+    background-position: top center;
+    height: 372px; }
+  .hero-container {
+    background: none;
+    height: auto; }
+    .hero-container .hero-container-text {
+      width: 100%;
+      box-sizing: border-box;
+      position: static;
+      text-align: center;
+      margin-top: 0;
+      background-color: #6200ee;
+      padding: 40px; }
+      .hero-container .hero-container-text h1 {
+        margin-bottom: 25px; }
+      .hero-container .hero-container-text .hero-container-subtitle {
+        margin-bottom: 20px; }
+      .hero-container .hero-container-text #alert-next-game {
+        line-height: 22px; }
+  .countdown-container {
+    width: 100%;
+    padding: 40px 20px;
+    box-sizing: border-box; }
+    .countdown-container h2 {
+      font-size: 34px; }
+    .countdown-container #countdown-clock {
+      width: 100%;
+      zoom: .6;
+      display: flex;
+      justify-content: center;
+      margin: 40px auto; }
+      .countdown-container #countdown-clock .flip-clock-label {
+        display: none; } }
 
 .lobby-title {
   height: 70px;
@@ -530,7 +579,7 @@ header {
   content: 'Invite'; }
 
 .how-to-play-container {
-  max-height: 213px;
+  max-height: 240px;
   box-sizing: border-box;
   margin: 0 auto;
   background-color: white;

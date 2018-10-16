@@ -7,6 +7,9 @@
   }
 }
 
+.mobile-hero {
+  display: none;
+}
 
 .hero-container {
   height: 540px;
@@ -249,3 +252,64 @@
     }
   }
 }
+
+
+@media (max-width: 1099px) {
+
+  .mobile-hero {
+    display: block;
+    background: url(../src/images/hero-mobile.jpg) no-repeat;
+    background-position: top center;
+    height: 372px;
+  }
+
+  .hero-container {
+    background: none;
+    height: auto;
+
+    .hero-container-text {
+      width: 100%;
+      box-sizing: border-box;
+      position: static;
+      text-align: center;
+      margin-top: 0;
+      background-color: #6200ee;
+      padding: 40px;
+
+      h1 {
+        margin-bottom: 25px;
+      }
+
+      .hero-container-subtitle {
+        margin-bottom: 20px;
+      }
+
+      #alert-next-game {
+        line-height: 22px;
+      }
+    }
+  }
+
+  .countdown-container {
+    width: 100%;
+    padding: 40px 20px;
+    box-sizing: border-box;
+
+    h2 {
+      font-size: 34px;
+    }
+
+    #countdown-clock {
+      width: 100%;
+      zoom: .6;
+      display: flex;
+      justify-content: center;
+      margin: 40px auto;
+
+      .flip-clock-label {
+        display: none;
+      }
+    }
+  }
+}
+
