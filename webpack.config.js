@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -7,6 +8,9 @@ module.exports = {
   watch: true,
   entry: {
     './src/lobby': './src/lobby.js',
+    './src/js/demo' : './src/js/demo.js',
+    './src/js/flipclock' : './src/js/flipclock.js',
+    './src/js/jquery' : './src/js/jquery.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -31,7 +35,11 @@ module.exports = {
             interpolate: true
           }
         }
-      } 
+      },
+      {
+        test: /jquery\.js/,
+        use: ['script-loader']
+      }
     ]
   },
   plugins: [
@@ -39,6 +47,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Custom template',
       template: './src/index.ejs',
-    }),
+    })
   ]
 };
