@@ -29,7 +29,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "dev": "node src/server/express.js"
+    "dev": "node src/server/express.js",
+    "start": "node src/server/express.js"
   },
   "keywords": [],
   "author": "",
