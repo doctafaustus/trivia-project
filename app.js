@@ -4,8 +4,6 @@ const app = express();
 app.use(express.static(`${__dirname}/dist`));
 
 app.get('/', (req, res) => {
-  console.log('/ requestioned');
-  console.log(`${__dirname}/dist/index.html`);
   res.sendFile(`${__dirname}/dist/index.html`);
 });
 
