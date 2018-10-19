@@ -487,6 +487,8 @@ header {
             line-height: 34px; }
         .demo-container .demo-container-inner #demo-box #demo-answers .answer-btn.answer-btn-left, .demo-container .demo-container-inner #demo-box #demo-answers .answer-btn.answer-btn-right {
           width: 100%; }
+        .demo-container .demo-container-inner #demo-box #demo-answers .answer-btn:not(.locked):hover {
+          background-color: rgba(50, 50, 69, 0.8); }
   .footer-container {
     padding: 70px 0; }
     .footer-container .home-wrapper {

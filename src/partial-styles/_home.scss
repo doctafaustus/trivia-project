@@ -256,6 +256,7 @@
 
 @media (max-width: 1099px) {
 
+  // Mobile Hero Section
   .mobile-hero {
     display: block;
     background: url(../src/images/hero-mobile.jpg) no-repeat;
@@ -294,6 +295,7 @@
     }
   }
 
+  // Mobile Countdown Section
   .countdown-container {
     width: 100%;
     padding: 40px 20px;
@@ -320,6 +322,7 @@
     }
   }
 
+  // Mobile Feature Section
   .feature-container {
     padding: 40px 0;
 
@@ -350,6 +353,7 @@
     }
   }
 
+  // Mobile Testimonial Section
   .testimonials-container {
     padding: 40px 0;
 
@@ -373,6 +377,7 @@
     }
   }
 
+  // Mobile Demo Section
   .demo-container {
     padding: 40px 0 0 0;
 
@@ -414,11 +419,16 @@
           .answer-btn.answer-btn-left, .answer-btn.answer-btn-right {
             width: 100%;
           }
+
+          .answer-btn:not(.locked):hover {
+            background-color: rgba(50, 50, 69, 0.8);
+          }
         }
       }
     }
   }
 
+  // Mobile Footer Section
   .footer-container {
     padding: 70px 0;
 
