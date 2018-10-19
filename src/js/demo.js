@@ -90,6 +90,6 @@ populateQuestion(questionIndex);
 function shrinkAnswers() {
   $('#demo-answers, #question-title').fadeOut(function() {
     $('#demo-question').addClass('grow');
-    $('#question-title').text('Download a question pack for more!').addClass('shifted').fadeIn();
+    $('#question-title').text('Join a live game for more!').addClass('shifted').fadeIn();
   });
 }

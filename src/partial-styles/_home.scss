@@ -374,9 +374,31 @@
   }
 
   .demo-container {
+    padding: 40px 0;
+
+    h1 {
+      font-size: 32px;
+      padding: 0 20px;
+    }
+
+    .demo-subtitle {
+      line-height: 22px;
+      font-size: 18px;
+      width: 100%;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
     .demo-container-inner {
+      padding: 0;
+      background: none;
+      margin: 0;
+      height: auto;
+
       #demo-box {
         width: 100%;
+        padding: 0;
+        overflow: auto;
   
         #demo-question {
           height: auto;
