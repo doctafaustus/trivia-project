@@ -319,6 +319,36 @@
       font-size: 18px;
     }
   }
+
+  .feature-container {
+    padding: 40px 0;
+
+    .feature-container-inner {
+      .sub-container {
+        width: 100%;
+        padding: 0 20px;
+
+        .circle {
+          background: none;
+          margin-bottom: 20px;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        .green-medium {
+          font-size: 20px;
+          line-height: 24px;
+        }
+
+        .feature-blurb {
+          font-size: 14px;
+          line-height: 18px;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 399px) {
