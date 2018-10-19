@@ -349,6 +349,29 @@
       }
     }
   }
+
+  .testimonials-container {
+    padding: 40px 0;
+
+    .testimonial {
+      padding: 0 20px;
+      display: block;
+      text-align: center;
+
+      .testimonial-image {
+        margin: 0;
+      }
+
+      .testimonial-text-container {
+        font-size: 14px;
+        line-height: 18px;
+
+        .testimonial-author {
+          font-size: 14px;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 399px) {

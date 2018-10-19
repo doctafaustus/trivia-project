@@ -445,7 +445,20 @@ header {
         line-height: 24px; }
       .feature-container .feature-container-inner .sub-container .feature-blurb {
         font-size: 14px;
-        line-height: 18px; } }
+        line-height: 18px; }
+  .testimonials-container {
+    padding: 40px 0; }
+    .testimonials-container .testimonial {
+      padding: 0 20px;
+      display: block;
+      text-align: center; }
+      .testimonials-container .testimonial .testimonial-image {
+        margin: 0; }
+      .testimonials-container .testimonial .testimonial-text-container {
+        font-size: 14px;
+        line-height: 18px; }
+        .testimonials-container .testimonial .testimonial-text-container .testimonial-author {
+          font-size: 14px; } }
 
 @media (max-width: 399px) {
   height: 272px;
