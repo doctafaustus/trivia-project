@@ -374,7 +374,7 @@
   }
 
   .demo-container {
-    padding: 40px 0;
+    padding: 40px 0 0 0;
 
     h1 {
       font-size: 32px;
@@ -414,6 +414,28 @@
           .answer-btn.answer-btn-left, .answer-btn.answer-btn-right {
             width: 100%;
           }
+        }
+      }
+    }
+  }
+
+  .footer-container {
+    padding: 70px 0;
+
+    .home-wrapper {
+      padding: 0 20px;
+    }
+
+    #footer-block {
+      width: auto;
+
+      #footer-links {
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+
+        li {
+          margin-right: 0;
         }
       }
     }

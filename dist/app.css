@@ -460,7 +460,7 @@ header {
         .testimonials-container .testimonial .testimonial-text-container .testimonial-author {
           font-size: 14px; }
   .demo-container {
-    padding: 40px 0; }
+    padding: 40px 0 0 0; }
     .demo-container h1 {
       font-size: 32px;
       padding: 0 20px; }
@@ -486,7 +486,19 @@ header {
             font-size: 23px;
             line-height: 34px; }
         .demo-container .demo-container-inner #demo-box #demo-answers .answer-btn.answer-btn-left, .demo-container .demo-container-inner #demo-box #demo-answers .answer-btn.answer-btn-right {
-          width: 100%; } }
+          width: 100%; }
+  .footer-container {
+    padding: 70px 0; }
+    .footer-container .home-wrapper {
+      padding: 0 20px; }
+    .footer-container #footer-block {
+      width: auto; }
+      .footer-container #footer-block #footer-links {
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px; }
+        .footer-container #footer-block #footer-links li {
+          margin-right: 0; } }
 
 @media (max-width: 399px) {
   height: 272px;
