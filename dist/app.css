@@ -121,6 +121,9 @@ header {
       background-color: #4e02bb; }
     header #menu li.active {
       border-bottom: solid 3px white; }
+    header #menu li a {
+      display: block;
+      color: white; }
 
 @media (max-width: 1099px) {
   header {

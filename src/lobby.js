@@ -10,13 +10,23 @@ $('.invitation-list').on('click', '.toggle-learn-more', function(e) {
 
 
 // Menu tab toggle
-$('#menu li').click(function() {
-  const $currentTab = $(this);
-  const tabContentToShow = $currentTab.attr('data-tab-id');
+$(window).on('hashchange', function() {
+
+  console.log('hashchange');
+
+  let clickedHash = window.location.hash.replace('#', '');
+  if (clickedHash === '') clickedHash = 'home';
+  const $currentTab = $(`#menu li[data-tab-id=${clickedHash}]`);
+
+  // First reset/remove the active class from the menu and content
   $('section, #menu li').removeClass('active');
-  $currentTab.add(`#page-${tabContentToShow}`).addClass('active');
+
+  // Apply the active class to the clicked menu and content
+  $currentTab.add(`#page-${clickedHash}`).addClass('active');
+
 });
-$('#menu li[data-tab-id=home]').click();
+$('#menu li[data-tab-id=home]').add('#page-home').addClass('active').click();
+
 // Footer navigation
 $('#footer-links a').click(function() {
   const linkID = $(this).attr('data-tab-id');

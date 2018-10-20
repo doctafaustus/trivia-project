@@ -41,6 +41,11 @@ header {
       &.active {
         border-bottom: solid 3px white;
       }
+
+      a {
+        display: block;
+        color: white;
+      }
     }
   }
 }
