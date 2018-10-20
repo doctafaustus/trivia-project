@@ -140,7 +140,14 @@ header {
       background-repeat: no-repeat;
       background-position: center left; }
     header #menu {
-      display: none; } }
+      background-color: gray;
+      top: 55px;
+      width: 80%;
+      position: absolute;
+      z-index: 10;
+      left: 0; }
+      header #menu li {
+        display: block; } }
 
 #page-home {
   background-color: #f5f5f5;

@@ -143,3 +143,9 @@ $('#countdown-clock').FlipClock(10, {
     },
   },
 });
+
+
+// Burger Menu
+$('#burger-menu').click(function() {
+  console.log('test');
+});

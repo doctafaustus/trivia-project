@@ -73,7 +73,16 @@ header {
     }
 
     #menu {
-      display: none;
+      background-color: gray;
+      top: 55px;
+      width: 80%;
+      position: absolute;
+      z-index: 10;
+      left: 0;
+
+      li {
+        display: block;
+      }
     }
   }
 }
