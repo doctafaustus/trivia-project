@@ -59,7 +59,9 @@ header {
 
 @media (max-width: 1099px) {
   header {
-    display: block;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 
     #burger-menu {
       display: block;
@@ -68,8 +70,10 @@ header {
       background-image: url(../src/images/burger.png);
       background-repeat: no-repeat;
       background-position: center left;
-      position: relative;
-      top: 9px;
+    }
+
+    #menu {
+      display: none;
     }
   }
 }
