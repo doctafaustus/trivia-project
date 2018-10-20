@@ -15,6 +15,11 @@ header {
   align-items: center;
   box-shadow: 0 0 2px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.24);
 
+
+  #burger-menu {
+    display: none;
+  }
+
   #logo {
     width: 50px;
   }
@@ -55,5 +60,16 @@ header {
 @media (max-width: 1099px) {
   header {
     display: block;
+
+    #burger-menu {
+      display: block;
+      height: 40px;
+      width: 40px;
+      background-image: url(../src/images/burger.png);
+      background-repeat: no-repeat;
+      background-position: center center;
+      position: relative;
+      top: 9px;
+    }
   }
 }

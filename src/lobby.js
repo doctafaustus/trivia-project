@@ -11,9 +11,6 @@ $('.invitation-list').on('click', '.toggle-learn-more', function(e) {
 
 // Menu tab toggle
 $(window).on('hashchange', function() {
-
-  console.log('hashchange');
-
   let clickedHash = window.location.hash.replace('#', '');
   if (clickedHash === '') clickedHash = 'home';
   const $currentTab = $(`#menu li[data-tab-id=${clickedHash}]`);
@@ -23,7 +20,6 @@ $(window).on('hashchange', function() {
 
   // Apply the active class to the clicked menu and content
   $currentTab.add(`#page-${clickedHash}`).addClass('active');
-
 });
 $('#menu li[data-tab-id=home]').add('#page-home').addClass('active').click();
 
