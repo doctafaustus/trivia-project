@@ -20,8 +20,11 @@ $(window).on('hashchange', function() {
 
   // Apply the active class to the clicked menu and content
   $currentTab.add(`#page-${clickedHash}`).addClass('active');
+  localStorage.lastPageVisited = clickedHash;
 });
-$('#menu li[data-tab-id=home]').add('#page-home').addClass('active').click();
+$(`#menu li[data-tab-id=${localStorage.lastPageVisited || 'home'}]`).add(`#page-${localStorage.lastPageVisited || 'home'}`).addClass('active').click();
+
+
 
 // Footer navigation
 $('#footer-links a').click(function() {

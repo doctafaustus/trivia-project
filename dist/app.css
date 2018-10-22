@@ -123,6 +123,8 @@ header {
       background-color: #4e02bb; }
     header #menu li.active {
       border-bottom: solid 3px white; }
+    header #menu li#mobile-menu-heading {
+      display: none; }
     header #menu li a {
       display: block;
       color: white; }
@@ -140,14 +142,45 @@ header {
       background-repeat: no-repeat;
       background-position: center left; }
     header #menu {
-      background-color: gray;
-      top: 55px;
-      width: 80%;
+      background-color: white;
+      width: 71%;
+      top: 0;
+      height: 100%;
       position: absolute;
       z-index: 10;
-      left: 0; }
+      left: 0;
+      box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12);
+      font-family: 'Roboto', sans-serif; }
       header #menu li {
-        display: block; } }
+        display: block;
+        text-transform: none;
+        font-weight: 500;
+        padding: 0 10px;
+        color: black; }
+        header #menu li:hover {
+          background-color: white; }
+        header #menu li.active a {
+          background-color: #ede1fd;
+          color: rgba(98, 0, 238, 0.87);
+          font-weight: 600; }
+        header #menu li#mobile-menu-heading {
+          height: auto;
+          line-height: normal;
+          margin-top: 14px;
+          margin-bottom: 16px;
+          display: block; }
+          header #menu li#mobile-menu-heading .mobile-logo {
+            display: block;
+            width: 60px;
+            margin-bottom: 8px; }
+          header #menu li#mobile-menu-heading .mobile-logo-text {
+            font-size: 16px;
+            padding-bottom: 15px;
+            border-bottom: solid 1px #dedede; }
+        header #menu li a {
+          color: black;
+          padding: 0 8px;
+          border-radius: 4px; } }
 
 #page-home {
   background-color: #f5f5f5;
@@ -875,6 +908,18 @@ header {
   .invite-friends-container .invite-info {
     color: #757575;
     font-size: 13px; }
+
+.modal {
+  border: solid 1px red; }
+  .modal .overlay {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.32);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5; }
 
 /* Get the bourbon mixin from http://bourbon.io */
 /* Reset */
