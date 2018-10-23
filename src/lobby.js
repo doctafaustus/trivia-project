@@ -24,6 +24,9 @@ $(window).on('hashchange', function() {
 });
 $(`#menu li[data-tab-id=${localStorage.lastPageVisited || 'home'}]`).add(`#page-${localStorage.lastPageVisited || 'home'}`).addClass('active').click();
 
+// Mobile menu close
+$('#menu li').click(hideMenu);
+
 
 
 // Footer navigation
@@ -150,5 +153,12 @@ $('#countdown-clock').FlipClock(10, {
 
 // Burger Menu
 $('#burger-menu').click(function() {
+  $('html, body').addClass('mobile-menu-open');
   console.log('test');
 });
+
+$('.overlay').click(hideMenu);
+
+function hideMenu() {
+  $('html, body').removeClass('mobile-menu-open');
+}

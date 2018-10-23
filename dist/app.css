@@ -130,6 +130,14 @@ header {
       color: white; }
 
 @media (max-width: 1099px) {
+  html.mobile-menu-open,
+  body.mobile-menu-open {
+    overflow: hidden; }
+    html.mobile-menu-open #menu,
+    html.mobile-menu-open .modal,
+    body.mobile-menu-open #menu,
+    body.mobile-menu-open .modal {
+      display: block; }
   header {
     display: flex;
     justify-content: flex-start;
@@ -142,6 +150,7 @@ header {
       background-repeat: no-repeat;
       background-position: center left; }
     header #menu {
+      display: none;
       background-color: white;
       width: 71%;
       top: 0;
@@ -159,7 +168,7 @@ header {
         color: black; }
         header #menu li:hover {
           background-color: white; }
-        header #menu li.active a {
+        header #menu li:not(#mobile-menu-heading).active a {
           background-color: #ede1fd;
           color: rgba(98, 0, 238, 0.87);
           font-weight: 600; }
@@ -910,9 +919,9 @@ header {
     font-size: 13px; }
 
 .modal {
-  border: solid 1px red; }
+  border: solid 1px red;
+  display: none; }
   .modal .overlay {
-    display: block;
     background-color: rgba(0, 0, 0, 0.32);
     position: fixed;
     top: 0;

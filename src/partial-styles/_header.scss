@@ -63,6 +63,19 @@ header {
 
 
 @media (max-width: 1099px) {
+
+  html,
+  body {
+    &.mobile-menu-open {
+      overflow: hidden;
+
+      #menu,
+      .modal {
+        display: block;
+      }
+    }
+  }
+
   header {
     display: flex;
     justify-content: flex-start;
@@ -78,6 +91,7 @@ header {
     }
 
     #menu {
+      display: none;
       background-color: white;
       width: 71%;
       top: 0;
@@ -99,7 +113,7 @@ header {
           background-color: white;
         }
 
-        &.active {
+        &:not(#mobile-menu-heading).active {
           a {
             background-color: #ede1fd;
             color: rgba(98,0,238,.87);
