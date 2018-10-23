@@ -875,7 +875,7 @@ header {
         grid-template-columns: 8.5% 57% 10.1% 10.1% 14.6%; }
         #page-leaderboard .leaderboard .leaderboard-row > div,
         #page-leaderboard .leaderboard #leaderboard-header-mobile > div {
-          padding: 15px 0;
+          padding: 16px 0;
           text-align: center; }
       #page-leaderboard .leaderboard .leaderboard-row .lb-player-icon-and-name {
         padding: 8px 10px !important; } }
