@@ -171,8 +171,7 @@ header {
           background-color: white; }
         header #menu li:not(#mobile-menu-heading).active a {
           background-color: #ede1fd;
-          color: rgba(98, 0, 238, 0.87);
-          font-weight: 600; }
+          color: rgba(98, 0, 238, 0.87); }
         header #menu li#mobile-menu-heading {
           height: auto;
           line-height: normal;
@@ -816,6 +815,7 @@ header {
   margin: 40px auto;
   font-size: 13px; }
   .leaderboard #leaderboard-header,
+  .leaderboard #leaderboard-header-mobile,
   .leaderboard .leaderboard-row {
     display: grid;
     grid-template-columns: 64px 308px 143px 143px 143px;
@@ -823,6 +823,7 @@ header {
     border-bottom: solid 1px #e0e0e0;
     box-sizing: border-box; }
     .leaderboard #leaderboard-header > div,
+    .leaderboard #leaderboard-header-mobile > div,
     .leaderboard .leaderboard-row > div {
       border-right: solid 1px #e0e0e0;
       padding: 15px;
@@ -830,6 +831,8 @@ header {
   .leaderboard #leaderboard-header {
     font-weight: bold;
     text-align: center; }
+  .leaderboard #leaderboard-header-mobile {
+    display: none; }
   .leaderboard .leaderboard-row:hover {
     background-color: #f3ebfe; }
   .leaderboard .leaderboard-row:last-child {
@@ -846,11 +849,36 @@ header {
       .leaderboard .leaderboard-row .lb-player-icon-and-name .lb-player-icon img {
         border-radius: 50%;
         width: 26px; }
+    .leaderboard .leaderboard-row .lb-player-icon-and-name .lb-player-name {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
   .leaderboard .leaderboard-row .lb-rank,
   .leaderboard .leaderboard-row .lb-wins,
   .leaderboard .leaderboard-row .lb-games-played,
   .leaderboard .leaderboard-row .lb-total-points {
     text-align: center; }
+
+@media (max-width: 1099px) {
+  #page-leaderboard {
+    padding: 0 12px; }
+    #page-leaderboard .leaderboard {
+      width: 100%; }
+      #page-leaderboard .leaderboard #leaderboard-header {
+        display: none; }
+      #page-leaderboard .leaderboard #leaderboard-header-mobile {
+        display: grid;
+        grid-template-columns: 8.5% 57% 10.1% 10.1% 14.6%;
+        font-weight: bold; }
+      #page-leaderboard .leaderboard .leaderboard-row,
+      #page-leaderboard .leaderboard #leaderboard-header-mobile {
+        grid-template-columns: 8.5% 57% 10.1% 10.1% 14.6%; }
+        #page-leaderboard .leaderboard .leaderboard-row > div,
+        #page-leaderboard .leaderboard #leaderboard-header-mobile > div {
+          padding: 15px 0;
+          text-align: center; }
+      #page-leaderboard .leaderboard .leaderboard-row .lb-player-icon-and-name {
+        padding: 7px 10px !important; } }
 
 .stats-container {
   width: 400px;

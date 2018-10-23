@@ -4,6 +4,7 @@
   font-size: 13px;
 
   #leaderboard-header,
+  #leaderboard-header-mobile,
   .leaderboard-row {
     display: grid;
     grid-template-columns: 64px 308px 143px 143px 143px;
@@ -21,6 +22,10 @@
   #leaderboard-header {
     font-weight: bold;
     text-align: center;
+  }
+
+  #leaderboard-header-mobile {
+    display: none;
   }
 
   .leaderboard-row {
@@ -50,6 +55,12 @@
           width: 26px;
         }
       }
+
+      .lb-player-name {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
   
     .lb-rank,
@@ -57,6 +68,43 @@
     .lb-games-played,
     .lb-total-points {
       text-align: center;
+    }
+  }
+}
+
+
+@media (max-width: 1099px) {
+  #page-leaderboard {
+    padding: 0 12px;
+
+    .leaderboard {
+      width: 100%;
+
+      #leaderboard-header {
+        display: none;
+      }
+
+      #leaderboard-header-mobile {
+        display: grid;
+        grid-template-columns: 8.5% 57% 10.1% 10.1% 14.6%;
+        font-weight: bold;
+      }
+
+      .leaderboard-row,
+      #leaderboard-header-mobile {
+        grid-template-columns: 8.5% 57% 10.1% 10.1% 14.6%;
+
+        > div {
+          padding: 15px 0;
+          text-align: center;
+        }
+      }
+
+      .leaderboard-row {
+        .lb-player-icon-and-name {
+          padding: 7px 10px !important;
+        }
+      }
     }
   }
 }
