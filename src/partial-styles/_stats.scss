@@ -52,11 +52,16 @@
     .stats-container {
       width: 100%;
       box-sizing: border-box;
+      padding: 20px;
 
       .player-icon{
         img {
           width: 75px;
         }
+      }
+
+      .stats-list {
+        margin-bottom: 20px;
       }
     }
   }

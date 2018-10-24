@@ -915,9 +915,12 @@ header {
     padding: 0 12px; }
     #page-stats .stats-container {
       width: 100%;
-      box-sizing: border-box; }
+      box-sizing: border-box;
+      padding: 20px; }
       #page-stats .stats-container .player-icon img {
-        width: 75px; } }
+        width: 75px; }
+      #page-stats .stats-container .stats-list {
+        margin-bottom: 20px; } }
 
 .invite-friends-container {
   width: 700px;
