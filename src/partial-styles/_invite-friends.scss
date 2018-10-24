@@ -50,3 +50,36 @@
     font-size: 13px;
   }
 }
+
+
+
+@media (max-width: 1099px) {
+  #page-invite-friends {
+    padding: 0 12px;
+
+    .invite-friends-container {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 20px;
+
+      .invite-code-container {
+        display: block;
+        width: 100%;
+
+        > div.invite-code {
+          margin-bottom: 20px;
+        }
+
+        > div.invite-icon {
+          float: left;
+          margin-right: 20px;
+          margin-bottom: 20px;
+        }
+      }
+
+      .invite-info {
+        clear: both;
+      }
+    }
+  }
+}

@@ -910,6 +910,15 @@ header {
     .stats-container .stats-list .stats-title {
       color: #7e7d7d; }
 
+@media (max-width: 1099px) {
+  #page-stats {
+    padding: 0 12px; }
+    #page-stats .stats-container {
+      width: 100%;
+      box-sizing: border-box; }
+      #page-stats .stats-container .player-icon img {
+        width: 75px; } }
+
 .invite-friends-container {
   width: 700px;
   margin: 40px auto;
@@ -947,6 +956,25 @@ header {
   .invite-friends-container .invite-info {
     color: #757575;
     font-size: 13px; }
+
+@media (max-width: 1099px) {
+  #page-invite-friends {
+    padding: 0 12px; }
+    #page-invite-friends .invite-friends-container {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 20px; }
+      #page-invite-friends .invite-friends-container .invite-code-container {
+        display: block;
+        width: 100%; }
+        #page-invite-friends .invite-friends-container .invite-code-container > div.invite-code {
+          margin-bottom: 20px; }
+        #page-invite-friends .invite-friends-container .invite-code-container > div.invite-icon {
+          float: left;
+          margin-right: 20px;
+          margin-bottom: 20px; }
+      #page-invite-friends .invite-friends-container .invite-info {
+        clear: both; } }
 
 .modal {
   border: solid 1px red;

@@ -42,3 +42,22 @@
     }
   }
 }
+
+
+
+@media (max-width: 1099px) {
+  #page-stats {
+    padding: 0 12px;
+
+    .stats-container {
+      width: 100%;
+      box-sizing: border-box;
+
+      .player-icon{
+        img {
+          width: 75px;
+        }
+      }
+    }
+  }
+}
