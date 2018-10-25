@@ -169,6 +169,8 @@ function hideMenu() {
 
 
 $(window).resize(setTabContentHeight);
+setTabContentHeight();
+
 // Lobby tab content height setter
 function setTabContentHeight() {
   const $sideBar = $('.side-bar');
