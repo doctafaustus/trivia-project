@@ -44,6 +44,7 @@ $('.tab').click(function() {
   const tabContentToShow = $currentTab.attr('data-tab-id');
   $('.tab, .tab-content').removeClass('active');
   $currentTab.add(`#${tabContentToShow}`).addClass('active');
+  setTabContentHeight();
 }); 
 $('.tab').eq(1).trigger('click');
 
@@ -155,7 +156,6 @@ $('#countdown-clock').FlipClock(10, {
 // Burger Menu
 $('#burger-menu').click(function() {
   $('html, body').addClass('mobile-menu-open');
-  console.log('test');
 });
 
 $('.overlay').click(hideMenu);
@@ -175,12 +175,20 @@ setTabContentHeight();
 // Lobby tab content height setter
 function setTabContentHeight() {
   const $sideBar = $('.side-bar');
+  const $partyMessages = $('#party-messages');
   const sideBarOffset = $sideBar.offset().top;
   const windowHeight = $(window).height();
+  const tabsHeight = $('.tabs').outerHeight();
+  const chatFormHeight = $('.chat-form').outerHeight();
+  
   const newSideBarHeight = windowHeight - sideBarOffset;
+  const newChatSize = newSideBarHeight - (tabsHeight + chatFormHeight);
+
   $sideBar.attr('style', `height: ${newSideBarHeight}px;`);
+  $partyMessages.attr('style', `height: ${newChatSize}px;`);
 
   if (windowHeight > 1099) {
     $sideBar.attr('style', 'height: auto;');
+    $partyMessages.attr('style', 'height: 451px;');
   }
 }

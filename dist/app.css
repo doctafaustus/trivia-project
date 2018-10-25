@@ -827,10 +827,12 @@ header {
         position: absolute;
         width: 100%;
         background: yellow;
-        min-height: auto; }
+        min-height: auto;
+        overflow: scroll; }
+        #page-lobby .main-top .main-top-right .side-bar #tab-party-content #party-messages {
+          height: auto; }
   #page-lobby .main-bottom {
-    display: none;
-    padding: 12px; }
+    display: none; }
     #page-lobby .main-bottom .how-to-play-container {
       display: none; } }
 

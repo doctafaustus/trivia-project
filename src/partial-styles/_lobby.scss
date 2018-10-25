@@ -299,13 +299,20 @@
           width: 100%;
           background: yellow;
           min-height: auto;
+          overflow: scroll;
+
+          #tab-party-content {
+            #party-messages {
+              height: auto;
+            }
+          }
         }
       }
     }
 
+
     .main-bottom {
       display: none;
-      padding: 12px;
 
       .how-to-play-container {
         display: none;
