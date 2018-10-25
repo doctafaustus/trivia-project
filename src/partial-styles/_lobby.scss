@@ -270,3 +270,45 @@
 }
 
 @import './party-chat';
+
+
+@media (max-width: 1099px) {
+  #page-lobby {
+    .main-top {
+      padding: 12px 0;
+      display: block;
+
+      .lobby-title {
+        height: 40px;
+        line-height: 40px;
+        font-size: 18px;
+      }
+
+      .video-container {
+        iframe {
+          height: 100% !important;
+        }
+      }
+
+      .main-top-right {
+        position: relative;
+
+        .side-bar {
+          position: absolute;
+          width: 100%;
+          background: yellow;
+          min-height: auto;
+        }
+      }
+    }
+
+    .main-bottom {
+      display: none;
+      padding: 12px;
+
+      .how-to-play-container {
+        display: none;
+      }
+    }
+  }
+}

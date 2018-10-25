@@ -162,3 +162,22 @@ $('.overlay').click(hideMenu);
 function hideMenu() {
   $('html, body').removeClass('mobile-menu-open');
 }
+
+
+
+
+
+
+$(window).resize(setTabContentHeight);
+// Lobby tab content height setter
+function setTabContentHeight() {
+  const $sideBar = $('.side-bar');
+  const sideBarOffset = $sideBar.offset().top;
+  const windowHeight = $(window).height();
+  const newSideBarHeight = windowHeight - sideBarOffset;
+  $sideBar.attr('style', `height: ${newSideBarHeight}px;`);
+
+  if (windowHeight > 1099) {
+    $sideBar.attr('style', 'height: auto;');
+  }
+}

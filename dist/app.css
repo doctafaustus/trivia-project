@@ -810,6 +810,29 @@ header {
     border-bottom: solid 1px #b8b8b8;
     background-color: #f8f8f8; }
 
+@media (max-width: 1099px) {
+  #page-lobby .main-top {
+    padding: 12px 0;
+    display: block; }
+    #page-lobby .main-top .lobby-title {
+      height: 40px;
+      line-height: 40px;
+      font-size: 18px; }
+    #page-lobby .main-top .video-container iframe {
+      height: 100% !important; }
+    #page-lobby .main-top .main-top-right {
+      position: relative; }
+      #page-lobby .main-top .main-top-right .side-bar {
+        position: absolute;
+        width: 100%;
+        background: yellow;
+        min-height: auto; }
+  #page-lobby .main-bottom {
+    display: none;
+    padding: 12px; }
+    #page-lobby .main-bottom .how-to-play-container {
+      display: none; } }
+
 .leaderboard {
   width: 800px;
   margin: 40px auto;
