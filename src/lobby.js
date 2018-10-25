@@ -202,10 +202,9 @@ function setTabContentHeight() {
 
 $('#chat-input').on('focus', function() {
   $('header, .video-container, .lobby-title').hide();
-  console.log('fu');
 });
 
 $('#chat-input').on('blur', function() {
   $('header, .video-container, .lobby-title').show();
-  console.log('fu!');
+  setTabContentHeight();
 });
