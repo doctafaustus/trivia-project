@@ -92,6 +92,12 @@ $('.chat-form').submit(function(e) {
   </li>`;
   $('#tab-party-content #party-messages').prepend(formattedMessage);
   $chatInput.val('');
+
+  // If on mobile trigger a blur event to bring down keyboard and properly reshow previously hidden content from when the keyboard was open
+  if ($(window).width() < 1099) {
+    $('#chat-input').trigger('blur');
+    setTabContentHeight();
+  }
 });
 
 
@@ -180,7 +186,7 @@ function setTabContentHeight() {
   const windowHeight = $(window).height();
   const tabsHeight = $('.tabs').outerHeight();
   const chatFormHeight = $('.chat-form').outerHeight();
-  
+
   const newSideBarHeight = windowHeight - sideBarOffset;
   const newChatSize = newSideBarHeight - (tabsHeight + chatFormHeight);
 
@@ -192,3 +198,14 @@ function setTabContentHeight() {
     $partyMessages.attr('style', 'height: 451px;');
   }
 }
+
+
+$('#chat-input').on('focus', function() {
+  $('header, .video-container, .lobby-title').hide();
+  console.log('fu');
+});
+
+$('#chat-input').on('blur', function() {
+  $('header, .video-container, .lobby-title').show();
+  console.log('fu!');
+});
