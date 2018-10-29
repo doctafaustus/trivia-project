@@ -199,12 +199,3 @@ function setTabContentHeight() {
   }
 }
 
-
-$('#chat-input').on('focus', function() {
-  $('header, .video-container, .lobby-title').hide();
-});
-
-$('#chat-input').on('blur', function() {
-  $('header, .video-container, .lobby-title').show();
-  setTabContentHeight();
-});
