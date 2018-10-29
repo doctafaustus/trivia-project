@@ -199,3 +199,11 @@ function setTabContentHeight() {
   }
 }
 
+
+$('#chat-input').on('focus', function() {
+  $('.chat-form').addClass('keyboard-open');
+});
+
+$('#chat-input').on('blur', function() {
+  $('.chat-form').removeClass('keyboard-open');
+});

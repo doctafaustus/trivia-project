@@ -85,6 +85,13 @@
     display: flex;
     background-color: #f8f8f8;
 
+    &.keyboard-open {
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      box-sizing: border-box;
+    }
+
     .chat-player-icon {
       margin-right: 12px;
 

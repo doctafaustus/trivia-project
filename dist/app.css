@@ -799,6 +799,11 @@ header {
   padding: 12px;
   display: flex;
   background-color: #f8f8f8; }
+  #tab-party-content .chat-form.keyboard-open {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    box-sizing: border-box; }
   #tab-party-content .chat-form .chat-player-icon {
     margin-right: 12px; }
     #tab-party-content .chat-form .chat-player-icon img {
