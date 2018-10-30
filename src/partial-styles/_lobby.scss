@@ -297,7 +297,7 @@
         .side-bar {
           position: absolute;
           width: 100%;
-          background: yellow;
+          background: white;
           min-height: auto;
           overflow: scroll;
 
@@ -313,6 +313,48 @@
 
     .main-bottom {
       display: none;
+      position: fixed;
+      width: 100%;
+      padding: 16px;
+      bottom: 0;
+      z-index: 100;
+
+      .invitation-list {
+        .invitation {
+          grid-template-columns: 43px auto 109px;
+          border-radius: 6px;
+          margin-bottom: 10px;
+          padding: 10px;
+          background-color: #6200ee;
+          color: white;
+
+          .invitation-middle {
+            padding-left: 10px;
+
+            .invitation-title {
+              font-size: 15px;
+              line-height: 18px;
+
+              .invitation-party-leader {
+                display: block;
+                font-weight: bold;
+              }
+            }
+          }
+
+          .invitation-right {
+            .accept,
+            .reject {
+              padding: 10px 8px;
+            }
+          }
+
+          .invitation-subtitle,
+          .invitation-learn-more {
+            display: none;
+          }
+        }
+      }
 
       .how-to-play-container {
         display: none;

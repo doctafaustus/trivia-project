@@ -831,13 +831,39 @@ header {
       #page-lobby .main-top .main-top-right .side-bar {
         position: absolute;
         width: 100%;
-        background: yellow;
+        background: white;
         min-height: auto;
         overflow: scroll; }
         #page-lobby .main-top .main-top-right .side-bar #tab-party-content #party-messages {
           height: auto; }
   #page-lobby .main-bottom {
-    display: none; }
+    display: none;
+    position: fixed;
+    width: 100%;
+    padding: 16px;
+    bottom: 0;
+    z-index: 100; }
+    #page-lobby .main-bottom .invitation-list .invitation {
+      grid-template-columns: 43px auto 109px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      padding: 10px;
+      background-color: #6200ee;
+      color: white; }
+      #page-lobby .main-bottom .invitation-list .invitation .invitation-middle {
+        padding-left: 10px; }
+        #page-lobby .main-bottom .invitation-list .invitation .invitation-middle .invitation-title {
+          font-size: 15px;
+          line-height: 18px; }
+          #page-lobby .main-bottom .invitation-list .invitation .invitation-middle .invitation-title .invitation-party-leader {
+            display: block;
+            font-weight: bold; }
+      #page-lobby .main-bottom .invitation-list .invitation .invitation-right .accept,
+      #page-lobby .main-bottom .invitation-list .invitation .invitation-right .reject {
+        padding: 10px 8px; }
+      #page-lobby .main-bottom .invitation-list .invitation .invitation-subtitle,
+      #page-lobby .main-bottom .invitation-list .invitation .invitation-learn-more {
+        display: none; }
     #page-lobby .main-bottom .how-to-play-container {
       display: none; } }
 
