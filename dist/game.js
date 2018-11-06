@@ -91,9 +91,20 @@
   !*** ./src/js/game.js ***!
   \************************/
 /*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// Add SCSS styles\r\nconst css = __webpack_require__(/*! ../style.scss */ \"./src/style.scss\");\r\n\r\n\r\n$('body').append('<div>Hello</div>');\r\n\r\nsetTimeout(() => {\r\n  $('body').append('<div>Hello World!</div>');\r\n}, 7000);\n\n//# sourceURL=webpack:///./src/js/game.js?");
+
+/***/ }),
+
+/***/ "./src/style.scss":
+/*!************************!*\
+  !*** ./src/style.scss ***!
+  \************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("$('body').append('<div>Hello</div>');\r\n\r\nsetTimeout(() => {\r\n  $('body').append('<div>Hello World!</div>');\r\n}, 7000);\n\n//# sourceURL=webpack:///./src/js/game.js?");
+eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./src/style.scss?");
 
 /***/ })
 
