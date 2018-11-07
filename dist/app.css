@@ -1492,6 +1492,41 @@ header {
           height: 25px;
           text-align: center;
           line-height: 25px; }
+  .game-wrapper .question-answer-wrapper {
+    margin-top: 40px;
+    padding: 60px;
+    position: relative; }
+    .game-wrapper .question-answer-wrapper .question-counter {
+      color: #7e7d7d;
+      position: absolute;
+      top: 15px;
+      right: 15px; }
+    .game-wrapper .question-answer-wrapper .question-title {
+      text-align: center;
+      font-size: 34px;
+      margin-bottom: 60px;
+      font-family: 'Open Sans', Arial; }
+    .game-wrapper .question-answer-wrapper .answer-wrapper {
+      text-align: center; }
+      .game-wrapper .question-answer-wrapper .answer-wrapper .answers-a-b .answer,
+      .game-wrapper .question-answer-wrapper .answer-wrapper .answers-c-d .answer {
+        outline: none;
+        border: none;
+        background-color: #6200ee;
+        color: white;
+        border-radius: 2px;
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+        padding: 14px 0;
+        width: 250px;
+        font-size: 16px;
+        font-family: 'Open Sans', Arial; }
+      .game-wrapper .question-answer-wrapper .answer-wrapper .answers-a-b #answer-a,
+      .game-wrapper .question-answer-wrapper .answer-wrapper .answers-a-b #answer-c,
+      .game-wrapper .question-answer-wrapper .answer-wrapper .answers-c-d #answer-a,
+      .game-wrapper .question-answer-wrapper .answer-wrapper .answers-c-d #answer-c {
+        margin-right: 14px; }
+    .game-wrapper .question-answer-wrapper .answers-a-b {
+      margin-bottom: 20px; }
 
 @media (max-width: 768px) {
   .game-wrapper .party-scores .party-score-container {

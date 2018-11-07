@@ -13,6 +13,7 @@
   ${require('./partials/header-shorthand.html')}
 
   <div class="game-wrapper">
+
     <div class="party-scores">
       <div class="party-score-container">
         <div class="party-score-top">
@@ -55,6 +56,25 @@
         </div>
       </div>
     </div>
+
+    <div class="question-answer-wrapper box">
+      <div class="question-counter">
+        <span id="question-counter-current">1</span> / <span id="question-counter-total">20</span>
+      </div>
+      <h1 class="question-title">What is the closest planet to the Sun?</h1>
+
+      <div class="answer-wrapper">
+        <div class="answers-a-b">
+            <button id="answer-a" class="answer">Mars</button>
+            <button id="answer-b" class="answer">Earth</button>
+        </div>
+        <div class="answers-c-d">
+            <button id="answer-c" class="answer">Mercury</button>
+            <button id="answer-d" class="answer">Venus</button>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <script src="../src/js/jquery.js"></script>
