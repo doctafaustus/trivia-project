@@ -59,36 +59,39 @@
       right: 15px;
     }
 
+    #question-cat {
+      display: block;
+      margin: 0 auto 40px auto;
+      width: 75px;
+    }
+
     .question-title {
       text-align: center;
       font-size: 34px;
-      margin-bottom: 60px;
+      margin-bottom: 50px;
       font-family: 'Open Sans', Arial;
     }
 
     .answer-wrapper {
       text-align: center;
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-auto-rows: 1fr;
+      grid-gap: 16px;
+      width: 550px;
+      margin: 0 auto;
 
-      .answers-a-b,
-      .answers-c-d {
-        .answer {
-          outline: none;
-          border: none;
-          background-color: #6200ee;
-          color: white;
-          border-radius: 2px;
-          box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.2);
-          padding: 14px 0;
-          width: 250px;
-          font-size: 16px;
-          font-family: 'Open Sans', Arial;
-        }
-
-        #answer-a,
-        #answer-c {
-          margin-right: 14px;
-        }
-      }
+      .answer {
+        outline: none;
+        border: none;
+        background-color: #6200ee;
+        color: white;
+        border-radius: 2px;
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+        padding: 14px;
+        font-size: 18px;
+        font-family: 'Open Sans', Arial;
+      }      
     }
 
     .answers-a-b {
