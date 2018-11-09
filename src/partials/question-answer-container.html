@@ -1,16 +1,26 @@
 <div class="question-answer-wrapper box">
-    <div class="question-counter">
-      <span id="question-counter-current">1</span> / <span id="question-counter-total">20</span>
-    </div>
 
-    <img id="question-cat" class="wiggle" src="../../src/images/question-cat.png">
+  <div class="status-bar">Compiling scores<span id="status-dots"></span></div>
 
-    <h1 class="question-title">What is the closest planet to the Sun?</h1>
-
-    <div class="answer-wrapper">
-        <button id="answer-a" class="answer">Mars</button>
-        <button id="answer-b" class="answer">Earth</button>
-        <button id="answer-c" class="answer">Mercury</button>
-        <button id="answer-d" class="answer">Venus</button>
-    </div>
+  <div class="question-counter">
+    <span id="question-counter-current">1</span> / <span id="question-counter-total">20</span>
   </div>
+
+  <img id="question-cat" class="wiggle" src="../../src/images/question-cat.png">
+  <div id="countdown">
+    <div id="countdown-number"></div>
+    <svg>
+      <circle r="18" cx="20" cy="20"></circle>
+    </svg>
+  </div>
+
+  <h1 class="question-title">What is the closest planet to the Sun?</h1>
+
+  <div class="answer-wrapper">
+      <button id="answer-a" class="answer">Mars</button>
+      <button id="answer-b" class="answer">Earth</button>
+      <button id="answer-c" class="answer">Mercury</button>
+      <button id="answer-d" class="answer">Venus</button>
+  </div>
+
+</div>

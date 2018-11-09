@@ -52,6 +52,14 @@
     padding: 60px;
     position: relative;
 
+    .status-bar {
+      color: #7e7d7d;
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      font-style: italic;
+    }
+
     .question-counter {
       color: #7e7d7d;
       position: absolute;
@@ -72,6 +80,41 @@
       }
     }
 
+    #countdown {
+      display: none;
+      position: relative;
+      margin: auto;
+      height: 40px;
+      width: 40px;
+      text-align: center;
+
+      #countdown-number {
+        color: white;
+        display: inline-block;
+        line-height: 40px;
+        color: black;
+      }
+
+      svg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        transform: rotateY(-180deg) rotateZ(-90deg);
+  
+        circle {
+          stroke-dasharray: 113px;
+          stroke-dashoffset: 0px;
+          stroke-linecap: round;
+          stroke-width: 2px;
+          stroke: #6200ee;
+          fill: none;
+          animation: countdown 10s linear infinite forwards;
+        }
+      }
+    }
+    
     .question-title {
       text-align: center;
       font-size: 34px;
@@ -165,6 +208,11 @@
     .question-answer-wrapper {
       padding: 20px;
       margin-top: 10px;
+
+      .status-bar,
+      .question-counter {
+        font-size: 12px;
+      }
       
       #question-cat {
         margin-bottom: 20px;
@@ -198,4 +246,13 @@
   50% {transform: rotate(20deg);}
   75% {transform: rotate(-5deg);}
   100% {transform: rotate(0deg);}
+}
+
+@keyframes countdown {
+  from {
+    stroke-dashoffset: 0px;
+  }
+  to {
+    stroke-dashoffset: 113px;
+  }
 }

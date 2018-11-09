@@ -2,8 +2,25 @@
 const css = require('../style.scss');
 
 
-$('body').append('<div>Hello</div>');
+const countdownNumberEl = document.getElementById('countdown-number');
+let countdown = 10;
+countdownNumberEl.textContent = countdown;
+
+const timer = setInterval(() => {
+  countdown = --countdown <= 0 ? 10 : countdown;
+  countdownNumberEl.textContent = countdown;
+}, 1000);
 
 setTimeout(() => {
-  $('body').append('<div>Hello World!</div>');
-}, 7000);
+  clearInterval(timer);
+}, 1000);
+
+
+// Flash status dots
+let statusDots = '';
+(function flashStatusDots() {
+  statusDots = (statusDots.length === 4) ? '' : statusDots + '.';
+  $('#status-dots').text(statusDots);
+  //setTimeout(flashStatusDots, 425);
+})();
+

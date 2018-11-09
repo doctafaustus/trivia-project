@@ -1496,6 +1496,12 @@ header {
     margin-top: 40px;
     padding: 60px;
     position: relative; }
+    .game-wrapper .question-answer-wrapper .status-bar {
+      color: #7e7d7d;
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      font-style: italic; }
     .game-wrapper .question-answer-wrapper .question-counter {
       color: #7e7d7d;
       position: absolute;
@@ -1510,6 +1516,33 @@ header {
         animation-duration: 1000ms;
         animation-iteration-count: 1;
         animation-timing-function: ease-in-out; }
+    .game-wrapper .question-answer-wrapper #countdown {
+      display: none;
+      position: relative;
+      margin: auto;
+      height: 40px;
+      width: 40px;
+      text-align: center; }
+      .game-wrapper .question-answer-wrapper #countdown #countdown-number {
+        color: white;
+        display: inline-block;
+        line-height: 40px;
+        color: black; }
+      .game-wrapper .question-answer-wrapper #countdown svg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        transform: rotateY(-180deg) rotateZ(-90deg); }
+        .game-wrapper .question-answer-wrapper #countdown svg circle {
+          stroke-dasharray: 113px;
+          stroke-dashoffset: 0px;
+          stroke-linecap: round;
+          stroke-width: 2px;
+          stroke: #6200ee;
+          fill: none;
+          animation: countdown 10s linear infinite forwards; }
     .game-wrapper .question-answer-wrapper .question-title {
       text-align: center;
       font-size: 34px;
@@ -1573,6 +1606,9 @@ header {
     .game-wrapper .question-answer-wrapper {
       padding: 20px;
       margin-top: 10px; }
+      .game-wrapper .question-answer-wrapper .status-bar,
+      .game-wrapper .question-answer-wrapper .question-counter {
+        font-size: 12px; }
       .game-wrapper .question-answer-wrapper #question-cat {
         margin-bottom: 20px;
         width: 50px; }
@@ -1598,3 +1634,9 @@ header {
     transform: rotate(-5deg); }
   100% {
     transform: rotate(0deg); } }
+
+@keyframes countdown {
+  from {
+    stroke-dashoffset: 0px; }
+  to {
+    stroke-dashoffset: 113px; } }

@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// Add SCSS styles\r\nconst css = __webpack_require__(/*! ../style.scss */ \"./src/style.scss\");\r\n\r\n\r\n$('body').append('<div>Hello</div>');\r\n\r\nsetTimeout(() => {\r\n  $('body').append('<div>Hello World!</div>');\r\n}, 7000);\n\n//# sourceURL=webpack:///./src/js/game.js?");
+eval("// Add SCSS styles\r\nconst css = __webpack_require__(/*! ../style.scss */ \"./src/style.scss\");\r\n\r\n\r\nconst countdownNumberEl = document.getElementById('countdown-number');\r\nlet countdown = 10;\r\ncountdownNumberEl.textContent = countdown;\r\n\r\nconst timer = setInterval(() => {\r\n  countdown = --countdown <= 0 ? 10 : countdown;\r\n  countdownNumberEl.textContent = countdown;\r\n}, 1000);\r\n\r\nsetTimeout(() => {\r\n  clearInterval(timer);\r\n}, 1000);\r\n\r\n\r\n// Flash status dots\r\nlet statusDots = '';\r\n(function flashStatusDots() {\r\n  statusDots = (statusDots.length === 4) ? '' : statusDots + '.';\r\n  $('#status-dots').text(statusDots);\r\n  //setTimeout(flashStatusDots, 425);\r\n})();\r\n\r\n\n\n//# sourceURL=webpack:///./src/js/game.js?");
 
 /***/ }),
 
