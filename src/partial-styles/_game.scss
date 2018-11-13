@@ -142,6 +142,7 @@
         padding: 14px;
         font-size: 18px;
         font-family: 'Open Sans', Arial;
+        cursor: pointer;
 
         &:hover {
           background-color: #ff9800;
@@ -153,6 +154,26 @@
 
     .answers-a-b {
       margin-bottom: 20px;
+    }
+  }
+
+  .game-chat {
+    border: solid 1px red;
+    margin-top: 20px;
+
+    #party-messages {
+      li {
+        display: grid;
+        align-items: center;
+        padding: 6px 12px;
+
+        .player-icon {
+          img {
+            border-radius: 50%;
+            width: 24px;
+          }
+        }
+      }
     }
   }
 }

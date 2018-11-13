@@ -751,37 +751,48 @@ header {
     top: 24px;
     right: 24px; }
 
-#tab-party-content #party-messages {
+#tab-party-content #party-messages,
+.game-chat #party-messages {
   height: 451px;
   overflow-y: scroll;
   display: flex;
   flex-direction: column-reverse; }
-  #tab-party-content #party-messages > li {
+  #tab-party-content #party-messages > li,
+  .game-chat #party-messages > li {
     grid-template-columns: 33px auto 18px;
     font-size: 13px;
     border-top: none;
     position: relative; }
-    #tab-party-content #party-messages > li:first-child {
+    #tab-party-content #party-messages > li:first-child,
+    .game-chat #party-messages > li:first-child {
       padding-bottom: 20px; }
-    #tab-party-content #party-messages > li:hover .chat-submenu .chat-submenu-dots {
+    #tab-party-content #party-messages > li:hover .chat-submenu .chat-submenu-dots,
+    .game-chat #party-messages > li:hover .chat-submenu .chat-submenu-dots {
       display: block; }
-    #tab-party-content #party-messages > li.submenu-open .chat-submenu .boot {
+    #tab-party-content #party-messages > li.submenu-open .chat-submenu .boot,
+    .game-chat #party-messages > li.submenu-open .chat-submenu .boot {
       display: block; }
-    #tab-party-content #party-messages > li .player-icon {
+    #tab-party-content #party-messages > li .player-icon,
+    .game-chat #party-messages > li .player-icon {
       display: inline;
       margin-right: 10px;
       align-self: flex-start; }
-    #tab-party-content #party-messages > li .name-and-message .player-name {
+    #tab-party-content #party-messages > li .name-and-message .player-name,
+    .game-chat #party-messages > li .name-and-message .player-name {
       color: #5f84f1;
       font-weight: bold;
       margin-right: 4px; }
-    #tab-party-content #party-messages > li .name-and-message .message {
+    #tab-party-content #party-messages > li .name-and-message .message,
+    .game-chat #party-messages > li .name-and-message .message {
       line-height: 15px; }
-    #tab-party-content #party-messages > li .chat-submenu {
+    #tab-party-content #party-messages > li .chat-submenu,
+    .game-chat #party-messages > li .chat-submenu {
       align-self: flex-start; }
-      #tab-party-content #party-messages > li .chat-submenu .chat-submenu-dots {
+      #tab-party-content #party-messages > li .chat-submenu .chat-submenu-dots,
+      .game-chat #party-messages > li .chat-submenu .chat-submenu-dots {
         display: none; }
-      #tab-party-content #party-messages > li .chat-submenu .boot {
+      #tab-party-content #party-messages > li .chat-submenu .boot,
+      .game-chat #party-messages > li .chat-submenu .boot {
         display: none;
         background-color: white;
         position: absolute;
@@ -792,23 +803,29 @@ header {
         z-index: 10;
         cursor: pointer;
         font-size: 12px; }
-        #tab-party-content #party-messages > li .chat-submenu .boot:hover {
+        #tab-party-content #party-messages > li .chat-submenu .boot:hover,
+        .game-chat #party-messages > li .chat-submenu .boot:hover {
           background-color: #f8f8f8; }
 
-#tab-party-content .chat-form {
+#tab-party-content .chat-form,
+.game-chat .chat-form {
   padding: 12px;
   display: flex;
   background-color: #f8f8f8; }
-  #tab-party-content .chat-form.keyboard-open {
+  #tab-party-content .chat-form.keyboard-open,
+  .game-chat .chat-form.keyboard-open {
     width: 100%;
     position: fixed;
     bottom: 0;
     box-sizing: border-box; }
-  #tab-party-content .chat-form .chat-player-icon {
+  #tab-party-content .chat-form .chat-player-icon,
+  .game-chat .chat-form .chat-player-icon {
     margin-right: 12px; }
-    #tab-party-content .chat-form .chat-player-icon img {
+    #tab-party-content .chat-form .chat-player-icon img,
+    .game-chat .chat-form .chat-player-icon img {
       border-radius: 50%; }
-  #tab-party-content .chat-form #chat-input {
+  #tab-party-content .chat-form #chat-input,
+  .game-chat .chat-form #chat-input {
     width: 100%;
     outline: none;
     border: none;
@@ -1566,11 +1583,22 @@ header {
         box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.2);
         padding: 14px;
         font-size: 18px;
-        font-family: 'Open Sans', Arial; }
+        font-family: 'Open Sans', Arial;
+        cursor: pointer; }
         .game-wrapper .question-answer-wrapper .answer-wrapper .answer:hover {
           background-color: #ff9800; }
     .game-wrapper .question-answer-wrapper .answers-a-b {
       margin-bottom: 20px; }
+  .game-wrapper .game-chat {
+    border: solid 1px red;
+    margin-top: 20px; }
+    .game-wrapper .game-chat #party-messages li {
+      display: grid;
+      align-items: center;
+      padding: 6px 12px; }
+      .game-wrapper .game-chat #party-messages li .player-icon img {
+        border-radius: 50%;
+        width: 24px; }
 
 @media (max-width: 768px) {
   .game-wrapper {

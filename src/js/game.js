@@ -24,3 +24,33 @@ let statusDots = '';
   //setTimeout(flashStatusDots, 425);
 })();
 
+
+
+// Chat functionality
+$('.chat-form').submit(function(e) {
+  e.preventDefault();
+  const $chatInput = $('#chat-input');
+  const message = $chatInput.val();
+  console.log('message', message);
+  if (message.trim() === '') return console.log('No message');
+  const randomNum = Math.floor(Math.random() * 1000);
+  const formattedMessage = `<li>
+    <div class="player-icon">
+      <img src="https://api.adorable.io/avatars/40/${randomNum}@adorable.png">
+    </div>
+    <div class="name-and-message">
+      <span class="player-name">${randomNum}</span>
+      <span class="message">${message}</span>
+    </div>
+    <div class="chat-submenu">
+      <svg class="chat-submenu-dots" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="style-scope yt-icon">
+        <g class="style-scope yt-icon">
+          <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" class="style-scope yt-icon"></path>
+        </g>
+      </svg>
+      <div class="boot">Remove from party</div>
+    </div>
+  </li>`;
+  $('#party-messages').prepend(formattedMessage);
+  $chatInput.val('');
+});
