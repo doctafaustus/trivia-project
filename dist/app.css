@@ -1496,6 +1496,8 @@ header {
         .game-wrapper .party-scores .party-score-container .party-score-top .party-score-icon {
           margin-right: 10px;
           border-radius: 50%; }
+        .game-wrapper .party-scores .party-score-container .party-score-top .party-score-points {
+          display: none; }
       .game-wrapper .party-scores .party-score-container .party-score-bottom {
         display: flex;
         justify-content: space-between;
@@ -1590,17 +1592,28 @@ header {
     .game-wrapper .question-answer-wrapper .answers-a-b {
       margin-bottom: 20px; }
   .game-wrapper .game-chat {
-    border: solid 1px red;
-    margin-top: 20px; }
-    .game-wrapper .game-chat #party-messages li {
-      display: grid;
-      align-items: center;
-      padding: 6px 12px; }
-      .game-wrapper .game-chat #party-messages li .player-icon img {
-        border-radius: 50%;
-        width: 24px; }
+    margin: 20px auto 0 auto;
+    width: 550px; }
+    .game-wrapper .game-chat #party-messages {
+      height: 345px; }
+      .game-wrapper .game-chat #party-messages li {
+        display: grid;
+        align-items: center;
+        padding: 6px 12px; }
+        .game-wrapper .game-chat #party-messages li .player-icon img {
+          border-radius: 50%;
+          width: 24px; }
 
 @media (max-width: 768px) {
+  header {
+    height: 24px;
+    display: block; }
+    header #logo {
+      display: none; }
+    header #logo-text {
+      font-size: 13px;
+      text-align: center;
+      line-height: 24px; }
   .game-wrapper {
     padding: 0;
     margin-top: 10px; }
@@ -1612,25 +1625,25 @@ header {
       .game-wrapper .party-scores .party-score-container .party-score-top {
         background-color: transparent;
         border: none;
-        display: block;
+        display: grid;
+        grid-template-columns: 20px 1fr;
         text-align: center; }
         .game-wrapper .party-scores .party-score-container .party-score-top .party-score-icon {
-          width: 26px;
-          margin-bottom: 3px;
+          width: 20px;
           margin-right: 0; }
         .game-wrapper .party-scores .party-score-container .party-score-top .party-score-name {
           color: black;
-          font-size: 11px; }
-      .game-wrapper .party-scores .party-score-container .party-score-bottom {
-        display: block;
-        text-align: center;
-        padding-top: 5px;
-        padding-bottom: 0; }
-        .game-wrapper .party-scores .party-score-container .party-score-bottom .party-score-rank {
-          display: none; }
-        .game-wrapper .party-scores .party-score-container .party-score-bottom .party-score-points {
+          font-size: 11px;
+          grid-column: 1/-1;
+          padding-top: 4px; }
+        .game-wrapper .party-scores .party-score-container .party-score-top .party-score-points {
           color: #6200ee;
-          font-weight: bold; }
+          font-weight: bold;
+          display: block;
+          justify-self: start;
+          padding-left: 5px; }
+      .game-wrapper .party-scores .party-score-container .party-score-bottom {
+        display: none; }
     .game-wrapper .question-answer-wrapper {
       padding: 20px;
       margin-top: 10px; }
@@ -1649,7 +1662,10 @@ header {
         width: 100%; }
         .game-wrapper .question-answer-wrapper .answer-wrapper .answer {
           font-size: 15px;
-          padding: 12px 8px; } }
+          padding: 12px 8px; }
+    .game-wrapper .game-chat {
+      margin: 20px auto 0 auto;
+      width: 100%; } }
 
 @keyframes wiggle {
   0% {
