@@ -205,6 +205,7 @@
   .game-wrapper {
     padding: 0;
     margin-top: 10px;
+    margin-bottom: 0;
 
     .party-scores {
       .party-score-container {
@@ -248,7 +249,7 @@
     }
 
     .question-answer-wrapper {
-      padding: 20px;
+      padding: 13px;
       margin-top: 10px;
 
       .status-bar,
@@ -257,12 +258,12 @@
       }
       
       #question-cat {
-        margin-bottom: 20px;
+        margin-bottom: 14px;
         width: 50px;
       }
 
       .question-title {
-        margin-bottom: 30px;
+        margin-bottom: 24px;
         font-size: 22px;
         line-height: 28px;
         text-align: left;
@@ -279,7 +280,7 @@
     }
 
     .game-chat {
-      margin: 20px auto 0 auto;
+      margin: 12px auto 0 auto;
       width: 100%;
     }
   }

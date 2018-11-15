@@ -54,3 +54,20 @@ $('.chat-form').submit(function(e) {
   $('#party-messages').prepend(formattedMessage);
   $chatInput.val('');
 });
+
+
+$(window).resize(setTabContentHeight);
+setTabContentHeight();
+
+// Lobby tab content height setter
+function setTabContentHeight() {
+  const $chat = $('.game-chat');
+  const chatOffset = $chat.offset().top;
+  const chatFormHeight = $('.chat-form').outerHeight();
+  const windowHeight = $(window).height();
+  const newChatHeight = windowHeight - (chatOffset + chatFormHeight) - 5;
+
+  console.log(newChatHeight);
+  $('#party-messages').attr('style', `height: ${newChatHeight}px;`);
+}
+

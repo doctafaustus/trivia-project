@@ -1616,7 +1616,8 @@ header {
       line-height: 24px; }
   .game-wrapper {
     padding: 0;
-    margin-top: 10px; }
+    margin-top: 10px;
+    margin-bottom: 0; }
     .game-wrapper .party-scores .party-score-container {
       width: 25%;
       overflow: hidden;
@@ -1645,16 +1646,16 @@ header {
       .game-wrapper .party-scores .party-score-container .party-score-bottom {
         display: none; }
     .game-wrapper .question-answer-wrapper {
-      padding: 20px;
+      padding: 13px;
       margin-top: 10px; }
       .game-wrapper .question-answer-wrapper .status-bar,
       .game-wrapper .question-answer-wrapper .question-counter {
         font-size: 12px; }
       .game-wrapper .question-answer-wrapper #question-cat {
-        margin-bottom: 20px;
+        margin-bottom: 14px;
         width: 50px; }
       .game-wrapper .question-answer-wrapper .question-title {
-        margin-bottom: 30px;
+        margin-bottom: 24px;
         font-size: 22px;
         line-height: 28px;
         text-align: left; }
@@ -1664,7 +1665,7 @@ header {
           font-size: 15px;
           padding: 12px 8px; }
     .game-wrapper .game-chat {
-      margin: 20px auto 0 auto;
+      margin: 12px auto 0 auto;
       width: 100%; } }
 
 @keyframes wiggle {
