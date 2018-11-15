@@ -186,7 +186,7 @@
 
 @media (max-width: 768px) {
 
-  header {
+  header.game-mode {
     height: 24px;
     display: block;
 
@@ -264,7 +264,7 @@
 
       .question-title {
         margin-bottom: 24px;
-        font-size: 18px;
+        font-size: 13px;
         line-height: 15px;
         text-align: left;
       }

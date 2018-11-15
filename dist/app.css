@@ -1605,12 +1605,12 @@ header {
           width: 24px; }
 
 @media (max-width: 768px) {
-  header {
+  header.game-mode {
     height: 24px;
     display: block; }
-    header #logo {
+    header.game-mode #logo {
       display: none; }
-    header #logo-text {
+    header.game-mode #logo-text {
       font-size: 13px;
       text-align: center;
       line-height: 24px; }
@@ -1656,7 +1656,7 @@ header {
         width: 50px; }
       .game-wrapper .question-answer-wrapper .question-title {
         margin-bottom: 24px;
-        font-size: 18px;
+        font-size: 13px;
         line-height: 15px;
         text-align: left; }
       .game-wrapper .question-answer-wrapper .answer-wrapper {

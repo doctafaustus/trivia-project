@@ -1,6 +1,8 @@
 // Add SCSS styles
 const css = require('../style.scss');
 
+$('header').addClass('game-mode');
+
 
 const countdownNumberEl = document.getElementById('countdown-number');
 let countdown = 10;
