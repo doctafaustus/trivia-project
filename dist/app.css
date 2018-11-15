@@ -1656,17 +1656,23 @@ header {
         width: 50px; }
       .game-wrapper .question-answer-wrapper .question-title {
         margin-bottom: 24px;
-        font-size: 22px;
-        line-height: 28px;
+        font-size: 18px;
+        line-height: 15px;
         text-align: left; }
       .game-wrapper .question-answer-wrapper .answer-wrapper {
         width: 100%; }
         .game-wrapper .question-answer-wrapper .answer-wrapper .answer {
           font-size: 15px;
-          padding: 12px 8px; }
+          padding: 10px 8px; }
     .game-wrapper .game-chat {
       margin: 12px auto 0 auto;
-      width: 100%; } }
+      width: 100%; }
+      .game-wrapper .game-chat #party-messages li {
+        padding: 4px 12px; }
+      .game-wrapper .game-chat .chat-form {
+        padding: 6px; }
+        .game-wrapper .game-chat .chat-form .chat-player-icon img {
+          width: 35px; } }
 
 @keyframes wiggle {
   0% {

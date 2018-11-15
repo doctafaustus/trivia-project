@@ -264,8 +264,8 @@
 
       .question-title {
         margin-bottom: 24px;
-        font-size: 22px;
-        line-height: 28px;
+        font-size: 18px;
+        line-height: 15px;
         text-align: left;
       }
 
@@ -274,7 +274,7 @@
 
         .answer {
           font-size: 15px;
-          padding: 12px 8px;
+          padding: 10px 8px;
         }
       }
     }
@@ -282,6 +282,23 @@
     .game-chat {
       margin: 12px auto 0 auto;
       width: 100%;
+
+      #party-messages {
+        li {
+          padding: 4px 12px;
+        }
+      }
+
+      .chat-form {
+        padding: 6px;
+
+        .chat-player-icon {
+          img {
+            width: 35px;
+          }
+        }
+      }
+      
     }
   }
 }
