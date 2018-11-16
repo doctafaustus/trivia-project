@@ -200,10 +200,18 @@ function setTabContentHeight() {
 }
 
 
+
 $('#chat-input').on('focus', function() {
+  if (!isMobile()) return;
   $('.chat-form').addClass('keyboard-open');
 });
 
 $('#chat-input').on('blur', function() {
+  if (!isMobile()) return;
   $('.chat-form').removeClass('keyboard-open');
 });
+
+
+function isMobile() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent);
+}

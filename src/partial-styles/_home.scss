@@ -254,7 +254,20 @@
 }
 
 
-@media (max-width: 1099px) {
+@media (min-width: 767px) and (max-width: 1110px) {
+  .hero-container {
+    background-position: right center;
+
+    .hero-container-text {
+      left: 0;
+      right: 0;
+      margin: 142px auto 0 auto;
+    }
+  }
+}
+
+
+@media (max-width: 767px) {
 
   // Mobile Hero Section
   .mobile-hero {

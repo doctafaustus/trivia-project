@@ -272,7 +272,31 @@
 @import './party-chat';
 
 
-@media (max-width: 1099px) {
+@media (min-width: 767px) and (max-width: 945px) {
+  .side-bar .tabs .tab .tab-title {
+    height: 33px;
+    box-sizing: border-box;
+    font-size: 10.5px;
+  }
+
+  .how-to-play-container {
+    .how-to-play-icon {
+      width: 30px;
+    }
+
+    .how-to-play-title {
+      margin: 4px 0 0 10px;
+    }
+
+    .how-to-play-subtitle {
+      font-size: 13px;
+      line-height: 17px;
+    }
+  }
+}
+
+
+@media (max-width: 767px) {
   #page-lobby {
     .main-top {
       padding: 0;

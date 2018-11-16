@@ -62,7 +62,26 @@ header {
 
 
 
-@media (max-width: 1099px) {
+@media (min-width: 768px) and (max-width: 904px) {
+  header {
+    grid-template-columns: 39px 199px auto;
+
+    #logo {
+      width: 35px;
+    }
+
+    #logo-text {
+      font-size: 15px;
+    }
+
+    #menu li {
+      padding: 0 6px;
+    }
+  }
+}
+
+
+@media (max-width: 767px) {
 
   html,
   body {
