@@ -1,7 +1,9 @@
+import auth0 from './js/auth0';
+
+auth0();
+
 // Add SCSS styles
 const css = require('./style.scss');
-
-console.log('Hello world....');
 
 // Invitation Learn More
 $('.invitation-list').on('click', '.toggle-learn-more', function(e) {
