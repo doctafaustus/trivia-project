@@ -57,7 +57,7 @@ export default function test() {
     webAuth.parseHash(function(err, authResult) {
       console.log('parsing hash');
       if (authResult && authResult.accessToken && authResult.idToken) {
-        //window.location.hash = '';
+        window.location.hash = 'profile';
         console.log('LOGGED IN', authResult);
         setSession(authResult);
       } else if (err) {

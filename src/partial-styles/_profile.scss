@@ -1,4 +1,4 @@
-.stats-container {
+.profile-container {
   width: 400px;
   margin: 40px auto;
   padding: 40px;
@@ -6,9 +6,39 @@
   
   .player-icon {
     margin-bottom: 20px;
+    display: inline-block;
+    border-radius: 50%;
+    position: relative;
 
-    img {
+    .profile-image-overlay {
+      display: none;
+      background-color: rgba(63, 63, 86, 0.63);
+      position: absolute;
+      width: 100%;
+      height: 100%;
       border-radius: 50%;
+      color: white;
+
+      .profile-image-overlay-text {
+        position: absolute;
+        top: 27px;
+        font-size: 14px;
+        width: 100%;
+
+        .camera-icon {
+          display: inline-block;
+        }
+      }
+    }
+
+    > img {
+      border-radius: 50%;
+    }
+
+    &:hover {
+      .profile-image-overlay {
+        display: block;
+      }
     }
   }
 
@@ -24,20 +54,20 @@
     color: #7e7d7d;
   }
 
-  .stats-list {
+  .profile-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 30px;
     margin-bottom: 40px;
 
-    .stats-value {
+    .profile-value {
       font-size: 45px;
       margin-bottom: 8px;
       color: #5f84f1;
       font-weight: bold;
     }
 
-    .stats-title {
+    .profile-title {
       color: #7e7d7d;
     }
   }
@@ -46,10 +76,10 @@
 
 
 @media (max-width: 767px) {
-  #page-stats {
+  #page-profile {
     padding: 0 12px;
 
-    .stats-container {
+    .profile-container {
       width: 100%;
       box-sizing: border-box;
       padding: 20px;
@@ -60,7 +90,7 @@
         }
       }
 
-      .stats-list {
+      .profile-list {
         margin-bottom: 20px;
       }
     }
