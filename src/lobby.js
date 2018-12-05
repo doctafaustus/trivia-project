@@ -1,9 +1,17 @@
 import auth0 from './js/auth0';
-
-auth0();
+import profileUpdate from './js/profile-update';
 
 // Add SCSS styles
 const css = require('./style.scss');
+
+
+// Handle authentication
+auth0();
+
+// Handle profile registration / update
+profileUpdate();
+
+
 
 // Invitation Learn More
 $('.invitation-list').on('click', '.toggle-learn-more', function(e) {
