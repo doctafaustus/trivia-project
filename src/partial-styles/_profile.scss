@@ -20,10 +20,6 @@
     .profile-save {
       display: inline-block;
     }
-
-    .player-icon .profile-image-overlay {
-      display: block;
-    }
   }
   
   .player-icon {
@@ -59,7 +55,8 @@
       width: 100px;
     }
 
-    &:hover {
+    &:hover,
+    &.init-edit {
       .profile-image-overlay {
         display: block;
       }
@@ -128,12 +125,6 @@
       width: 100%;
       box-sizing: border-box;
       padding: 20px;
-
-      .player-icon{
-        #profile-image {
-          width: 75px;
-        }
-      }
 
       .profile-list {
         margin-bottom: 20px;

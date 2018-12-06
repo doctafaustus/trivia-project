@@ -1025,8 +1025,6 @@ header {
     margin-bottom: 0; }
   .profile-container.edit-mode .profile-save {
     display: inline-block; }
-  .profile-container.edit-mode .player-icon .profile-image-overlay {
-    display: block; }
   .profile-container .player-icon {
     margin-bottom: 20px;
     display: inline-block;
@@ -1051,7 +1049,7 @@ header {
       border-radius: 50%;
       height: 100px;
       width: 100px; }
-    .profile-container .player-icon:hover .profile-image-overlay {
+    .profile-container .player-icon:hover .profile-image-overlay, .profile-container .player-icon.init-edit .profile-image-overlay {
       display: block; }
   .profile-container .player-name #player-name-input {
     border: solid 1px #b8b8b8;
@@ -1096,8 +1094,6 @@ header {
       width: 100%;
       box-sizing: border-box;
       padding: 20px; }
-      #page-profile .profile-container .player-icon #profile-image {
-        width: 75px; }
       #page-profile .profile-container .profile-list {
         margin-bottom: 20px; } }
 
