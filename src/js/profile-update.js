@@ -12,6 +12,7 @@ export default function profileUpdate() {
       $('#profile-image').attr('src', e.target.result);
     });
     reader.readAsDataURL(this.files[0]);
+    window.x = this.files[0];
 
     // Remove initial overlay
     $('.player-icon').removeClass('init-edit');
@@ -19,19 +20,43 @@ export default function profileUpdate() {
 
   // Save information to database
   $('.profile-save').click(function() {
+    $('.profile-validation').text('');
     const enteredName = $('#player-name-input').val();
-    const validation = validateUsername(enteredName);
+    const enteredPhoto = $('#profile-image-upload-input').val();
+    const validation = validate({enteredName, enteredPhoto});
+
+    const fd = new FormData();
+    fd.append('tags', 'cat_profile_img');
+    fd.append('profile-image', window.x);
+
+    console.log('fd', fd);
+
+    // TODO: Cleanup fd call
     if (validation) {
-      console.log('show');
-    };
+      $('.profile-validation').text(validation);
+    } else {
+      $.ajax({
+        type: 'POST',
+        url: '/register-profile',
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: fd
+      })
+      .then(data => {
+        console.log(data)
+      });
+      console.log('Submitting to server');
+    }
   });
 
-  // TODO: Show username validation messages in DOM
 }
 
-function validateUsername(username) {
+function validate({ enteredName, enteredPhoto }) {
   let errorMessage = '';
-  if (username.length > 22) errorMessage = 'Username too long (max 22 characters)';
-  if (username.length < 5) errorMessage = 'Username too short (min 5 characters)';
+  if (enteredName.length > 22) errorMessage = 'Username too long (max 22 characters)';
+  if (enteredName.length < 5) errorMessage = 'Username too short (min 5 characters)';
+  if (!enteredPhoto) errorMessage = 'Please upload a profile image';
+  
   return errorMessage;
 }

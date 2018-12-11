@@ -6,6 +6,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   mode: 'development',
   watch: true,
+  node: {
+    fs: 'empty'
+  },
   entry: {
     'lobby': './src/lobby.js',
     'demo' : './src/js/demo.js',
