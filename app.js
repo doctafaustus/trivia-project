@@ -1,9 +1,54 @@
+// Core modules
 const express = require('express');
 const app = express();
 const cloudinary = require('cloudinary');
 const fs = require('fs');
 const multer = require('multer');
 const upload = multer({ dest: 'uploads/' });
+
+// Database config
+const mongoose = require('mongoose');
+const uriUtil = require('mongodb-uri');
+const Schema = mongoose.Schema;
+const ObjectId = Schema.ObjectId;
+const dbOptions = { useNewUrlParser: true, server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }, replset: { socketOptions: { keepAlive: 1, connectTimeoutMS : 30000 } }};
+mongoose.Promise = global.Promise; // Removes deprecation warning
+
+// Connect to DB
+if (process.env.PORT) {
+  const mongodbUri = process.env.MONGODB_URI;
+  const mongooseUri = uriUtil.formatMongoose(mongodbUri);
+  mongoose.connect(mongooseUri, dbOptions);
+} else {
+  mongoose.connect('mongodb://localhost/trivia', { useNewUrlParser: true });
+}
+
+// Schema
+const playerSchema = new mongoose.Schema({
+  id: ObjectId,
+  playerName: String,
+  created: {type: Date, default: Date.now},
+});
+const Player = mongoose.model('Player', playerSchema);
+
+// Configure MongoStore options
+// This enables users to stay logged in even if the server goes down
+const mongoStoreOptions = {
+  url: process.env.PORT ? process.env.MONGODB_URI : 'mongodb://localhost/grubster',
+  ttl: 365 * 24 * 60 * 60,
+};
+
+// Express config
+app.use(express.static(`${__dirname}/dist`));
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+app.use(session({
+  secret: 'keyboard cat',
+  cookie: { maxAge: 31556952000, secure: false },
+  resave: true,
+  saveUninitialized: true,
+  store: new MongoStore(mongoStoreOptions),
+}));
 
 // Cloudinary config
 const cloudinarySecret = process.env.PORT ? process.env.CLOUDINARY_SECRET : fs.readFileSync('./private/cloudinary_secret.txt').toString();
@@ -14,8 +59,22 @@ cloudinary.config({
 });
 const cloudinaryOptions = { gravity: 'center', height: 100, width: 100 };
 
-// Express config
-app.use(express.static(`${__dirname}/dist`));
+
+app.get('/test', (req, res) => {
+  console.log('/test');
+
+  const player = new Player({
+    playerName: 'testman'
+  });
+
+  player.save((err, user) => {
+    if (err) console.log(err);
+    console.log('User saved!', user);
+    res.json(user);
+  });
+
+});
+
 
 // Home page
 app.get('/', (req, res) => {
@@ -30,15 +89,16 @@ app.get('/game', (req, res) => {
 
 // Register profile
 app.post('/register-profile', upload.single('profile-image'), (req, res) => {
-  console.log('FILE URL', req.file.path);
+
   cloudinary.uploader.upload(req.file.path,
     function(result) {
       console.log('result', result);
       fs.unlink(req.file.path, err => {});
+
+      res.sendStatus(200);
     },
   cloudinaryOptions);
 
-  res.sendStatus(200);
 });
 
 // Listen on port 3000
