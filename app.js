@@ -1,3 +1,6 @@
+// NEXT: Create real user at /auth0-user endpoint
+// TODO: Clean up auth0.js file
+
 // Core modules
 const express = require('express');
 const app = express();
@@ -5,6 +8,7 @@ const cloudinary = require('cloudinary');
 const fs = require('fs');
 const multer = require('multer');
 const upload = multer({ dest: 'uploads/' });
+const bodyParser = require('body-parser');
 
 // Database config
 const mongoose = require('mongoose');
@@ -40,6 +44,7 @@ const mongoStoreOptions = {
 
 // Express config
 app.use(express.static(`${__dirname}/dist`));
+app.use(bodyParser.urlencoded({ extended: true, limit: '1mb' }));
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 app.use(session({
@@ -86,6 +91,13 @@ app.get('/game', (req, res) => {
   console.log('/game');
   res.sendFile(`${__dirname}/dist/game.html`);
 });
+
+app.post('/auth0-user', (req, res) => {
+  console.log('/auth0-user');
+  console.log(req.body.idToken);
+  res.sendStatus(200);
+});
+
 
 // Register profile
 app.post('/register-profile', upload.single('profile-image'), (req, res) => {

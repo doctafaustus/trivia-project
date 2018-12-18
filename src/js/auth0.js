@@ -1,3 +1,5 @@
+import retrieveUser from './retrieve-user';
+
 export default function test() {
 
   const webAuth = new auth0.WebAuth({
@@ -60,6 +62,7 @@ export default function test() {
         window.location.hash = 'profile';
         console.log('LOGGED IN', authResult);
         setSession(authResult);
+        retrieveUser(authResult.idToken);
       } else if (err) {
         console.log(err);
       } else {
