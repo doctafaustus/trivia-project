@@ -3,10 +3,10 @@ export default function retrieveUser(idToken) {
   $.ajax({
     type: 'POST',
     url: '/auth0-user',
-    data: { idToken: idToken },
+    data: { idToken },
   })
-  .then(() => {
-    console.log('success!');
+  .then((data) => {
+    console.log('success!', data);
   });
 
 }

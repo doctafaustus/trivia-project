@@ -62,7 +62,7 @@ export default function test() {
         window.location.hash = 'profile';
         console.log('LOGGED IN', authResult);
         setSession(authResult);
-        retrieveUser(authResult.idToken);
+        retrieveUser(authResult.idTokenPayload.sub);
       } else if (err) {
         console.log(err);
       } else {

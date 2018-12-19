@@ -1,4 +1,4 @@
-// NEXT: Create real user at /auth0-user endpoint
+// NEXT: Save user avatar and playerName to DB
 // TODO: Clean up auth0.js file
 
 // Core modules
@@ -29,7 +29,7 @@ if (process.env.PORT) {
 
 // Schema
 const playerSchema = new mongoose.Schema({
-  id: ObjectId,
+  _id: String,
   playerName: String,
   created: {type: Date, default: Date.now},
 });
@@ -38,7 +38,7 @@ const Player = mongoose.model('Player', playerSchema);
 // Configure MongoStore options
 // This enables users to stay logged in even if the server goes down
 const mongoStoreOptions = {
-  url: process.env.PORT ? process.env.MONGODB_URI : 'mongodb://localhost/grubster',
+  url: process.env.PORT ? process.env.MONGODB_URI : 'mongodb://localhost/trivia',
   ttl: 365 * 24 * 60 * 60,
 };
 
@@ -65,22 +65,6 @@ cloudinary.config({
 const cloudinaryOptions = { gravity: 'center', height: 100, width: 100 };
 
 
-app.get('/test', (req, res) => {
-  console.log('/test');
-
-  const player = new Player({
-    playerName: 'testman'
-  });
-
-  player.save((err, user) => {
-    if (err) console.log(err);
-    console.log('User saved!', user);
-    res.json(user);
-  });
-
-});
-
-
 // Home page
 app.get('/', (req, res) => {
   res.sendFile(`${__dirname}/dist/index.html`);
@@ -92,10 +76,23 @@ app.get('/game', (req, res) => {
   res.sendFile(`${__dirname}/dist/game.html`);
 });
 
+// Add / find player
 app.post('/auth0-user', (req, res) => {
   console.log('/auth0-user');
-  console.log(req.body.idToken);
-  res.sendStatus(200);
+
+  Player.findOne({ '_id': req.body.idToken }, (err, player) => {
+    if (player) res.json(player);
+    else {
+      const newPlayer = new Player({
+        _id: req.body.idToken,
+        playerName: null,
+      });
+      newPlayer.save((err, player) => {
+        console.log('New player added', player._id);
+        res.json(player);
+      });
+    }
+  });
 });
 
 
