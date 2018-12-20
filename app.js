@@ -1,4 +1,4 @@
-// NEXT: Save user avatar and playerName to DB
+// NEXT: Add loading gif and success message for profile update or error message for duplicate name
 // TODO: Clean up auth0.js file
 
 // Core modules
@@ -13,10 +13,11 @@ const bodyParser = require('body-parser');
 // Database config
 const mongoose = require('mongoose');
 const uriUtil = require('mongodb-uri');
+const uniqueValidator = require('mongoose-unique-validator');
 const Schema = mongoose.Schema;
-const ObjectId = Schema.ObjectId;
 const dbOptions = { useNewUrlParser: true, server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }, replset: { socketOptions: { keepAlive: 1, connectTimeoutMS : 30000 } }};
 mongoose.Promise = global.Promise; // Removes deprecation warning
+mongoose.set('useCreateIndex', true);
 
 // Connect to DB
 if (process.env.PORT) {
@@ -30,10 +31,13 @@ if (process.env.PORT) {
 // Schema
 const playerSchema = new mongoose.Schema({
   _id: String,
-  playerName: String,
+  playerName: { type: String, unique: true },
+  profileImage: String,
   created: {type: Date, default: Date.now},
 });
+playerSchema.plugin(uniqueValidator);
 const Player = mongoose.model('Player', playerSchema);
+
 
 // Configure MongoStore options
 // This enables users to stay logged in even if the server goes down
@@ -62,7 +66,7 @@ cloudinary.config({
   api_key: '778489856867779', 
   api_secret: cloudinarySecret
 });
-const cloudinaryOptions = { gravity: 'center', height: 100, width: 100 };
+const cloudinaryOptions = { gravity: 'center', height: 100, width: 100, tags: ['CAT_profile_image'] };
 
 
 // Home page
@@ -80,6 +84,8 @@ app.get('/game', (req, res) => {
 app.post('/auth0-user', (req, res) => {
   console.log('/auth0-user');
 
+  req.session.playerID = req.body.idToken;
+
   Player.findOne({ '_id': req.body.idToken }, (err, player) => {
     if (player) res.json(player);
     else {
@@ -87,28 +93,45 @@ app.post('/auth0-user', (req, res) => {
         _id: req.body.idToken,
         playerName: null,
       });
-      newPlayer.save((err, player) => {
-        console.log('New player added', player._id);
-        res.json(player);
+      newPlayer.save((err, record) => {
+        console.log('New player added', record._id);
+        res.json(record);
       });
     }
   });
 });
 
 
-// Register profile
-app.post('/register-profile', upload.single('profile-image'), (req, res) => {
+// Update profile
+app.post('/update-profile', upload.fields([
+  { name: 'player-name' },
+  { name: 'profile-image' }
+]), (req, res) => {
 
-  cloudinary.uploader.upload(req.file.path,
-    function(result) {
-      console.log('result', result);
-      fs.unlink(req.file.path, err => {});
+  const playerName = req.body['player-name'];
+  const imagePath = req.files['profile-image'][0].path;
 
-      res.sendStatus(200);
-    },
+  cloudinary.uploader.upload(imagePath, result => {
+    fs.unlink(imagePath, err => {});
+
+    Player.findOne({ '_id': req.session.playerID }, (err, player) => {
+      if (!player) return console.log('No player found');
+  
+      player.playerName = playerName;
+      player.profileImage = result.url;
+
+      player.save((err, record) => {
+        const response = err ? err : record;
+        res.json(response);
+      });
+    });
+
+  },
   cloudinaryOptions);
 
 });
+
+
 
 // Listen on port 3000
 app.listen(process.env.PORT || 3000, () => {

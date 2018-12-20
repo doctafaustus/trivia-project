@@ -1,4 +1,8 @@
+import { fstat } from "fs";
+
 export default function profileUpdate() {
+
+  let uploadedImage;
 
   // Open file upload dialog on profile image click
   $('.profile-image-overlay').click(function() {
@@ -12,7 +16,7 @@ export default function profileUpdate() {
       $('#profile-image').attr('src', e.target.result);
     });
     reader.readAsDataURL(this.files[0]);
-    window.x = this.files[0];
+    uploadedImage = this.files[0];
 
     // Remove initial overlay
     $('.player-icon').removeClass('init-edit');
@@ -26,10 +30,9 @@ export default function profileUpdate() {
     const validation = validate({enteredName, enteredPhoto});
 
     const fd = new FormData();
-    fd.append('tags', 'cat_profile_img');
-    fd.append('profile-image', window.x);
+    fd.append('player-name', enteredName);
+    fd.append('profile-image', uploadedImage);
 
-    console.log('fd', fd);
 
     // TODO: Cleanup fd call
     if (validation) {
@@ -37,7 +40,7 @@ export default function profileUpdate() {
     } else {
       $.ajax({
         type: 'POST',
-        url: '/register-profile',
+        url: '/update-profile',
         cache: false,
         contentType: false,
         processData: false,
