@@ -1,5 +1,3 @@
-import { fstat } from "fs";
-
 export default function profileUpdate() {
 
   let uploadedImage;
@@ -23,8 +21,12 @@ export default function profileUpdate() {
   });
 
   // Save information to database
-  $('.profile-save').click(function() {
+  $('#page-profile').on('click', '.profile-save:not(.loading)', function() {
+
+    const $saveButton = $(this);
+    $saveButton.addClass('loading');
     $('.profile-validation').text('');
+
     const enteredName = $('#player-name-input').val();
     const enteredPhoto = $('#profile-image-upload-input').val();
     const validation = validate({enteredName, enteredPhoto});
@@ -48,7 +50,8 @@ export default function profileUpdate() {
       })
       .then(data => {
         console.log(data)
-      });
+      })
+      .always(() => $saveButton.removeClass('loading'));
       console.log('Submitting to server');
     }
   });

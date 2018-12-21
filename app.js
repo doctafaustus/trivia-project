@@ -1,4 +1,4 @@
-// NEXT: Add loading gif and success message for profile update or error message for duplicate name
+// NEXT: Add success message for profile update or error message for duplicate name
 // TODO: Clean up auth0.js file
 
 // Core modules

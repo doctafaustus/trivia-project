@@ -19,6 +19,27 @@
 
     .profile-save {
       display: inline-block;
+
+      .profile-save-loading {
+        display: none;
+      }
+
+      &.loading {
+        background: #ff7818;
+        padding: 4px 45px;
+
+        .profile-save-text {
+          display: none;
+        }
+
+        .profile-save-loading {
+          display: block;
+
+          img {
+            width: 25px;
+          }
+        }
+      }
     }
   }
   

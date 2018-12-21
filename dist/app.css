@@ -1025,6 +1025,17 @@ header {
     margin-bottom: 0; }
   .profile-container.edit-mode .profile-save {
     display: inline-block; }
+    .profile-container.edit-mode .profile-save .profile-save-loading {
+      display: none; }
+    .profile-container.edit-mode .profile-save.loading {
+      background: #ff7818;
+      padding: 4px 45px; }
+      .profile-container.edit-mode .profile-save.loading .profile-save-text {
+        display: none; }
+      .profile-container.edit-mode .profile-save.loading .profile-save-loading {
+        display: block; }
+        .profile-container.edit-mode .profile-save.loading .profile-save-loading img {
+          width: 25px; }
   .profile-container .player-icon {
     margin-bottom: 20px;
     display: inline-block;
